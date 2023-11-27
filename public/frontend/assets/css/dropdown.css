@@ -1,0 +1,59 @@
+/* Basic styling for the dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    
+  }
+  
+  /* Styling for the button inside the dropdown */
+  .dropbtn {
+    background-color: #fff;
+    color: #070707;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    
+  }
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fbf9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    
+   
+    
+  }
+  
+  /* Style for each card in the dropdown */
+  .dropdown-card {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .dropdown-card i {
+    width: 40px; /* Adjust icon width */
+    height: 40px; /* Adjust icon height */
+    border-radius: 50%; /* To make the icon round */
+    margin-right: 10px; /* Adjust spacing between icon and text */
+    background-color: rgb(146, 224, 155); /* Background color for the icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px; /* Adjust icon size if needed */
+    color: #0a0909; /* Icon color */
+   
+}
+
+
+
+
+  
