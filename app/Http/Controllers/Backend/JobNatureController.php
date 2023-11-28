@@ -70,9 +70,13 @@ class JobNatureController extends Controller
      */
     public function update(Request $request, JobNature $jobNature)
     {
-        $jobNature->update($request->all());
-        return redirect()->route('job-natures.index')->with('success', 'Job nature updated successfully');
+    $jobNature->name = $request->jobNatureName;
+    
+    $jobNature->save();
+
+    return redirect()->route('job-natures.index')->with('success', 'Job nature updated successfully');
     }
+
 
     /**
      * Remove the specified resource from storage.

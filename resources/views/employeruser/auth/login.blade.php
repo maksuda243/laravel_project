@@ -10,10 +10,10 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <div class="brand-logo">
-                <img src="public/images/logo.svg" alt="logo">
+                <img src="{{ asset('public/images/logo.png') }}" alt="logo">
               </div>
-              <h4>Hello! let's get started</h4>
-              <h6 class="font-weight-light">Sign in to continue.</h6>
+              <h4><b>Corporate Sign In</b></h4>
+              <h6 class="font-weight-light">Find the best Candidates in the fastest way</h6>
               <form class="pt-3" action="{{route('employeruser.login.check')}}" method="POST">
               @csrf
                 <div class="form-group">
@@ -25,7 +25,7 @@
 												@endif
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" required="" id="password" name="password" placeholder="Enter pwd">
+                  <input type="password" class="form-control form-control-lg" required="" id="password" name="password" placeholder="Enter password">
                   @if($errors->has('password'))
 													<small class="d-block text-danger">
 														{{$errors->first('password')}}
@@ -51,7 +51,7 @@
                   </button>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
-                  Don't have an account? <a href="{{route('employeruser.register')}}" class="text-primary">Sign Up</a>
+                Register for your employer's account to get started. <a href="{{route('employeruser.register')}}" class="text-primary">Sign Up</a>
                 </div>
               </form>
             </div>

@@ -46,17 +46,28 @@ class JobCategoryController extends Controller
         return view('backend.job-category.edit', compact('jobCategory'));
     }
 
-    public function update(Request $request, JobCategory $jobCategory)
-    {
-        $jobCategory->name = $request->name;
-        $jobCategory->description = $request->description;
-        return redirect()->route('job-category.index')->with('success', 'Job category updated successfully');
-    }
+    public function update(Request $request, $id)
+{
+    $jobCategory = JobCategory::findOrFail($id);
+    
+    $jobCategory->name = $request->name;
+    $jobCategory->description = $request->description;
+    $jobCategory->save();
 
-    public function destroy(JobNature $jobNature)
-    {
-        $jobNature->delete();
-        return redirect()->route('job-natures.index')->with('success', 'Organization Type deleted successfully');
+    return redirect()->route('job-category.index')->with('success', 'Job category updated successfully');
+}
+
+
+public function destroy($id)
+{
+    try {
+        $jobCategory = JobCategory::findOrFail($id);
+        $jobCategory->delete();
+        
+        return redirect()->route('job-category.index')->with('success', 'Job category deleted successfully');
+    } catch (\Exception $e) {
+        return redirect()->route('job-category.index')->with('error', 'Failed to delete job category');
     }
+}
 
 }

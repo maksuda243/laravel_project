@@ -45,6 +45,7 @@
                                                 @csrf
                                                 @method('delete')
                                             </form>
+                                            
                                         </td>
                                     </tr>
                                     @empty
@@ -64,10 +65,10 @@
 
 <!-- JavaScript Function to Confirm Deletion -->
 <script>
-    function deleteJobNature(jobNatureId) {
-        if (confirm("Are you sure you want to delete this job nature?")) {
+    function deleteJobCategory(jobCategoryId) {
+        if (confirm("Are you sure you want to delete this job category?")) {
             event.preventDefault();
-            document.getElementById('delete-form-' + jobNatureId).submit();
+            document.getElementById('delete-form-' + jobCategoryId).submit();
         }
     }
 </script>

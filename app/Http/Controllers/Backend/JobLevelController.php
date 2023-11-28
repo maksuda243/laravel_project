@@ -43,28 +43,33 @@ class JobLevelController extends Controller
     }
 
     public function update(Request $request, JobLevel $jobLevel)
-    {
-        {
-            try {
-                $jobLevel = new JobLevel();
-                $jobLevel->name = $request->name;
-                $jobLevel->description=$request->description; 
+{
+    try {
+        $jobLevel->name = $request->name;
+        $jobLevel->description = $request->description;
         
-                if ($jobLevel->save()) {
-                    return redirect()->route('job-level.index')->with('success', 'Job level created successfully');
-                } else {
-                    return redirect()->back()->withInput()->with('error', 'Failed to create job level');
-                }
-            } catch (Exception $e) {
-                return redirect()->back()->withInput()->with('error', 'An error occurred. Please try again');
-            }
+        if ($jobLevel->save()) {
+            return redirect()->route('job-level.index')->with('success', 'Job level updated successfully');
+        } else {
+            return redirect()->back()->withInput()->with('error', 'Failed to update job level');
         }
+    } catch (\Exception $e) {
+        return redirect()->back()->withInput()->with('error', 'An error occurred. Please try again');
     }
+}
 
-    public function destroy(JobLevel $jobLevel)
-    {
-        $jobNature->delete();
-        return redirect()->route('job-level.index')->with('success', 'Job nature deleted successfully');
+
+public function destroy($id)
+{
+    try {
+        $jobLevel = JobLevel::findOrFail($id);
+        $jobLevel->delete();
+        
+        return redirect()->route('job-level.index')->with('success', 'Job level deleted successfully');
+    } catch (\Exception $e) {
+        return redirect()->route('job-level.index')->with('error', 'Failed to delete job level');
     }
+}
+
 
 }

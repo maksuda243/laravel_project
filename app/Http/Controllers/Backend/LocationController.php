@@ -71,30 +71,37 @@ class LocationController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, Location $location)
-    {
-        {
-            try {
-                $location = new Location();
-                $location->name = $request->name;
-                $location->covered_area=$request->covered_area; 
-        
-                if ($location->save()) {
-                    return redirect()->route('location.index')->with('success', 'location updated successfully');
-                } else {
-                    return redirect()->back()->withInput()->with('error', 'Failed to create location ');
-                }
-            } catch (Exception $e) {
-                return redirect()->back()->withInput()->with('error', 'An error occurred. Please try again');
-            }
+{
+    try {
+        // Find the existing location by its ID
+        $existingLocation = Location::find($location->id);
+
+        // Update its properties
+        $existingLocation->name = $request->name;
+        $existingLocation->covered_area = $request->covered_area;
+
+        if ($existingLocation->save()) {
+            return redirect()->route('location.index')->with('success', 'Location updated successfully');
+        } else {
+            return redirect()->back()->withInput()->with('error', 'Failed to update Location');
         }
+    } catch (\Exception $e) {
+        return redirect()->back()->withInput()->with('error', 'An error occurred. Please try again');
     }
+}
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Location $location)
     {
-        $location->delete();
-        return redirect()->route('location.index')->with('success', 'location deleted successfully');
+        try {
+            $location->delete();
+            return redirect()->route('location.index')->with('success', 'Location deleted successfully');
+        } catch (\Exception $e) {
+            return redirect()->route('location.index')->with('error', 'Failed to delete location');
+        }
     }
+    
 }

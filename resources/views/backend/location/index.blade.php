@@ -43,7 +43,7 @@
                                             </a>
                                             <form id="delete-form-{{ $location->id }}" action="{{ route('location.destroy', $location->id) }}" method="post" style="display: none;">
                                                 @csrf
-                                                @method('delete')
+                                                @method('DELETE')
                                             </form>
                                         </td>
                                     </tr>

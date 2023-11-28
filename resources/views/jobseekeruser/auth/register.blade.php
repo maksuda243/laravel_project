@@ -10,10 +10,10 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <div class="brand-logo">
-                <img src="public/images/logo.svg" alt="logo">
+                <img src="{{ asset('public/images/logo.png') }}" alt="logo">
               </div>
               <h4>New here?</h4>
-              <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
+              <h6 class="font-weight-light">Create your account. It only takes a few steps</h6>
               <form action="{{route('jobseekeruser.register.store')}}" method="POST" class="pt-3">
               @csrf
                 <div class="form-group">

@@ -64,12 +64,12 @@
 
 <!-- JavaScript Function to Confirm Deletion -->
 <script>
-    function deleteJobNature(jobNatureId) {
-        if (confirm("Are you sure you want to delete this job nature?")) {
-            event.preventDefault();
-            document.getElementById('delete-form-' + jobNatureId).submit();
-        }
+    function deleteJobLevel(jobLevelId) {
+    if (confirm("Are you sure you want to delete this job level?")) {
+        event.preventDefault();
+        document.getElementById('delete-form-' + jobLevelId).submit();
     }
+}
 </script>
 
 @endsection
