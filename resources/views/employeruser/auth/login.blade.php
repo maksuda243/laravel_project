@@ -1,4 +1,4 @@
-@extends('employeruser.layout.app')
+@extends('employeruser.layout.appAuth')
 @section('title','Sign Up')
 @section('content')
 

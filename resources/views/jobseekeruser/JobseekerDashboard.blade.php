@@ -1,26 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('jobseekeruser.layout.app')
+@section('title','Jobseeker User Dashboard')
+@section('content')
 
-    <title>@yield('title',env('APP_NAME'))</title>
-
-    <!-- Bootstrap -->
-    <link href="{{asset('public/vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="{{asset('public/vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
-    <!-- NProgress -->
-    <link href="{{asset('public/vendors/nprogress/nprogress.css')}}" rel="stylesheet">
-
-    <!-- Custom Theme Style -->
-    <link href="{{asset('public/build/css/custom.min.css')}}" rel="stylesheet">
-  </head>
-
-  <body class="nav-md">
+<body class="nav-md">
     <div class="container body">
       <div class="main_container">
         <div class="col-md-3 left_col">
@@ -325,22 +307,3 @@
         <!-- /footer content -->
       </div>
     </div>
-
-
-@yield('content')
-
-
-
-<!-- jQuery -->
-<script src="{{asset('public/vendors/jquery/dist/jquery.min.js')}}"></script>
-<!-- Bootstrap -->
-<script src="{{asset('public/vendors/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
-<!-- FastClick -->
-<script src="{{asset('public/vendors/fastclick/lib/fastclick.js')}}"></script>
-<!-- NProgress -->
-<script src="{{asset('public/vendors/nprogress/nprogress.js')}}"></script>
-
-<!-- Custom Theme Scripts -->
-<script src="{{asset('public/build/js/custom.min.js')}}"></script>
-</body>
-</html>

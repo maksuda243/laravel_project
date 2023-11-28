@@ -46,7 +46,7 @@ class AuthController extends Controller
                 if($user->status==1){
                     if(Hash::check($request->password , $user->password)){
                         $this->setSession($user);
-                        return redirect()->route('employeruserdashboard')->with('success','Successfully login');
+                        return redirect()->route('empuserdashboard')->with('success','Successfully login');
                     }else
                         return redirect()->route('employeruser.login')->with('error','Your phone number or password is wrong!');
                 }else
