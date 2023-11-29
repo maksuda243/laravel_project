@@ -88,7 +88,7 @@ Route::resource('employer_user', EmployerUserController::class);
 
 
 // frontend Route
-Route::get('/',[HomeController::class,'index']);
+Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/about',[AboutController::class,'index']);
 Route::get('/blog',[BlogController::class,'index']);
 Route::get('/blogdetails',[BlogDetailsController::class,'index']);

@@ -21,20 +21,20 @@ return new class extends Migration
         });
         DB::table('roles')->insert([
             [
-                'name' => ' Super Admin',
-                'identity' => 'superadmin',
+                'name' => 'Adiyat',
+                'identity' => 'Superadmin',
                 'created_at' => Carbon::now()
             ],[
-                'name' => 'Admin',
-                'identity' => 'admin',
+                'name' => '	Jawaad',
+                'identity' => 'Admin',
                 'created_at' => Carbon::now()
             ],[
-                'name' => 'Employer',
-                'identity' => 'employer',
+                'name' => '	Shifa',
+                'identity' => 'Manager',
                 'created_at' => Carbon::now()
             ],[
-                'name' => 'Job Seeker',
-                'identity' => 'jobseeker',
+                'name' => 'Aarham',
+                'identity' => 'salesman',
                 'created_at' => Carbon::now()
             ]
         ]);
