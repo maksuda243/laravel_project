@@ -2,6 +2,74 @@
 @section('title','Sign Up')
 @section('content')
 
+<header>
+        <!-- Header Start -->
+       <div class="header-area header-transparrent">
+           <div class="headder-top header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 col-md-2">
+                            <!-- Logo -->
+                            <div class="logo">
+                                <a href="index.html"><img src="{{ asset('public/images/logo.png') }}" alt=""></a>
+                            </div>  
+                        </div>
+                        <div class="col-lg-9 col-md-9">
+                            <div class="menu-wrapper">
+                                <!-- Main-menu -->
+                                <div class="main-menu">
+                                    <nav class="d-none d-lg-block">
+                                        <ul id="navigation">
+                                            <li><a href="{{url('/')}}">Home</a></li>
+                                            <li><a href="{{url('/joblisting')}}">Find a Jobs </a></li>
+                                            <li><a href="{{ route('employeruser.login') }}">Employer</a></li>
+                                            <li><a href="#">Page</a>
+                                                <ul class="submenu">
+                                                    <li><a href="{{url('/blog')}}">Blog</a></li>
+                                                    <li><a href="{{url('/blogdetails')}}">Blog Details</a></li>
+                                                    <li><a href="{{url('/elements')}}">Elements</a></li>
+                                                    <li><a href="{{url('/jobdetails')}}">job Details</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="{{url('/contact')}}">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>          
+                                <!-- Header-btn -->
+                                <!-- <div class="header-btn d-none f-right d-lg-block">
+                                    <div class="dropdown">
+                                        <button onclick="toggleDropdown()" class="btn head-btn1 dropbtn">Register</button>
+                                        <div id="registerDropdown" class="dropdown-content">
+                                            <a href="{{ route('jobseekeruser.register') }}">
+                                                <div class="dropdown-card jobseeker">
+                                                    <i class="fas fa-laptop"></i>
+                                                    <p> As a Jobseeker</p>
+                                                </div>
+                                            </a>
+                                            <a href="{{ route('employeruser.register') }}">
+                                                <div class="dropdown-card employer">
+                                                    <i class="fas fa-user-tie"></i>
+                                                    <p>As a Employer</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <a href="{{ route('jobseekeruser.login') }}" class="btn head-btn2">Login</a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+       </div>
+        <!-- Header End -->
+    </header>
+
+
 
 <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">

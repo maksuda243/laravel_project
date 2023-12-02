@@ -35,9 +35,6 @@ use App\Http\Controllers\Frontend\EmployerUser\AuthController as empuserauth;
 use App\Http\Controllers\Frontend\EmployerUser\DashboardController as empuserdashboard;
 
 
-
-
-
 Route::get('/register', [auth::class,'signUpForm'])->name('register');
 Route::post('/register', [auth::class,'signUpStore'])->name('register.store');
 Route::get('/login', [auth::class,'signInForm'])->name('login');
@@ -74,7 +71,6 @@ Route::get('employeruser/logout', [empuserauth::class,'singOut'])->name('employe
 Route::get('employeruser/dashboard', [empuserdashboard::class,'index'])->name('empuserdashboard');
 
 
-
 Route::middleware(['checkrole'])->prefix('admin')->group(function(){
   Route::resource('user', user::class);
   Route::resource('role', role::class);
@@ -90,7 +86,6 @@ Route::resource('gender', GenderController::class);
 Route::resource('location', LocationController::class);
 Route::resource('jobseeker_user', JobseekerUserController::class);
 Route::resource('employer_user', EmployerUserController::class);
-
 
 
 // frontend Route

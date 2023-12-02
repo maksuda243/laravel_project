@@ -18,6 +18,28 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="{{asset('public/images/favicon.png')}}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"/>
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="public/frontend/assets/img/favicon.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+		<!-- CSS here -->
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/bootstrap.min.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/owl.carousel.min.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/flaticon.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/price_rangs.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/slicknav.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/animate.min.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/magnific-popup.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/fontawesome-all.min.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/themify-icons.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/slick.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/nice-select.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/dropdown.css')}}">
+          
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/style.css')}}">
+
 </head>
   <body>
     @yield('content')
