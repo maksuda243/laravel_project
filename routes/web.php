@@ -44,6 +44,15 @@ Route::get('/login', [auth::class,'signInForm'])->name('login');
 Route::post('/login', [auth::class,'signInCheck'])->name('login.check');
 Route::get('/logout', [auth::class,'signOut'])->name('logOut');
 
+
+Route::middleware(['checkJobseekerAuth'])->group(function(){
+  Route::get('jobseekeruser/dashboard', [jsuserdashboard::class,'index'])->name('jobseekeruserdashboard');
+});
+
+Route::middleware(['checkEmployerAuth'])->group(function(){
+  Route::get('employeruser/dashboard', [empuserdashboard::class,'index'])->name('empuserdashboard');
+});
+
 Route::middleware(['checkauth'])->prefix('admin')->group(function(){
   Route::get('dashboard', [dashboard::class,'index'])->name('dashboard');
 });
@@ -54,9 +63,6 @@ Route::post('jobseekeruser/register', [jsuserauth::class,'signUpStore'])->name('
 Route::get('jobseekeruser/login', [jsuserauth::class,'signInForm'])->name('jobseekeruser.login');
 Route::post('jobseekeruser/login', [jsuserauth::class,'signInCheck'])->name('jobseekeruser.login.check');
 Route::get('jobseekeruser/logout', [jsuserauth::class,'singOut'])->name('jobseekeruser.LogOut');
-
-Route::get('jobseekeruser/dashboard', [jsuserdashboard::class,'index'])->name('jobseekeruserdashboard');
-
 
 // EmployerUser
 Route::get('employeruser/register', [empuserauth::class,'signUpForm'])->name('employeruser.register');

@@ -72,6 +72,6 @@ class AuthController extends Controller
 
     public function singOut(){
         request()->session()->flush();
-        return redirect('jobseekeruser.login')->with('danger','Succfully Logged Out');
+        return redirect('jobseekeruser/login')->with('danger','Succfully Logged Out');
     }
 }
