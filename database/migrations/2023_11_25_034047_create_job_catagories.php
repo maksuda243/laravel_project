@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->text('description')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
         DB::table('job_catagories')->insert([

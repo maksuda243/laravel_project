@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\JobCategory;
 use Illuminate\Http\Request;
+use Exception;
+use File;
+use Toastr;
 
 class JobCategoryController extends Controller
 {   
@@ -27,7 +30,12 @@ class JobCategoryController extends Controller
                 $jobCategory = new JobCategory();
                 $jobCategory->name = $request->name;
                 $jobCategory->description = $request->description;
-
+                if($request->hasFile('image')){
+                    $imageName = rand(111,999).time().'.'.$request->image->extension();
+                    $request->image->move(public_path('uploads/jobcategory'), $imageName);
+                    $jobCategory->image=$imageName;
+                }
+        
                 if ($jobCategory->save()) {
                     return redirect()->route('job-category.index')->with('success', 'Job nature created successfully');
                 } else {
@@ -52,21 +60,29 @@ class JobCategoryController extends Controller
     
     $jobCategory->name = $request->name;
     $jobCategory->description = $request->description;
+
+    if($request->hasFile('image')){
+        $imageName = rand(111,999).time().'.'.$request->image->extension();
+        $request->image->move(public_path('uploads/users'), $imageName);
+        $jobCategory->image=$imageName;
+    }
     $jobCategory->save();
 
     return redirect()->route('job-category.index')->with('success', 'Job category updated successfully');
 }
 
 
-public function destroy($id)
+public function destroy(string $id)
 {
-    try {
-        $jobCategory = JobCategory::findOrFail($id);
-        $jobCategory->delete();
+    $jobCategory= JobCategory::findOrFail($id);
+    $image_path=public_path('uploads/jobcategory/').$jobCategory->image;
+    
+    if($jobCategory->delete()){
+        if(File::exists($image_path)) 
+            File::delete($image_path);
         
-        return redirect()->route('job-category.index')->with('success', 'Job category deleted successfully');
-    } catch (\Exception $e) {
-        return redirect()->route('job-category.index')->with('error', 'Failed to delete job category');
+        Toastr::warning('Deleted Permanently!');
+        return redirect()->back();
     }
 }
 
