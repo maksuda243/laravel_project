@@ -13,6 +13,9 @@ use App\Http\Controllers\Backend\JobLevelController;
 use App\Http\Controllers\Backend\OrgTypeController;
 use App\Http\Controllers\Backend\GenderController;
 use App\Http\Controllers\Backend\LocationController;
+use App\Http\Controllers\Backend\EducationController;
+use App\Http\Controllers\Backend\SubscriptionController;
+use App\Http\Controllers\Backend\JobController;
 use App\Http\Controllers\Backend\JobseekerUserController;
 use App\Http\Controllers\Backend\EmployerUserController;
 
@@ -29,10 +32,13 @@ use App\Http\Controllers\Frontend\JobListingController;
 /* JobseeekrUser panel */
 use App\Http\Controllers\Frontend\JobseekerUser\AuthController as jsuserauth;
 use App\Http\Controllers\Frontend\JobseekerUser\DashboardController as jsuserdashboard;
+use App\Http\Controllers\Frontend\JobseekerUser\JobseekerprofileController as jsprofile;
+
 
 /* EmployerUser panel */
 use App\Http\Controllers\Frontend\EmployerUser\AuthController as empuserauth;
 use App\Http\Controllers\Frontend\EmployerUser\DashboardController as empuserdashboard;
+use App\Http\Controllers\Frontend\EmployerUser\JobpostController as jobpost;
 
 
 Route::get('/register', [auth::class,'signUpForm'])->name('register');
@@ -44,11 +50,10 @@ Route::get('/logout', [auth::class,'signOut'])->name('logOut');
 
 Route::middleware(['checkJobseekerAuth'])->group(function(){
   Route::get('jobseekeruser/dashboard', [jsuserdashboard::class,'index'])->name('jobseekeruserdashboard');
+ 
 });
-
-Route::middleware(['checkEmployerAuth'])->group(function(){
-  Route::get('employeruser/dashboard', [empuserdashboard::class,'index'])->name('empuserdashboard');
-});
+//  Route::resource('jobseekeruser', JobseekerUser::class);
+//  Route::get('default-page', [DefaultPageController::class,'index'])->name('default-page');
 
 Route::middleware(['checkauth'])->prefix('admin')->group(function(){
   Route::get('dashboard', [dashboard::class,'index'])->name('dashboard');
@@ -67,8 +72,11 @@ Route::post('employeruser/register', [empuserauth::class,'signUpStore'])->name('
 Route::get('employeruser/login', [empuserauth::class,'signInForm'])->name('employeruser.login');
 Route::post('employeruser/login', [empuserauth::class,'signInCheck'])->name('employeruser.login.check');
 Route::get('employeruser/logout', [empuserauth::class,'singOut'])->name('employeruser.LogOut');
-
 Route::get('employeruser/dashboard', [empuserdashboard::class,'index'])->name('empuserdashboard');
+
+
+Route::get('/jobpost/create', [JobpostController::class, 'create'])->name('jobpost.create');
+Route::post('/jobpost/store', [JobpostController::class, 'store'])->name('jobpost.store');
 
 
 Route::middleware(['checkrole'])->prefix('admin')->group(function(){
@@ -83,7 +91,10 @@ Route::resource('job-category', JobCategoryController::class);
 Route::resource('job-level', JobLevelController::class);
 Route::resource('org-type', OrgTypeController::class);
 Route::resource('gender', GenderController::class);
+Route::resource('education', EducationController::class);
 Route::resource('location', LocationController::class);
+Route::resource('subscription', SubscriptionController::class);
+Route::resource('job', JobController::class);
 Route::resource('jobseeker_user', JobseekerUserController::class);
 Route::resource('employer_user', EmployerUserController::class);
 

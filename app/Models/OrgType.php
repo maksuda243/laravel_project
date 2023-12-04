@@ -9,4 +9,9 @@ class OrgType extends Model
 {
     use HasFactory;
     protected $table = 'organization_type';
+
+    public function jobpost()
+    {
+        return $this->belongsTo(JobPost::class);
+    }
 }

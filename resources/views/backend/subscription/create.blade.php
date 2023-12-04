@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title', trans('Create Job Category'))
+@section('title', trans('Create Subscription Plan'))
 
 @section('content')
     <!-- Basic multiple Column Form section start -->
@@ -10,12 +10,12 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form" method="post" enctype="multipart/form-data" action="{{ route('job-category.store') }}">
+                            <form class="form" method="post" enctype="multipart/form-data" action="{{ route('subscription.store') }}">
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="name">Job Category Name <i class="text-danger">*</i></label>
+                                            <label for="name"> Subscription Plan Name <i class="text-danger">*</i></label>
                                             <input type="text" id="name" class="form-control" value="{{ old('name') }}" name="name">
                                             @if($errors->has('name'))
                                                 <span class="text-danger"> {{ $errors->first('name') }}</span>
@@ -24,19 +24,31 @@
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="name">Job Category Description <i class="text-danger">*</i></label>
+                                            <label for="name"> Plan Description <i class="text-danger">*</i></label>
                                             <input type="text" id="description" class="form-control" value="{{ old('description') }}"  name="description">
                                             @if($errors->has('description'))
                                                 <span class="text-danger"> {{ $errors->first('description') }}</span>
                                             @endif
                                         </div>
                                     </div>
-                                    {{-- <div class="col-md-6 col-12">
+                                    <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="image">Image</label>
-                                            <input type="file" id="image" class="form-control" placeholder="Image" name="image">
+                                            <label for="duration"> Plan Duration_Month <i class="text-danger">*</i></label>
+                                            <input type="text" id="duration" class="form-control" value="{{ old('duration') }}"  name="duration">
+                                            @if($errors->has('duration'))
+                                                <span class="text-danger"> {{ $errors->first('duration') }}</span>
+                                            @endif
                                         </div>
-                                    </div> --}}
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="price"> Price <i class="text-danger">*</i></label>
+                                            <input type="text" id="price" class="form-control" value="{{ old('price') }}"  name="price">
+                                            @if($errors->has('price'))
+                                                <span class="text-danger"> {{ $errors->first('price') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 d-flex justify-content-end">

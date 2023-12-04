@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', trans('Employer User List'))
+@section('title', trans('Users List'))
 
 @section('content')
 
@@ -10,12 +10,12 @@
         <div class="col-lg-10 offset-lg-2">
             <div class="card">
                 <div class="card-header">
-                    <h4>{{ trans('Employer User List') }}</h4>
-                    <!-- <div class="card-header-action">
-                        <a href="{{ route('jobseeker_user.create') }}" class="btn btn-primary">
+                    <h4>{{ trans('Users List') }}</h4>
+                    <div class="card-header-action">
+                        <a href="{{ route('user.create') }}" class="btn btn-primary">
                             <i class="fa fa-plus"></i> {{ trans('Add User') }}
                         </a>
-                    </div> -->
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -24,46 +24,42 @@
                                 <tr>
                                     <th scope="col">{{ __('#SL') }}</th>
                                     <th scope="col">{{ __('Name') }}</th>
-                                    <th scope="col">{{ __('Company Name') }}</th>
                                     <th scope="col">{{ __('Email') }}</th>
-                                    <th scope="col">{{ __('Contact No') }}</th>
-                                     <th scope="col">{{ __('Designation') }}</th>
-                                    <th scope="col">{{ __('Company Address') }}</th>
-                                    <th scope="col">{{ __('Years of Establishment') }}</th>
-                                    <th scope="col">{{ __('Industry') }}</th>
-                                    <th scope="col">{{ __('Organization Type') }}</th>
-                                    <th scope="col">{{ __('Company Description') }}</th>
-                                    <th scope="col">{{ __('Website URL') }}</th>
-                                    <!-- <th class="text-center">{{ __('Action') }}</th> -->
+                                    <th scope="col">{{ __('Contact') }}</th>
+                                    <th scope="col">{{ __('Role') }}</th>
+                                    <th scope="col">{{ __('Image') }}</th>
+                                    <th scope="col">{{ __('Status') }}</th>
+                                    <th class="text-center">{{ __('Action') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse($useremployer as $p)
+                                @forelse($data as $p)
                                 <tr>
                                     <td>{{ ++$loop->index }}</td>
-                                    <td>{{ $p->name }}</td>
-                                    <td>{{ $p->company_name }}</td>
+                                    <td>{{ $p->name_en }}</td>
                                     <td>{{ $p->email }}</td>
-                                    <td>{{ $p->contact_no }}</td>
-                                    <td>{{ $p->designation }}</td>
-                                    <td>{{ $p->address }}</td>
-                                    <td>{{ $p->years_of_establishment }}</td>
-                                    <td>{{ $p->industry }}</td>
-                                    <td>{{ $p->organization_type }}</td>
-                                    <td>{{ $p->company_description }}</td>
-                                    <td>{{ $p->website_url }}</td>
-                                    <!-- <td class="text-center">
-                                        <a href="{{ route('jobseeker_user.edit', encryptor('encrypt', $p->id)) }}" class="btn btn-sm btn-warning">
+                                    <td>{{ $p->contact_no_en }}</td>
+                                    <td>{{ $p->role ? $p->role->identity : '-' }}</td>
+                                    <td><img width="50px" src="{{ asset('public/uploads/users/'.$p->image) }}" alt=""></td>
+                                    <td>
+                                        @if($p->status == 1)
+                                            <span class="badge badge-success">{{ __('Active') }}</span>
+                                        @else
+                                            <span class="badge badge-secondary">{{ __('Inactive') }}</span>
+                                        @endif
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="{{ route('user.edit', encryptor('encrypt', $p->id)) }}" class="btn btn-sm btn-warning">
                                             <i class="fa fa-edit"></i>
                                         </a>
                                         <a href="javascript:void(0)" onclick="deleteUser('{{ $p->id }}')" class="btn btn-sm btn-danger">
                                             <i class="fa fa-trash"></i>
                                         </a>
-                                        <form id="delete-form-{{ $p->id }}" action="{{ route('jobseeker_user.destroy', encryptor('encrypt', $p->id)) }}" method="post" style="display: none;">
+                                        <form id="delete-form-{{ $p->id }}" action="{{ route('user.destroy', encryptor('encrypt', $p->id)) }}" method="post" style="display: none;">
                                             @csrf
                                             @method('delete')
                                         </form>
-                                    </td> -->
+                                    </td>
                                 </tr>
                                 @empty
                                 <tr>

@@ -86,27 +86,20 @@
                       <li><a href="{{route('org-type.index')}}">Organization Type</a></li>
                       <li><a href="{{route('gender.index')}}">Gender</a></li>
                       <li><a href="{{route('location.index')}}">Location</a></li>
-                      <!-- <li><a href="invoice.html">Invoice</a></li>
-                      <li><a href="inbox.html">Inbox</a></li>
-                      <li><a href="calendar.html">Calendar</a></li> -->
+                       <li><a href="{{route('education.index')}}">Education</a></li>
+                      <li><a href="{{route('subscription.index')}}">Subscription</a></li>
+                      <li><a href="calendar.html">Calendar</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-table"></i> Frontend User <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-table"></i> User <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{route('jobseeker_user.index')}}">Job Seeker</a></li>
                       <li><a href="{{route('employer_user.index')}}">Employer</a></li>
                     </ul>
                   </li>
-                  <!-- <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="chartjs.html">Chart JS</a></li>
-                      <li><a href="chartjs2.html">Chart JS2</a></li>
-                      <li><a href="morisjs.html">Moris JS</a></li>
-                      <li><a href="echarts.html">ECharts</a></li>
-                      <li><a href="other_charts.html">Other Charts</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+                  <li><a href="{{route('job.index')}}"><i class="fa fa-bar-chart-o"></i> Jobs </a></li>
+                  
+                  {{-- <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
                       <li><a href="fixed_footer.html">Fixed Footer</a></li>
@@ -152,7 +145,7 @@
                         <li><a href="#level1_2">Level One</a>
                         </li>
                     </ul>
-                  </li>                   -->
+                  </li>                    --}}
                   <!-- <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li> -->
                 </ul>
               </div>

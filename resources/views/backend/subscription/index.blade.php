@@ -1,19 +1,19 @@
 @extends('backend.layouts.app')
-@section('title', trans('Job Category List'))
+@section('title', trans('Subscription Plan List'))
 
 @section('content')
 
-<!-- Enhanced Bordered table -->
+
 <section class="p-3">
     <div class="container">
         <div class="row" id="table-bordered">
             <div class="col-lg-10 offset-lg-2">
                 <div class="card">
                     <div class="card-header">
-                        <h4>{{ trans('Job Category List') }}</h4>
+                        <h4>{{ trans('Subscription Plan List') }}</h4>
                         <div class="card-header-action">
-                            <a href="{{ route('job-category.create') }}" class="btn btn-primary">
-                                <i class="fa fa-plus"></i> {{ trans('Add Job Category') }}
+                            <a href="{{ route('subscription.create') }}" class="btn btn-primary">
+                                <i class="fa fa-plus"></i> {{ trans('Add Subscription Plan') }}
                             </a>
                         </div>
                     </div>
@@ -25,35 +25,36 @@
                                         <th scope="col">{{ __('#SL') }}</th>
                                         <th scope="col">{{ __('Name') }}</th>
                                         <th scope="col">{{ __('Description') }}</th>
-                                        {{-- <th scope="col">{{ __('Image') }}</th> --}}
+                                        <th scope="col">{{ __('Duration_Month') }}</th>
+                                        <th scope="col">{{ __('Price') }}</th>
                                         <th class="text-center">{{ __('Action') }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($jobCategory as $jobCategory)
+                                    @forelse($subscription as $subscription)
                                     <tr>
                                         <td>{{ ++$loop->index }}</td>
-                                        <td>{{ $jobCategory->name }}</td>
-                                        <td>{{ $jobCategory->description }}</td>
-                                        {{-- <td><img width="50px" src="{{ asset('public/uploads/jobcategory/'.$jobCategory->image) }}" alt=""></td> --}}
-
+                                        <td>{{ $subscription->name }}</td>
+                                        <td>{{ $subscription->description }}</td>
+                                        <td>{{ $subscription->duration }}</td>
+                                        <td>{{ $subscription->price }}</td>
+                                      
                                         <td class="text-center">
-                                            <a href="{{ route('job-category.edit', $jobCategory->id) }}" class="btn btn-sm btn-warning">
+                                            <a href="{{ route('subscription.edit', $subscription->id) }}" class="btn btn-sm btn-warning">
                                                 <i class="fa fa-edit"></i>
                                             </a>
-                                            <a href="javascript:void(0)" onclick="deleteJobCategory('{{ $jobCategory->id }}')" class="btn btn-sm btn-danger">
+                                            <a href="javascript:void(0)" onclick="deleteJobLevel('{{ $subscription->id }}')" class="btn btn-sm btn-danger">
                                                 <i class="fa fa-trash"></i>
                                             </a>
-                                            <form id="delete-form-{{ $jobCategory->id }}" action="{{ route('job-category.destroy', $jobCategory->id) }}" method="post" style="display: none;">
+                                            <form id="delete-form-{{ $subscription->id }}" action="{{ route('subscription.destroy', $subscription->id) }}" method="post" style="display: none;">
                                                 @csrf
                                                 @method('delete')
                                             </form>
-                                            
                                         </td>
                                     </tr>
                                     @empty
                                     <tr>
-                                        <td colspan="3" class="text-center">{{ __('No Job Category Found') }}</td>
+                                        <td colspan="3" class="text-center">{{ __('No Subscription Plan Found') }}</td>
                                     </tr>
                                     @endforelse
                                 </tbody>
@@ -68,12 +69,12 @@
 
 <!-- JavaScript Function to Confirm Deletion -->
 <script>
-    function deleteJobCategory(jobCategoryId) {
-        if (confirm("Are you sure you want to delete this job category?")) {
-            event.preventDefault();
-            document.getElementById('delete-form-' + jobCategoryId).submit();
-        }
+    function deleteJobLevel(jobLevelId) {
+    if (confirm("Are you sure you want to delete this job level?")) {
+        event.preventDefault();
+        document.getElementById('delete-form-' + jobLevelId).submit();
     }
+}
 </script>
 
 @endsection

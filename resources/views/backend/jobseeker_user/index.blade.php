@@ -25,7 +25,26 @@
                                     <th scope="col">{{ __('#SL') }}</th>
                                     <th scope="col">{{ __('Name') }}</th>
                                     <th scope="col">{{ __('Email') }}</th>
-                                    <th scope="col">{{ __('Contact') }}</th>
+                                    <th scope="col">{{ __("Father's name") }}</th>
+                                    <th scope="col">{{ __("Mothers's name") }}</th>
+                                    <th scope="col">{{ __("Date of Birth") }}</th>
+                                    <th scope="col">{{ __("Gender") }}</th>
+                                    <th scope="col">{{ __("Religion") }}</th>
+                                    <th scope="col">{{ __("Nationality") }}</th>
+                                    <th scope="col">{{ __("Marital Status") }}</th>
+                                    <th scope="col">{{ __("Nationl_ID") }}</th>
+                                    <th scope="col">{{ __("Present Address") }}</th>
+                                    <th scope="col">{{ __("Permanent Address") }}</th>
+                                    <th scope="col">{{ __("Contact No") }}</th>
+                                    <th scope="col">{{ __("Job Nature") }}</th>
+                                    <th scope="col">{{ __("Job Level") }}</th>
+                                    <th scope="col">{{ __("Expected Salary") }}</th>
+                                    <th scope="col">{{ __("Job Category") }}</th>
+                                    <th scope="col">{{ __("Organization Type") }}</th>
+                                    <th scope="col">{{ __("Preferred Job Location") }}</th>
+                                    <th scope="col">{{ __("Education") }}</th>
+                                    <th scope="col">{{ __("Career Objective") }}</th>
+                                    <th scope="col">{{ __("Skill") }}</th>
                                     <!-- <th class="text-center">{{ __('Action') }}</th> -->
                                 </tr>
                             </thead>
@@ -35,7 +54,27 @@
                                     <td>{{ ++$loop->index }}</td>
                                     <td>{{ $p->name }}</td>
                                     <td>{{ $p->email }}</td>
+                                    <td>{{ $p->father_name }}</td>
+                                    <td>{{ $p->mother_name }}</td>
+                                    <td>{{ $p->date_of_birth }}</td>
+                                    <td>{{ $p->gender }}</td>
+                                    <td>{{ $p->religion}}</td>
+                                    <td>{{ $p->nationality}}</td>
+                                    <td>{{ $p->marital_status}}</td>
+                                    <td>{{ $p->national_id}}</td>
+                                    <td>{{ $p->present_address}}</td>
+                                    <td>{{ $p->permanent_address}}</td>
                                     <td>{{ $p->contact_no }}</td>
+                                    <td>{{ $p->job_nature }}</td>
+                                    <td>{{ $p->job_level }}</td>
+                                    <td>{{ $p->expected_salary }}</td>
+                                    <td>{{ $p->job_category }}</td>
+                                    <td>{{ $p->organization_type }}</td>
+                                    <td>{{ $p->location }}</td>
+                                    <td>{{ $p->education }}</td>
+                                    <td>{{ $p->career_objective }}</td>
+                                    <td>{{ $p->skill }}</td>
+                                    
                                     <!-- <td class="text-center">
                                         <a href="{{ route('jobseeker_user.edit', encryptor('encrypt', $p->id)) }}" class="btn btn-sm btn-warning">
                                             <i class="fa fa-edit"></i>

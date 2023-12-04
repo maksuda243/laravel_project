@@ -9,4 +9,9 @@ class JobLevel extends Model
 {
     use HasFactory;
     protected $table = 'job_level';
+
+    public function jobpost()
+    {
+        return $this->belongsTo(JobPost::class);
+    }
 }

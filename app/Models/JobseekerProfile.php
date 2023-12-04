@@ -5,13 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Location extends Model
+class JobseekerProfile extends Model
 {
     use HasFactory;
-
-    public function jobpost()
-    {
-        return $this->belongsTo(JobPost::class);
-    }
-    
+    protected $table = 'jobseeker_user';
 }

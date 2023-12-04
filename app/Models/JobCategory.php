@@ -9,4 +9,9 @@ class JobCategory extends Model
 {
     use HasFactory;
     protected $table = 'job_catagories';
+
+    public function jobpost()
+    {
+        return $this->belongsTo(JobPost::class);
+    }
 }

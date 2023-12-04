@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', trans('Employer User List'))
+@section('title', trans('Jobs List'))
 
 @section('content')
 
@@ -10,9 +10,9 @@
         <div class="col-lg-10 offset-lg-2">
             <div class="card">
                 <div class="card-header">
-                    <h4>{{ trans('Employer User List') }}</h4>
+                    <h4>{{ trans('Jobs List') }}</h4>
                     <!-- <div class="card-header-action">
-                        <a href="{{ route('jobseeker_user.create') }}" class="btn btn-primary">
+                        <a href="{{ route('job.create') }}" class="btn btn-primary">
                             <i class="fa fa-plus"></i> {{ trans('Add User') }}
                         </a>
                     </div> -->
@@ -23,35 +23,41 @@
                             <thead>
                                 <tr>
                                     <th scope="col">{{ __('#SL') }}</th>
-                                    <th scope="col">{{ __('Name') }}</th>
-                                    <th scope="col">{{ __('Company Name') }}</th>
-                                    <th scope="col">{{ __('Email') }}</th>
-                                    <th scope="col">{{ __('Contact No') }}</th>
-                                     <th scope="col">{{ __('Designation') }}</th>
-                                    <th scope="col">{{ __('Company Address') }}</th>
-                                    <th scope="col">{{ __('Years of Establishment') }}</th>
-                                    <th scope="col">{{ __('Industry') }}</th>
+                                    <th scope="col">{{ __('Employer_ID') }}</th>
+                                    <th scope="col">{{ __('Service Type') }}</th>
+                                    <th scope="col">{{ __('No.of.Vacancies') }}</th>
+                                    <th scope="col">{{ __('Job Title') }}</th>
+                                     <th scope="col">{{ __('Industry') }}</th>
+                                    <th scope="col">{{ __('Job Nature') }}</th>
+                                    <th scope="col">{{ __('Job Level') }}</th>
                                     <th scope="col">{{ __('Organization Type') }}</th>
-                                    <th scope="col">{{ __('Company Description') }}</th>
-                                    <th scope="col">{{ __('Website URL') }}</th>
+                                    <th scope="col">{{ __('Location') }}</th>
+                                    <th scope="col">{{ __('Salary') }}</th>
+                                    <th scope="col">{{ __('Requirments') }}</th>
+                                    <th scope="col">{{ __('Special Instruction') }}</th>
+                                    <th scope="col">{{ __('Application Start_Date') }}</th>
+                                    <th scope="col">{{ __('Application deadline') }}</th>
                                     <!-- <th class="text-center">{{ __('Action') }}</th> -->
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse($useremployer as $p)
+                                @forelse($job as $p)
                                 <tr>
                                     <td>{{ ++$loop->index }}</td>
-                                    <td>{{ $p->name }}</td>
-                                    <td>{{ $p->company_name }}</td>
-                                    <td>{{ $p->email }}</td>
-                                    <td>{{ $p->contact_no }}</td>
-                                    <td>{{ $p->designation }}</td>
-                                    <td>{{ $p->address }}</td>
-                                    <td>{{ $p->years_of_establishment }}</td>
-                                    <td>{{ $p->industry }}</td>
+                                    <td>{{ $p->employer_id }}</td>
+                                    <td>{{ $p->service_type }}</td>
+                                    <td>{{ $p->no_of_vacancies }}</td>
+                                    <td>{{ $p->job_title }}</td>
+                                    <td>{{ $p->job_category }}</td>
+                                    <td>{{ $p->job_nature }}</td>
+                                    <td>{{ $p->job_level }}</td>
                                     <td>{{ $p->organization_type }}</td>
-                                    <td>{{ $p->company_description }}</td>
-                                    <td>{{ $p->website_url }}</td>
+                                    <td>{{ $p->location }}</td>
+                                    <td>{{ $p->salary }}</td>
+                                    <td>{{ $p->requirments }}</td>
+                                    <td>{{ $p->special_instruction }}</td>
+                                    <td>{{ $p->application_start_date }}</td>
+                                    <td>{{ $p->application_deadline }}</td>
                                     <!-- <td class="text-center">
                                         <a href="{{ route('jobseeker_user.edit', encryptor('encrypt', $p->id)) }}" class="btn btn-sm btn-warning">
                                             <i class="fa fa-edit"></i>

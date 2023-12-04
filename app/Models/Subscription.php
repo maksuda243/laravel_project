@@ -2,21 +2,16 @@
 
 namespace App\Models;
 
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-
-class EmployerUser extends Model
+class Subscription extends Model
 {
     use HasFactory;
-    protected $table = 'employer_user'; 
+    protected $table = 'subscriptions';
 
-
-    public function employjobposter()
+    public function jobpost()
     {
         return $this->belongsTo(JobPost::class);
     }
-
 }

@@ -12,4 +12,9 @@ class JobNature extends Model
     protected $table = 'job_natures';
 
     protected $fillable = ['name'];
+
+    public function jobpost()
+    {
+        return $this->belongsTo(JobPost::class);
+    }
 }
