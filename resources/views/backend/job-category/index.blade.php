@@ -25,7 +25,7 @@
                                         <th scope="col">{{ __('#SL') }}</th>
                                         <th scope="col">{{ __('Name') }}</th>
                                         <th scope="col">{{ __('Description') }}</th>
-                                        <th scope="col">{{ __('Image') }}</th>
+                                        <!-- <th scope="col">{{ __('Image') }}</th> -->
                                         <th class="text-center">{{ __('Action') }}</th>
                                     </tr>
                                 </thead>
@@ -35,7 +35,7 @@
                                         <td>{{ ++$loop->index }}</td>
                                         <td>{{ $jobCategory->name }}</td>
                                         <td>{{ $jobCategory->description }}</td>
-                                        <td><img width="50px" src="{{ asset('public/uploads/jobcategory/'.$jobCategory->image) }}" alt=""></td>
+                                        <!-- <td><img width="50px" src="{{ asset('public/uploads/jobcategory/'.$jobCategory->image) }}" alt=""></td> -->
 
                                         <td class="text-center">
                                             <a href="{{ route('job-category.edit', $jobCategory->id) }}" class="btn btn-sm btn-warning">
