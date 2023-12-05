@@ -55,7 +55,7 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> MANAGE PROFILE <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="">create Profile</a></li>
+                      <li><a href="{{route('jobseeker_profile.create')}}">create Profile</a></li>
                       <li><a href="index2.html">Edit Profile</a></li>
                       <li><a href="index3.html">Upload Resume</a></li>
                       <li><a href="index3.html">Emailed CV</a></li>

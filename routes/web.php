@@ -32,7 +32,7 @@ use App\Http\Controllers\Frontend\JobListingController;
 /* JobseeekrUser panel */
 use App\Http\Controllers\Frontend\JobseekerUser\AuthController as jsuserauth;
 use App\Http\Controllers\Frontend\JobseekerUser\DashboardController as jsuserdashboard;
-use App\Http\Controllers\Frontend\JobseekerUser\JobseekerprofileController as jsprofile;
+use App\Http\Controllers\Frontend\JobseekerUser\JobseekerprofileController;
 
 
 /* EmployerUser panel */
@@ -53,8 +53,6 @@ Route::middleware(['checkJobseekerAuth'])->group(function(){
   Route::get('jobseekeruser/dashboard', [jsuserdashboard::class,'index'])->name('jobseekeruserdashboard');
  
 });
-//  Route::resource('jobseekeruser', JobseekerUser::class);
-//  Route::get('default-page', [DefaultPageController::class,'index'])->name('default-page');
 
 Route::middleware(['checkauth'])->prefix('admin')->group(function(){
   Route::get('dashboard', [dashboard::class,'index'])->name('dashboard');
@@ -66,6 +64,8 @@ Route::post('jobseekeruser/register', [jsuserauth::class,'signUpStore'])->name('
 Route::get('jobseekeruser/login', [jsuserauth::class,'signInForm'])->name('jobseekeruser.login');
 Route::post('jobseekeruser/login', [jsuserauth::class,'signInCheck'])->name('jobseekeruser.login.check');
 Route::get('jobseekeruser/logout', [jsuserauth::class,'singOut'])->name('jobseekeruser.LogOut');
+
+Route::resource('jobseeker_profile',JobseekerprofileController::class);
 
 // EmployerUser
 Route::get('employeruser/register', [empuserauth::class,'signUpForm'])->name('employeruser.register');
