@@ -14,9 +14,9 @@ class EmployerUser extends Model
     protected $table = 'employer_user'; 
 
 
-    public function employjobposter()
+    public function jobPosts()
     {
-        return $this->belongsTo(JobPost::class);
+        return $this->hasMany(JobPost::class);
     }
 
 }

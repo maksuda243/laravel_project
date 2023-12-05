@@ -12,86 +12,78 @@ use App\Models\JobLevel;
 use App\Models\OrgType;
 use App\Models\Location;
 use Illuminate\Http\Request;
+use Exception;
 
-class JobpostController extends Controller
+class JobPostController extends Controller
 {
     public function index()
     {
-        $data=JobpostController::paginate(10);
+        $data=JobpostController::latest()->paginate(10);
         return view('employeruser.job.index',compact('data'));
     }
     
     public function create()
     {
-        $subscription = Subscription::all();
-        $jobcategory = JobCategory::all();
-        $jobnature = JobNature::all();
-        $joblevel = JobLevel::all();
-        $orgtype = OrgType::all();
+        $service_type = Subscription::all();
+        $job_categories = JobCategory::all();
+        $job_nature = JobNature::all();
+        $job_level = JobLevel::all();
+        $organization_type = OrgType::all();
         $location = Location::all();
-        $employeruser = EmployerUser::all();
-        
-        return view('employeruser.job.create', compact('subscription','jobcategory','jobnature','joblevel','orgtype','location','employeruser'));
+ 
+        return view('employeruser.job.create', compact('service_type','job_categories','job_nature','job_level','organization_type','location',));
         
     }
 
     public function store(Request $request)
     {try{
-        $data=new JobpostController();
-        $data->service_type=$request->subscriptionId;
+        $data=new JobPostController();
+        $data->employer_id=$request->employer_id;
+        $data->service_type=$request->subscription;
         $data->no_of_vacancies=$request->no_of_vacancies;
         $data->job_title=$request->job_title;
-        $data->job_category=$request->jobCategoryId;
-        $data->job_nature=$request->jobNatureId;
-        $data->job_level=$request->jobLevelId;
-        $data->organization_type=$request->organizationTypeId;
-        $data->location=$request->locationId;
+        $data->job_categories=$request->job_categories;
+        $data->job_nature=$request->job_nature;
+        $data->job_level=$request->job_level;
+        $data->organization_type=$request->organization_type;
+        $data->location=$request->location;
         $data->salary=$request->salary;
         $data->requirments=$request->requirments;
         $data->special_instruction=$request->special_instruction;
         $data->application_start_date=$request->application_start_date;
         $data->application_deadline=$request->application_deadline;
       
-
         if($data->save())
             return redirect()->route('employeruser.job.index')->with('success','Successfully saved');
         else
             return redirect()->back()->withInput()->with('error','Please try again');
         
     }catch(Exception $e){
-        //dd($e);
+        dd($e);
         return redirect()->back()->withInput()->with('error','Please try again');
     }
-        //
+        
     }
 
-    public function edit($id)
+    public function edit(string $id)
     {
-        $subscription = Subscription::all();
-        $jobcategory = JobCategory::all();
-        $jobnature = JobNature::all();
-        $joblevel = JobLevel::all();
-        $orgtype = OrgType::all();
-        $location = Location::all();
-        $employeruser = EmployerUser::all();
-
-        $jobpost=JobpostController::findOrFail(encryptor('decrypt',$id));
-        
-        return view('employeruser.job.edit',compact('subscription','jobcategory','jobnature','joblevel','orgtype','location','employeruser'));
+             $data = JobPostController::find($id);
+         return view('employeruser.job.edit', compact('data'));
     }
 
     public function update(Request $request, $id)
     {
         try{
-            $data=JobpostController::findOrFail(encryptor('decrypt',$id));
-            $data->service_type=$request->subscriptionId;
+            $data=JobPostController::findOrFail(encryptor('decrypt',$id));
+            $data->employer_id=$request->employer_id;
+            $data->service_type=$request->subscription;
             $data->no_of_vacancies=$request->no_of_vacancies;
             $data->job_title=$request->job_title;
-            $data->job_category=$request->jobCategoryId;
-            $data->job_nature=$request->jobNatureId;
-            $data->job_level=$request->jobLevelId;
-            $data->organization_type=$request->organizationTypeId;
-            $data->location=$request->locationId;
+            $data->job_categories=$request->job_categories;
+            $data->job_nature=$request->job_nature;
+            $data->job_level=$request->job_level;
+            $data->organization_type=$request->organization_type;
+            $data->location=$request->location;
             $data->salary=$request->salary;
             $data->requirments=$request->requirments;
             $data->special_instruction=$request->special_instruction;

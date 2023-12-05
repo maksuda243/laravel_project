@@ -3,7 +3,7 @@
 @section('title',trans('Post a Job'))
 
 @section('content')
-  <!-- // Basic multiple Column Form section start -->
+
     <section id="multiple-column-form">
         <div class="row match-height">
             <div class="col-lg-10 offset-lg-2">
@@ -15,17 +15,16 @@
                                 <div class="row">
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="subscriptionId">Service Type <i class="text-danger">*</i></label>
-                                            <select class="form-control" name="subscriptionId" id="subscriptionId">
+                                            <label for="service_type">Service Type <i class="text-danger">*</i></label>
+                                            <select id="service_type" class="form-control" name="service_type">
                                                 <option value="">Select Service</option>
-                                                @forelse($subscription as $r)
-                                                    <option value="{{$r->id}}" {{ old('subscriptionId')==$r->id?"selected":""}}> {{ $r->name}}</option>
+                                                @forelse($service_type as $st)
+                                                    <option value="{{$st->id}}" @if(old('service_type')==$st->id) selected @endif>{{$st->name}}</option>
                                                 @empty
-                                                    <option value="">No Service found</option>
                                                 @endforelse
                                             </select>
-                                            @if($errors->has('subscriptionId'))
-                                                <span class="text-danger"> {{ $errors->first('subscriptionId') }}</span>
+                                            @if($errors->has('service_type"'))
+                                             <span class="text-danger"> {{ $errors->first('service_type"') }}</span>
                                             @endif
                                         </div>
                                     </div>
@@ -50,85 +49,80 @@
                                 
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="jobCategoryId">Job Category <i class="text-danger">*</i></label>
-                                            <select class="form-control" name="jobCategoryId" id="jobCategoryId">
+                                            <label for="job_category">Job Category <i class="text-danger">*</i></label>
+                                            <select id="job_category" class="form-control" name="job_category">
                                                 <option value="">Select Job Category</option>
-                                                @foreach($jobCategories as $category)
-                                                    <option value="{{ $category->id }}" {{ old('jobCategoryId') == $category->id ? "selected" : "" }}>
-                                                        {{ $category->name }}
-                                                    </option>
-                                                @endforeach
+                                                @forelse($job_categories as $cat)
+                                                    <option value="{{$cat->id}}" @if(old('job_category')==$cat->id) selected @endif>{{$cat->name}}</option>
+                                                @empty
+                                                @endforelse
                                             </select>
-                                            @if($errors->has('jobCategoryId'))
-                                                <span class="text-danger"> {{ $errors->first('jobCategoryId') }}</span>
+                                            @if($errors->has('job_category"'))
+                                                <span class="text-danger"> {{ $errors->first('job_category"') }}</span>
                                             @endif
-                                        </div>
+                                        </div>                                                                                                                                  
                                     </div>
 
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="jobNatureId">Job Nature <i class="text-danger">*</i></label>
-                                            <select class="form-control" name="jobNatureId" id="jobNatureId">
+                                            <label for="job_nature">Job Nature <i class="text-danger">*</i></label>
+                                            <select id="job_nature" class="form-control" name="job_nature">
                                                 <option value="">Select Job Nature</option>
-                                                @foreach($jobNatures as $nature)
-                                                    <option value="{{ $nature->id }}" {{ old('jobNatureId') == $nature->id ? "selected" : "" }}>
-                                                        {{ $nature->name }}
-                                                    </option>
-                                                @endforeach
+                                                @forelse($job_nature as $nature)
+                                                    <option value="{{$nature->id}}" @if(old('job_nature')==$nature->id) selected @endif>{{$nature->name}}</option>
+                                                @empty
+                                                @endforelse
                                             </select>
-                                            @if($errors->has('jobNatureId'))
-                                                <span class="text-danger"> {{ $errors->first('jobNatureId') }}</span>
+                                            @if($errors->has('job_nature"'))
+                                                <span class="text-danger"> {{ $errors->first('job_nature"') }}</span>
                                             @endif
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="jobLevelId">Job Level <i class="text-danger">*</i></label>
-                                            <select class="form-control" name="jobLevelId" id="jobLevelId">
+                                            <label for="job_level">Job Level <i class="text-danger">*</i></label>
+                                            <select id="job_level" class="form-control" name="job_level">
                                                 <option value="">Select Job Level</option>
-                                                @foreach($jobLevels as $level)
-                                                    <option value="{{ $level->id }}" {{ old('jobLevelId') == $level->id ? "selected" : "" }}>
-                                                        {{ $level->name }}
-                                                    </option>
-                                                @endforeach
+                                                @forelse($job_level as $level)
+                                                    <option value="{{$level->id}}" @if(old('job_level')==$level->id) selected @endif>{{$level->name}}</option>
+                                                @empty
+                                                @endforelse
                                             </select>
-                                            @if($errors->has('jobLevelId'))
-                                                <span class="text-danger"> {{ $errors->first('jobLevelId') }}</span>
+                                            @if($errors->has('job_level"'))
+                                                <span class="text-danger"> {{ $errors->first('job_level"') }}</span>
                                             @endif
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 col-12">
                                     <div class="form-group">
-                                        <label for="organizationTypeId">Organization Type <i class="text-danger">*</i></label>
-                                        <select class="form-control" name="organizationTypeId" id="organizationTypeId">
+                                        <label for="organization_type">Organization Type <i class="text-danger">*</i></label>
+                                        <select id="organization_type" class="form-control" name="organization_type">
                                             <option value="">Select Organization Type</option>
-                                            @foreach($organizationTypes as $orgType)
-                                                <option value="{{ $orgType->id }}" {{ old('organizationTypeId') == $orgType->id ? "selected" : "" }}>
-                                                    {{ $orgType->name }}
-                                                </option>
-                                            @endforeach
+                                            @forelse($organization_type as $org)
+                                                <option value="{{$org->id}}" @if(old('organization_type')==$org->id) selected @endif>{{$org->name}}</option>
+                                            @empty
+                                            @endforelse
                                         </select>
-                                        @if($errors->has('organizationTypeId'))
-                                            <span class="text-danger"> {{ $errors->first('organizationTypeId') }}</span>
+                                        @if($errors->has('organization_type"'))
+                                            <span class="text-danger"> {{ $errors->first('organization_type"') }}</span>
                                         @endif
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
-                                        <label for="locationId">Location <i class="text-danger">*</i></label>
-                                        <select class="form-control" name="locationId" id="locationId">
+                                        <label for="location">Location <i class="text-danger">*</i></label>
+                                        <select id="location" class="form-control" name="location">
                                             <option value="">Select Location</option>
-                                            @foreach($locations as $location)
-                                                <option value="{{ $location->id }}" {{ old('locationId') == $location->id ? "selected" : "" }}>
-                                                    {{ $location->name }}
-                                                </option>
-                                            @endforeach
+                                            @forelse($location as $loc)
+                                                <option value="{{$loc->id}}" @if(old('location')==$loc->id) selected @endif>{{$loc->name}}</option>
+                                            @empty
+                                            @endforelse
                                         </select>
-                                        @if($errors->has('locationId'))
-                                            <span class="text-danger"> {{ $errors->first('locationId') }}</span>
+                                        @if($errors->has('location"'))
+                                         <span class="text-danger"> {{ $errors->first('location"') }}</span>
                                         @endif
                                     </div>
                                 </div>

@@ -10,8 +10,8 @@ class Subscription extends Model
     use HasFactory;
     protected $table = 'subscriptions';
 
-    public function jobpost()
-    {
-        return $this->belongsTo(JobPost::class);
-    }
+    // public function jobpost()
+    // {
+    //     return $this->belongsTo(JobPost::class);
+    // }
 }

@@ -38,7 +38,8 @@ use App\Http\Controllers\Frontend\JobseekerUser\JobseekerprofileController as js
 /* EmployerUser panel */
 use App\Http\Controllers\Frontend\EmployerUser\AuthController as empuserauth;
 use App\Http\Controllers\Frontend\EmployerUser\DashboardController as empuserdashboard;
-use App\Http\Controllers\Frontend\EmployerUser\JobpostController as jobpost;
+use App\Http\Controllers\Frontend\EmployerUser\JobPostController;
+use App\Http\Controllers\Frontend\EmployerUser\EmployerProfileController;
 
 
 Route::get('/register', [auth::class,'signUpForm'])->name('register');
@@ -74,9 +75,10 @@ Route::post('employeruser/login', [empuserauth::class,'signInCheck'])->name('emp
 Route::get('employeruser/logout', [empuserauth::class,'singOut'])->name('employeruser.LogOut');
 Route::get('employeruser/dashboard', [empuserdashboard::class,'index'])->name('empuserdashboard');
 
+Route::resource('jobpost',JobPostController::class);
+Route::resource('employer_profile',EmployerProfileController::class);
 
-Route::get('/jobpost/create', [JobpostController::class, 'create'])->name('jobpost.create');
-Route::post('/jobpost/store', [JobpostController::class, 'store'])->name('jobpost.store');
+
 
 
 Route::middleware(['checkrole'])->prefix('admin')->group(function(){
@@ -97,6 +99,10 @@ Route::resource('subscription', SubscriptionController::class);
 Route::resource('job', JobController::class);
 Route::resource('jobseeker_user', JobseekerUserController::class);
 Route::resource('employer_user', EmployerUserController::class);
+
+
+
+
 
 
 // frontend Route

@@ -13,8 +13,5 @@ class JobNature extends Model
 
     protected $fillable = ['name'];
 
-    public function jobpost()
-    {
-        return $this->belongsTo(JobPost::class);
-    }
+  
 }

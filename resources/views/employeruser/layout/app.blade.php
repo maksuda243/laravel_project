@@ -34,7 +34,7 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                {{-- <img src="images/img.jpg" alt="..." class="img-circle profile_img"> --}}
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
@@ -51,16 +51,12 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> User profile <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{{route('jobpost.create')}}">Profile</a></li>
-                      <li><a href="index2.html">Edit Profile</a></li>
-                      <!-- <li><a href="index3.html">Dashboard</a></li> -->
-                    </ul>
+                  <li><a href="{{route('jobpost.create')}}"><i class="fa fa-home"></i> Post a Job </a>
+                    
                   </li>
                   <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="form.html">General Form</a></li>
+                      <li><a href="{{route('employer_profile.create')}}">Create Employer Profile</a></li>
                       <li><a href="form_advanced.html">Advanced Components</a></li>
                       <li><a href="form_validation.html">Form Validation</a></li>
                       <li><a href="form_wizards.html">Form Wizard</a></li>
@@ -180,7 +176,7 @@
                 <ul class=" navbar-right">
                   <li class="nav-item dropdown open" style="padding-left: 15px;">
                     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                      <img src="images/img.jpg" alt="">John Doe
+                      {{-- <img src="images/img.jpg" alt="">John Doe --}}
                     </a>
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item"  href="javascript:;"> Profile</a>
@@ -201,7 +197,7 @@
                     <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
                       <li class="nav-item">
                         <a class="dropdown-item">
-                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          {{-- <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span> --}}
                           <span>
                             <span>John Smith</span>
                             <span class="time">3 mins ago</span>
@@ -213,7 +209,7 @@
                       </li>
                       <li class="nav-item">
                         <a class="dropdown-item">
-                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          {{-- <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span> --}}
                           <span>
                             <span>John Smith</span>
                             <span class="time">3 mins ago</span>
@@ -225,7 +221,7 @@
                       </li>
                       <li class="nav-item">
                         <a class="dropdown-item">
-                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          {{-- <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span> --}}
                           <span>
                             <span>John Smith</span>
                             <span class="time">3 mins ago</span>
@@ -237,7 +233,7 @@
                       </li>
                       <li class="nav-item">
                         <a class="dropdown-item">
-                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          {{-- <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span> --}}
                           <span>
                             <span>John Smith</span>
                             <span class="time">3 mins ago</span>
