@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
+Use Carbon\Carbon;
 return new class extends Migration
 {
     /**
@@ -34,10 +34,10 @@ return new class extends Migration
                 'price' => '4300.00',
                 'created_at' => Carbon::now()
             ],[
-                'name' => 'GovernPlatinumment',
+                'name' => 'Platinum',
                 'description' => "Display your company logo and position name on the homepage of bdjobs.com. Customized web page for your job circular. 10 days display in the Hot Jobs section, then in the classified section up to 30 days as Stand-out jobs",
                 'duration' => '1',
-                'price' => 'sdfdhfj',
+                'price' => '13000.00',
                 'created_at' => Carbon::now()
             ]
             ]);
