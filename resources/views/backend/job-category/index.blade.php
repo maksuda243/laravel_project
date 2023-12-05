@@ -25,7 +25,7 @@
                                         <th scope="col">{{ __('#SL') }}</th>
                                         <th scope="col">{{ __('Name') }}</th>
                                         <th scope="col">{{ __('Description') }}</th>
-                                        {{-- <th scope="col">{{ __('Image') }}</th> --}}
+                                        <!-- {{-- <th scope="col">{{ __('Image') }}</th> --> --}}
                                         <th class="text-center">{{ __('Action') }}</th>
                                     </tr>
                                 </thead>
