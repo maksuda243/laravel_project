@@ -14,9 +14,9 @@ class EmployerUser extends Model
     protected $table = 'employer_user'; 
 
 
-    public function jobPosts()
+    public function profile()
     {
-        return $this->hasMany(JobPost::class);
+        return $this->hasOne(EmployerProfile::class, 'employer_id');
     }
 
 }

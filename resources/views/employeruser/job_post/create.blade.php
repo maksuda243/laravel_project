@@ -10,9 +10,18 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form" method="post" enctype="multipart/form-data" action="{{route('job.store')}}">
+                            <form class="form" method="post" enctype="multipart/form-data" action="{{route('job_post.store')}}">
                                 @csrf
                                 <div class="row">
+                                <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="employer_id">Employer Id</label>
+                                            <input type="text" id="employer_id" class="form-control" value="{{ old('employer_id')}}" name="employer_id">
+                                            @if($errors->has('employer_id'))
+                                                <span class="text-danger"> {{ $errors->first('employer_id') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="service_type">Service Type <i class="text-danger">*</i></label>

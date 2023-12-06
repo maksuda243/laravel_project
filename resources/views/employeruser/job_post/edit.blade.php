@@ -10,7 +10,7 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form" method="post" enctype="multipart/form-data" action="{{route('jobpost.store')}}">
+                            <form class="form" method="post" enctype="multipart/form-data" action="{{route('job_post.update')}}">
                                 @csrf
                                 @method('PATCH')
                                 <div class="row">
