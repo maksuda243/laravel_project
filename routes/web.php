@@ -115,3 +115,10 @@ Route::get('/elements',[ElementsController::class,'index']);
 Route::get('/jobdetails',[JobDetailsController::class,'index']);
 Route::get('/joblisting',[JobListingController::class,'index']);
    
+
+
+
+
+
+
+

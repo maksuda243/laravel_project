@@ -49,7 +49,7 @@
                         <div class="col-lg-3 col-md-2">
                             <!-- Logo -->
                             <div class="logo">
-                                <a href="index.html"><img src="public/frontend/assets/img/logo/logo.png" alt=""></a>
+                                <a href="{{url('/')}}"><img src="public/frontend/assets/img/logo/logo.png" alt=""></a>
                             </div>  
                         </div>
                         <div class="col-lg-9 col-md-9">
@@ -60,15 +60,8 @@
                                         <ul id="navigation">
                                             <li><a href="{{url('/')}}">Home</a></li>
                                             <li><a href="{{url('/joblisting')}}">Find a Jobs </a></li>
-                                            <li><a href="{{ route('employeruser.login') }}">Employer</a></li>
-                                            <li><a href="#">Page</a>
-                                                <ul class="submenu">
-                                                    <li><a href="{{url('/blog')}}">Blog</a></li>
-                                                    <li><a href="{{url('/blogdetails')}}">Blog Details</a></li>
-                                                    <li><a href="{{url('/elements')}}">Elements</a></li>
-                                                    <li><a href="{{url('/jobdetails')}}">job Details</a></li>
-                                                </ul>
-                                            </li>
+                                            <li><a href="{{ route('employeruser.login') }}">Employer</a><li>
+                                            <li><a href="{{url('/blog')}}">Blog</a></li>
                                             <li><a href="{{url('/contact')}}">Contact</a></li>
                                         </ul>
                                     </nav>

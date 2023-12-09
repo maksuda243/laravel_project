@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('service_type')->unique();
             $table->string('no_of_vacancies')->nullable();
             $table->string('job_title');
-            $table->string('job_category');
+            $table->string('job_categories');
             $table->string('job_nature');
             $table->string('job_level');
             $table->string('organization_type');
