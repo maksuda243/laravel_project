@@ -12,7 +12,7 @@
                 <div class="card-header">
                     <h4>{{ trans('Posted Job List') }}</h4>
                     <div class="card-Posted Job Listheader-action">
-                        <a href="{{ route('jobpost.create') }}" class="btn btn-primary">
+                        <a href="{{ route('job_post.create') }}" class="btn btn-primary">
                             <i class="fa fa-plus"></i> {{ trans('Post New Job') }}
                         </a>
                     </div>
@@ -45,7 +45,7 @@
                                 <tr>
                                     <td>{{ ++$loop->index }}</td>
                                     <td>{{ $p->employer_id }}</td>
-                                    <td>{{ $p->service_type }}</td>
+                                    <td>{{ $p->service_type}}</td>
                                     <td>{{ $p->no_of_vacancies }}</td>
                                     <td>{{ $p->job_title }}</td>
                                     <td>{{ $p->job_categories}}</td>
@@ -61,13 +61,13 @@
                                     <td>{{ $p->application_deadline}}</td>
                                    
                                     <td class="text-center">
-                                        <a href="{{ route('jobpost.edit', encryptor('encrypt', $p->id)) }}" class="btn btn-sm btn-warning">
+                                        <a href="{{ route('job_post.edit', encryptor('encrypt', $p->id)) }}" class="btn btn-sm btn-warning">
                                             <i class="fa fa-edit"></i>
                                         </a>
                                         <a href="javascript:void(0)" onclick="deleteUser('{{ $p->id }}')" class="btn btn-sm btn-danger">
                                             <i class="fa fa-trash"></i>
                                         </a>
-                                        <form id="delete-form-{{ $p->id }}" action="{{ route('jobpost.destroy', encryptor('encrypt', $p->id)) }}" method="post" style="display: none;">
+                                        <form id="delete-form-{{ $p->id }}" action="{{ route('job_post.destroy', encryptor('encrypt', $p->id)) }}" method="post" style="display: none;">
                                             @csrf
                                             @method('delete')
                                         </form>
