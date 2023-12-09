@@ -76,8 +76,8 @@ class JobPostController extends Controller
         try{
             $data=JobPost::findOrFail(encryptor('decrypt',$id));
             $data->employer_id=$request->employer_id;
-            $data->service_type=$request->            $data->service_type=$request->subscription;
-            ;
+            $data->service_type=$request->            
+            $data->service_type=$request->subscription;
             $data->no_of_vacancies=$request->no_of_vacancies;
             $data->job_title=$request->job_title;
             $data->job_categories=$request->job_categories;

@@ -13,20 +13,7 @@
                             <form class="form" method="post" enctype="multipart/form-data" action="{{route('job_post.store')}}">
                                 @csrf
                                 <div class="row">
-<<<<<<< HEAD:resources/views/employeruser/job/create.blade.php
                                     <div class="col-md-4 col-12">
-=======
-                                <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="employer_id">Employer Id</label>
-                                            <input type="text" id="employer_id" class="form-control" value="{{ old('employer_id')}}" name="employer_id">
-                                            @if($errors->has('employer_id'))
-                                                <span class="text-danger"> {{ $errors->first('employer_id') }}</span>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
->>>>>>> 9774dce285b81fe06a9a37310d82ac89d5cb4ad3:resources/views/employeruser/job_post/create.blade.php
                                         <div class="form-group">
                                             <label for="service_type">Service Type <i class="text-danger">*</i></label>
                                             <select id="service_type" class="form-control" name="service_type">
