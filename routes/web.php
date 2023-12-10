@@ -77,7 +77,7 @@ Route::post('employeruser/login', [empuserauth::class,'signInCheck'])->name('emp
 Route::get('employeruser/logout', [empuserauth::class,'singOut'])->name('employeruser.LogOut');
 Route::get('employeruser/dashboard', [empuserdashboard::class,'index'])->name('empuserdashboard');
 
-Route::resource('jobpost',JobPostController::class);
+Route::resource('job_post',JobPostController::class);
 Route::resource('employer_profile',EmployerProfileController::class);
 
 

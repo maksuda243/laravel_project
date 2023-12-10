@@ -10,11 +10,10 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form" method="post" enctype="multipart/form-data" action="{{route('jobpost.store')}}">
+                            <form class="form" method="post" enctype="multipart/form-data" action="{{route('job_post.store')}}">
                                 @csrf
-                                @method('PATCH')
                                 <div class="row">
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-4 col-12">
                                         <div class="form-group">
                                             <label for="service_type">Service Type <i class="text-danger">*</i></label>
                                             <select id="service_type" class="form-control" name="service_type">
@@ -29,7 +28,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-4 col-12">
                                         <div class="form-group">
                                             <label for="no_of_vacancies">No.of Vacancies <i class="text-danger">*</i></label>
                                             <input type="text" id="no_of_vacancies" class="form-control" value="{{ old('no_of_vacancies')}}" name="no_of_vacancies">
@@ -38,7 +37,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-4 col-12">
                                         <div class="form-group">
                                             <label for="job_title">Job Title</label>
                                             <input type="text" id="job_title" class="form-control" value="{{ old('job_title')}}" name="job_title">
@@ -48,13 +47,13 @@
                                         </div>
                                     </div>
                                 
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-4 col-12">
                                         <div class="form-group">
-                                            <label for="job_category">Job Category <i class="text-danger">*</i></label>
-                                            <select id="job_category" class="form-control" name="job_category">
+                                            <label for="job_categories">Job Category <i class="text-danger">*</i></label>
+                                            <select id="job_categories" class="form-control" name="job_categories">
                                                 <option value="">Select Job Category</option>
                                                 @forelse($job_categories as $cat)
-                                                    <option value="{{$cat->id}}" @if(old('job_category')==$cat->id) selected @endif>{{$cat->name}}</option>
+                                                    <option value="{{$cat->id}}" @if(old('job_categories')==$cat->id) selected @endif>{{$cat->name}}</option>
                                                 @empty
                                                 @endforelse
                                             </select>
@@ -64,7 +63,7 @@
                                         </div>                                                                                                                                  
                                     </div>
 
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-4 col-12">
                                         <div class="form-group">
                                             <label for="job_nature">Job Nature <i class="text-danger">*</i></label>
                                             <select id="job_nature" class="form-control" name="job_nature">
@@ -80,7 +79,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-4 col-12">
                                         <div class="form-group">
                                             <label for="job_level">Job Level <i class="text-danger">*</i></label>
                                             <select id="job_level" class="form-control" name="job_level">
@@ -96,7 +95,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-4 col-12">
                                     <div class="form-group">
                                         <label for="organization_type">Organization Type <i class="text-danger">*</i></label>
                                         <select id="organization_type" class="form-control" name="organization_type">
@@ -112,7 +111,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6 col-12">
+                                <div class="col-md-4 col-12">
                                     <div class="form-group">
                                         <label for="location">Location <i class="text-danger">*</i></label>
                                         <select id="location" class="form-control" name="location">
@@ -128,7 +127,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6 col-12">
+                                <div class="col-md-4 col-12">
                                     <div class="form-group">
                                         <label for="salary">Salary</label>
                                         <input type="text" id="salary" class="form-control" value="{{ old('salary')}}" name="salary">
@@ -137,28 +136,28 @@
                                         @endif
                                     </div>
                                 </div>
-
-                                <div class="col-md-6 col-12">
-                                    <div class="form-group">
-                                        <label for="requirments">Requirments</label>
-                                        <input type="textarea" id="requirments" class="form-control" value="{{ old('requirments')}}" name="requirments">
-                                        @if($errors->has('requirments'))
-                                            <span class="text-danger"> {{ $errors->first('requirments') }}</span>
+                                <div class="col-md-4 col-12">
+                                <div class="form-group">
+                                        <label for="requirements">Requirements</label>
+                                        <textarea id="requirements" class="form-control" name="requirements">{{ old('requirements') }}</textarea>
+                                        @if($errors->has('requirements'))
+                                            <span class="text-danger">{{ $errors->first('requirements') }}</span>
                                         @endif
                                     </div>
                                 </div>
 
-                                <div class="col-md-6 col-12">
+                                <div class="col-md-4 col-12">
                                     <div class="form-group">
                                         <label for="special_instruction">Special Instruction</label>
-                                        <input type="textarea" id="special_instruction" class="form-control" value="{{ old('special_instruction')}}" name="special_instruction">
+                                        <textarea id="special_instruction" class="form-control" name="special_instruction">{{ old('special_instruction') }}</textarea>
                                         @if($errors->has('special_instruction'))
-                                            <span class="text-danger"> {{ $errors->first('special_instruction') }}</span>
+                                            <span class="text-danger">{{ $errors->first('special_instruction') }}</span>
                                         @endif
                                     </div>
                                 </div>
 
-                                <div class="col-md-6 col-12">
+
+                                <div class="col-md-4 col-12">
                                     <div class="form-group">
                                         <label for="application_start_date">Application Start Date</label>
                                         <input type="date" id="application_start_date" class="form-control" value="{{ old('application_start_date')}}" name="application_start_date">
@@ -168,7 +167,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6 col-12">
+                                <div class="col-md-4 col-12">
                                     <div class="form-group">
                                         <label for="application_deadline">application_deadline</label>
                                         <input type="date" id="application_deadline" class="form-control" value="{{ old('application_deadline')}}" name="application_deadline">
@@ -180,7 +179,7 @@
                                 
                                 <div class="row">
                                     <div class="col-12 d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
+                                        <button type="submit" class="btn btn-primary me-5 mb-5">Save</button>
                                         
                                     </div>
                                 </div>

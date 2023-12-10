@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
-            $table->string('employer_id')->unique();
-            $table->string('service_type')->unique();
+            $table->string('employer_id');
+            $table->string('service_type');
             $table->string('no_of_vacancies')->nullable();
             $table->string('job_title');
             $table->string('job_categories');
