@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', trans('Organization Type List'))
+@section('title', trans('Blog List'))
 
 @section('content')
 
@@ -10,10 +10,10 @@
             <div class="col-lg-10 offset-lg-2">
                 <div class="card">
                     <div class="card-header">
-                        <h4>{{ trans('Organization Type List') }}</h4>
+                        <h4>{{ trans('Blog List') }}</h4>
                         <div class="card-header-action">
-                            <a href="{{ route('org-type.create') }}" class="btn btn-primary">
-                                <i class="fa fa-plus"></i> {{ trans('Add Organization Type') }}
+                            <a href="{{ route('blog.create') }}" class="btn btn-primary">
+                                <i class="fa fa-plus"></i> {{ trans('Add New Blog') }}
                             </a>
                         </div>
                     </div>
@@ -23,25 +23,33 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">{{ __('#SL') }}</th>
-                                        <th scope="col">{{ __('Name') }}</th>
-                                        <th scope="col">{{ __('Description') }}</th>
+                                        <th scope="col">{{ __('Blog Title') }}</th>
+                                        <th scope="col">{{ __('Short Description') }}</th>
+                                        <th scope="col">{{ __('Descriiption') }}</th>
+                                        <th scope="col">{{ __('Image') }}</th>
+                                        <th scope="col">{{ __('Author') }}</th>
+                                        <th scope="col">{{ __('Publish Date') }}</th>
                                         <th class="text-center">{{ __('Action') }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($orgType as $orgType)
+                                    @forelse($blog as $b)
                                     <tr>
                                         <td>{{ ++$loop->index }}</td>
-                                        <td>{{ $orgType->name }}</td>
-                                        <td>{{ $orgType->description }}</td>
+                                        <td>{{ $b->title }}</td>
+                                        <td>{{ $b->short_description }}</td>
+                                        <td>{{ $b->description }}</td>
+                                        <td><img width="50px" src="{{ asset('public/uploads/blog/'.$b->image) }}" alt=""></td>
+                                        <td>{{ $b->author }}</td>
+                                        <td>{{ $b->publish_date }}</td>
                                         <td class="text-center">
-                                            <a href="{{ route('org-type.edit', $orgType->id) }}" class="btn btn-sm btn-warning">
+                                            <a href="{{ route('blog.edit', $b->id) }}" class="btn btn-sm btn-warning">
                                                 <i class="fa fa-edit"></i>
                                             </a>
-                                            <a href="javascript:void(0)" onclick="deleteOrgType('{{ $orgType->id }}')" class="btn btn-sm btn-danger">
+                                            <a href="javascript:void(0)" onclick="deleteBlog('{{ $b->id }}')" class="btn btn-sm btn-danger">
                                                 <i class="fa fa-trash"></i>
                                             </a>
-                                            <form id="delete-form-{{ $orgType->id }}" action="{{ route('org-type.destroy', $orgType->id) }}" method="post" style="display: none;">
+                                            <form id="delete-form-{{ $b->id }}" action="{{ route('blog.destroy', $b->id) }}" method="post" style="display: none;">
                                                 @csrf
                                                 @method('delete')
                                             </form>
@@ -49,7 +57,7 @@
                                     </tr>
                                     @empty
                                     <tr>
-                                        <td colspan="3" class="text-center">{{ __('No Job Level Found') }}</td>
+                                        <td colspan="3" class="text-center">{{ __('No Blog Found') }}</td>
                                     </tr>
                                     @endforelse
                                 </tbody>
@@ -64,13 +72,12 @@
 
 <!-- JavaScript Function to Confirm Deletion -->
 <script>
-    function deleteOrgType(orgTypeId) {
-        if (confirm("Are you sure you want to delete this organization type?")) {
+    function deleteBlog(blogId) {
+        if (confirm("Are you sure you want to delete this blog?")) {
             event.preventDefault();
-            document.getElementById('delete-form-' + orgTypeId).submit();
+            document.getElementById('delete-form-' + blogId).submit();
         }
     }
 </script>
-
 
 @endsection

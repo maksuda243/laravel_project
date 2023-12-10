@@ -14,7 +14,7 @@
                                 @csrf
                                 <div class="row">
 
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-4 col-12">
                                         <div class="form-group">
                                             <label for="name">Name</label>
                                             <input type="text" id="name" class="form-control" value="{{ old('name')}}" name="name">
@@ -23,7 +23,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-4 col-12">
                                         <div class="form-group">
                                             <label for="company_name"> Company Name</label>
                                             <input type="text" id="company_name" class="form-control" value="{{ old('company_name')}}" name="company_name">
@@ -32,7 +32,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-4 col-12">
                                         <div class="form-group">
                                             <label for="address"> Company Address</label>
                                             <input type="text" id="address" class="form-control" value="{{ old('address')}}" name="address">
@@ -41,7 +41,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-4 col-12">
                                         <div class="form-group">
                                             <label for="email"> Email</label>
                                             <input type="text" id="email" class="form-control" value="{{ old('email')}}" name="email">
@@ -50,7 +50,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-4 col-12">
                                         <div class="form-group">
                                             <label for="contact_no"> Contact No.</label>
                                             <input type="text" id="contact_no" class="form-control" value="{{ old('contact_no')}}" name="contact_no">
@@ -59,7 +59,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-4 col-12">
                                         <div class="form-group">
                                             <label for="designation"> Designation</label>
                                             <input type="text" id="designation" class="form-control" value="{{ old('designation')}}" name="designation">
@@ -69,7 +69,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-4 col-12">
                                         <div class="form-group">
                                             <label for="job_category">Job Category <i class="text-danger">*</i></label>
                                             <select id="job_category" class="form-control" name="job_category">
@@ -85,7 +85,7 @@
                                         </div>                                                                                                                                  
                                     </div>
 
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-4 col-12">
                                         <div class="form-group">
                                             <label for="organization_type">Organization Type <i class="text-danger">*</i></label>
                                             <select id="organization_type" class="form-control" name="organization_type">
@@ -101,7 +101,7 @@
                                         </div>
                                       </div>
 
-                                      <div class="col-md-6 col-12">
+                                      <div class="col-md-4 col-12">
                                         <div class="form-group">
                                             <label for="location"> Job Location <i class="text-danger">*</i></label>
                                             <select id="location" class="form-control" name="location">
@@ -117,17 +117,17 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-4 col-12">
                                         <div class="form-group">
-                                            <label for="company_description"> Company Description</label>
-                                            <input type="textares" id="company_description" class="form-control" value="{{ old('company_description')}}" name="company_description">
+                                            <label for="company_description">Company Description</label>
+                                            <textarea id="company_description" class="form-control" name="company_description">{{ old('company_description') }}</textarea>
                                             @if($errors->has('company_description'))
-                                                <span class="text-danger"> {{ $errors->first('company_description') }}</span>
+                                                <span class="text-danger">{{ $errors->first('company_description') }}</span>
                                             @endif
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-4 col-12">
                                         <div class="form-group">
                                             <label for="years_of_establishment">Year of Company Establishment</label>
                                             <input type="textarea" id="years_of_establishment" class="form-control" value="{{ old('years_of_establishment')}}" name="years_of_establishment">
@@ -137,7 +137,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-4 col-12">
                                         <div class="form-group">
                                             <label for="website_url">Website URL</label>
                                             <input type="text" id="website_url" class="form-control" value="{{ old('website_url')}}" name="website_url">
@@ -149,7 +149,7 @@
  
                                 <div class="row">
                                     <div class="col-12 d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
+                                        <button type="submit" class="btn btn-primary me-5 mb-5">Save</button>
                                         
                                     </div>
                                 </div>

@@ -88,7 +88,7 @@
                       <li><a href="{{route('location.index')}}">Location</a></li>
                        <li><a href="{{route('education.index')}}">Education</a></li>
                       <li><a href="{{route('subscription.index')}}">Subscription</a></li>
-                      <li><a href="calendar.html">Calendar</a></li>
+                      <li><a href="{{ route('religion.index') }}">Religion</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-table"></i> User <span class="fa fa-chevron-down"></span></a>
@@ -98,6 +98,7 @@
                     </ul>
                   </li>
                   <li><a href="{{route('job.index')}}"><i class="fa fa-bar-chart-o"></i> Jobs </a></li>
+                  <li><a href="{{ route('blog.index') }}"><i class="fa fa-bar-chart-o"></i> Blogs </a></li>
                   
                   {{-- <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">

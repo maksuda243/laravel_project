@@ -1,38 +1,28 @@
 @extends('backend.layouts.app')
 
-@section('pageTitle', trans('Update Location'))
-@section('pageSubTitle', trans('Update'))
+@section('title', trans('Create Religion'))
 
 @section('content')
-
+    <!-- Basic multiple Column Form section start -->
     <section id="multiple-column-form">
         <div class="row match-height">
             <div class="col-lg-10 offset-lg-2">
                 <div class="card">
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form" method="post" enctype="multipart/form-data" action="{{ route('location.update', $location->id) }}">
+                            <form class="form" method="post" enctype="multipart/form-data" action="{{ route('religion.store') }}">
                                 @csrf
-                                @method('PATCH')
                                 <div class="row">
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="name">Location <i class="text-danger">*</i></label>
-                                            <input type="text" id="name" class="form-control" value="{{ $location->name }}" name="name">
+                                            <label for="">Religion Name <i class="text-danger">*</i></label>
+                                            <input type="text" id="name" class="form-control" value="{{ old('name') }}" name="name">
                                             @if($errors->has('name'))
                                                 <span class="text-danger"> {{ $errors->first('name') }}</span>
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="name">Covered Areas <i class="text-danger">*</i></label>
-                                            <input type="text" id="covered_area" class="form-control" value="{{ $location->covered_area }}" name="covered_area">
-                                            @if($errors->has('covered_area'))
-                                                <span class="text-danger"> {{ $errors->first('covered_area') }}</span>
-                                            @endif
-                                        </div>
-                                    </div>
+                                    <!-- Add more fields here if needed for job nature creation -->
                                 </div>
                                 <div class="row">
                                     <div class="col-12 d-flex justify-content-end">

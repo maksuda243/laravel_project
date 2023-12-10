@@ -62,21 +62,26 @@ class SubscriptionController extends Controller
     public function update(Request $request, Subscription $subscription)
     {
         try {
-          
+         
             $existingSubscription = Subscription::find($subscription->id);
     
-            $existingSubscription->name = $request->name;
+          
+            $existingSubscription->name = $request->input('name');
+            $existingSubscription->description = $request->input('description');
+            $existingSubscription->duration = $request->input('duration');
+            $existingSubscription->price = $request->input('price');
     
+        
             if ($existingSubscription->save()) {
-                return redirect()->route('subscription.index')->with('success', 'subscription updated successfully');
+                return redirect()->route('subscription.index')->with('success', 'Subscription updated successfully');
             } else {
                 return redirect()->back()->withInput()->with('error', 'Failed to update subscription');
             }
-        } catch (\Exception $e) 
-        {
+        } catch (\Exception $e) {
             return redirect()->back()->withInput()->with('error', 'An error occurred. Please try again');
         }
     }
+    
 
     public function destroy(subscription $subscription)
     {
