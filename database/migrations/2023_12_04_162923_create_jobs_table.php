@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('salary')->nullable();
             $table->date('application_start_date')->nullable();
             $table->date('application_deadline')->nullable();
+            $table->integer('status')->default(0)->comment('0 pending,1 active, 2 inactive');
             $table->timestamps();
         });
     }

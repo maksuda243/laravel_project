@@ -68,7 +68,10 @@ Route::get('jobseekeruser/login', [jsuserauth::class,'signInForm'])->name('jobse
 Route::post('jobseekeruser/login', [jsuserauth::class,'signInCheck'])->name('jobseekeruser.login.check');
 Route::get('jobseekeruser/logout', [jsuserauth::class,'singOut'])->name('jobseekeruser.LogOut');
 
-Route::resource('jobseeker_profile',JobseekerprofileController::class);
+Route::get('jobseeker_profile',[JobseekerprofileController::class,'index'])->name('jobseekerprofile');
+Route::get('jobseeker_profile/change',[JobseekerprofileController::class,'change_profile'])->name('jobseekerprofile.change');
+Route::post('jobseeker_profile/update',[JobseekerprofileController::class,'update'])->name('jobseekerprofile.update');
+
 
 // EmployerUser
 Route::get('employeruser/register', [empuserauth::class,'signUpForm'])->name('employeruser.register');

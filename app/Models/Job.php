@@ -8,5 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Job extends Model
 {
     use HasFactory;
-    protected $table = 'jobs';
+    public function employee(){
+        return $this->belongsTo(EmployerUser::class,'employer_id','id');
+    }
 }
