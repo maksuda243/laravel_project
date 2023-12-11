@@ -16,6 +16,8 @@ use App\Http\Controllers\Backend\LocationController;
 use App\Http\Controllers\Backend\EducationController;
 use App\Http\Controllers\Backend\SubscriptionController;
 use App\Http\Controllers\Backend\JobController;
+use App\Http\Controllers\Backend\BlogsController;
+use App\Http\Controllers\Backend\ReligionController;
 use App\Http\Controllers\Backend\JobseekerUserController;
 use App\Http\Controllers\Backend\EmployerUserController;
 
@@ -28,6 +30,7 @@ use App\Http\Controllers\Frontend\ElementsController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\JobDetailsController;
 use App\Http\Controllers\Frontend\JobListingController;
+use App\Http\Controllers\Frontend\ServiceController;
 
 /* JobseeekrUser panel */
 use App\Http\Controllers\Frontend\JobseekerUser\AuthController as jsuserauth;
@@ -97,9 +100,17 @@ Route::resource('education', EducationController::class);
 Route::resource('location', LocationController::class);
 Route::resource('subscription', SubscriptionController::class);
 Route::resource('job', JobController::class);
+Route::resource('religion', ReligionController::class);
 Route::resource('jobseeker_user', JobseekerUserController::class);
 Route::resource('employer_user', EmployerUserController::class);
-
+Route::get('/blogs', [BlogsController::class, 'index'])->name('blog.index');
+Route::get('/blogs/create', [BlogsController::class, 'create'])->name('blog.create');
+Route::post('/blogs', [BlogsController::class, 'store'])->name('blog.store');
+Route::get('/blogs/{blog}/edit', [BlogsController::class, 'edit'])->name('blog.edit');
+Route::delete('/blogs/{blog}', [BlogsController::class, 'destroy'])->name('blog.destroy');
+Route::put('/blogs/{blog}', [BlogsController::class, 'update'])->name('blog.update');
+Route::put('/blogs/{blog}', [BlogsController::class, 'update'])->name('blog.update');
+// Route::resource('blogs', BlogsController::class);
 
 
 
@@ -114,4 +125,12 @@ Route::get('/contact',[ContactController::class,'index']);
 Route::get('/elements',[ElementsController::class,'index']);
 Route::get('/jobdetails',[JobDetailsController::class,'index']);
 Route::get('/joblisting',[JobListingController::class,'index']);
+Route::get('/service',[ServiceController::class,'index']);
    
+
+
+
+
+
+
+

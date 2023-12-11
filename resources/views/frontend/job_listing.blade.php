@@ -213,7 +213,7 @@
                                             <a href="#"><img src="public/frontend/assets/img/icon/job-list1.png" alt=""></a>
                                         </div>
                                         <div class="job-tittle job-tittle2">
-                                            <a href="#">
+                                            <a href="{{url('/jobdetails')}}">
                                                 <h4>Digital Marketer</h4>
                                             </a>
                                             <ul>
@@ -235,7 +235,7 @@
                                             <a href="#"><img src="public/frontend/assets/img/icon/job-list2.png" alt=""></a>
                                         </div>
                                         <div class="job-tittle job-tittle2">
-                                            <a href="#">
+                                            <a href="{{url('/jobdetails')}}">
                                                 <h4>Digital Marketer</h4>
                                             </a>
                                             <ul>
@@ -257,7 +257,7 @@
                                             <a href="#"><img src="public/frontend/assets/img/icon/job-list3.png" alt=""></a>
                                         </div>
                                         <div class="job-tittle job-tittle2">
-                                            <a href="#">
+                                            <a href="{{url('/jobdetails')}}">
                                                 <h4>Digital Marketer</h4>
                                             </a>
                                             <ul>
@@ -279,7 +279,7 @@
                                             <a href="#"><img src="public/frontend/assets/img/icon/job-list4.png" alt=""></a>
                                         </div>
                                         <div class="job-tittle job-tittle2">
-                                            <a href="#">
+                                            <a href="{{url('/jobdetails')}}">
                                                 <h4>Digital Marketer</h4>
                                             </a>
                                             <ul>
@@ -301,7 +301,7 @@
                                             <a href="#"><img src="public/frontend/assets/img/icon/job-list1.png" alt=""></a>
                                         </div>
                                         <div class="job-tittle job-tittle2">
-                                            <a href="#">
+                                            <a href="{{url('/jobdetails')}}">
                                                 <h4>Digital Marketer</h4>
                                             </a>
                                             <ul>
@@ -323,7 +323,7 @@
                                             <a href="#"><img src="public/frontend/assets/img/icon/job-list3.png" alt=""></a>
                                         </div>
                                         <div class="job-tittle job-tittle2">
-                                            <a href="#">
+                                            <a href="{{url('/jobdetails')}}">
                                                 <h4>Digital Marketer</h4>
                                             </a>
                                             <ul>
@@ -345,7 +345,7 @@
                                             <a href="#"><img src="public/frontend/assets/img/icon/job-list4.png" alt=""></a>
                                         </div>
                                         <div class="job-tittle job-tittle2">
-                                            <a href="#">
+                                            <a href="{{url('/jobdetails')}}">
                                                 <h4>Digital Marketer</h4>
                                             </a>
                                             <ul>

@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', trans('Organization Type List'))
+@section('title', trans('Religion List'))
 
 @section('content')
 
@@ -10,10 +10,10 @@
             <div class="col-lg-10 offset-lg-2">
                 <div class="card">
                     <div class="card-header">
-                        <h4>{{ trans('Organization Type List') }}</h4>
+                        <h4>{{ trans('Religion List') }}</h4>
                         <div class="card-header-action">
-                            <a href="{{ route('org-type.create') }}" class="btn btn-primary">
-                                <i class="fa fa-plus"></i> {{ trans('Add Organization Type') }}
+                            <a href="{{ route('religion.create') }}" class="btn btn-primary">
+                                <i class="fa fa-plus"></i> {{ trans('Add Religion') }}
                             </a>
                         </div>
                     </div>
@@ -24,24 +24,22 @@
                                     <tr>
                                         <th scope="col">{{ __('#SL') }}</th>
                                         <th scope="col">{{ __('Name') }}</th>
-                                        <th scope="col">{{ __('Description') }}</th>
                                         <th class="text-center">{{ __('Action') }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($orgType as $orgType)
+                                    @forelse($religion as $r)
                                     <tr>
                                         <td>{{ ++$loop->index }}</td>
-                                        <td>{{ $orgType->name }}</td>
-                                        <td>{{ $orgType->description }}</td>
+                                        <td>{{ $r->name }}</td>
                                         <td class="text-center">
-                                            <a href="{{ route('org-type.edit', $orgType->id) }}" class="btn btn-sm btn-warning">
+                                            <a href="{{ route('religion.edit', $r->id) }}" class="btn btn-sm btn-warning">
                                                 <i class="fa fa-edit"></i>
                                             </a>
-                                            <a href="javascript:void(0)" onclick="deleteOrgType('{{ $orgType->id }}')" class="btn btn-sm btn-danger">
+                                            <a href="javascript:void(0)" onclick="deleteReligion('{{ $r->id }}')" class="btn btn-sm btn-danger">
                                                 <i class="fa fa-trash"></i>
                                             </a>
-                                            <form id="delete-form-{{ $orgType->id }}" action="{{ route('org-type.destroy', $orgType->id) }}" method="post" style="display: none;">
+                                            <form id="delete-form-{{ $r->id }}" action="{{ route('religion.destroy', $r->id) }}" method="post" style="display: none;">
                                                 @csrf
                                                 @method('delete')
                                             </form>
@@ -49,7 +47,7 @@
                                     </tr>
                                     @empty
                                     <tr>
-                                        <td colspan="3" class="text-center">{{ __('No Job Level Found') }}</td>
+                                        <td colspan="3" class="text-center">{{ __('No Religion Found') }}</td>
                                     </tr>
                                     @endforelse
                                 </tbody>
@@ -64,13 +62,12 @@
 
 <!-- JavaScript Function to Confirm Deletion -->
 <script>
-    function deleteOrgType(orgTypeId) {
-        if (confirm("Are you sure you want to delete this organization type?")) {
+    function deleteReligion(religionId) {
+        if (confirm("Are you sure you want to delete this job nature?")) {
             event.preventDefault();
-            document.getElementById('delete-form-' + orgTypeId).submit();
+            document.getElementById('delete-form-' + religionId).submit();
         }
     }
 </script>
-
 
 @endsection

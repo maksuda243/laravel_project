@@ -10,6 +10,7 @@ use App\Models\JobCategory;
 use App\Models\OrgType;
 use App\Models\JobNature;
 use App\Models\Education;
+use App\Models\Religion;
 use App\Models\JobseekerProfile;
 use Illuminate\Http\Request;
 use Exception;
@@ -39,7 +40,9 @@ class JobseekerprofileController extends Controller
         $org_type=OrgType::get();
         $job_nature=JobNature::get();
         $education=JobNature::get();
-        return view('jobseekeruser.jobseeker_profile.create',compact('gender','location','job_level','job_category','org_type','job_nature','education'));
+        $religion=Religion::get();
+        $education=Education::get();
+        return view('jobseekeruser.jobseeker_profile.create',compact('gender','location','job_level','job_category','org_type','job_nature','education','religion'));
     }
 
 
@@ -112,7 +115,9 @@ class JobseekerprofileController extends Controller
         $org_type=OrgType::get();
         $job_nature=JobNature::get();
         $education=JobNature::get();
-        return view('jobseekeruser.jobseeker_profile.edit',compact('gender','location','job_level','job_category','org_type','job_nature','education'));
+        $religion=Religion::get();
+        $education=Education::get();
+        return view('jobseekeruser.jobseeker_profile.edit',compact('gender','location','job_level','job_category','org_type','job_nature','education','religion'));
     }
 
 

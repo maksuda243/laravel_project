@@ -18,17 +18,13 @@ class JobNatureController extends Controller
         return view('backend.job-natures.index', compact('jobNatures'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    
     public function create()
     {
         return view('backend.job-natures.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    
     public function store(Request $request)
     {
         {
@@ -42,6 +38,7 @@ class JobNatureController extends Controller
                     return redirect()->back()->withInput()->with('error', 'Failed to create job nature');
                 }
             } catch (Exception $e) {
+                  //dd($e);
                 return redirect()->back()->withInput()->with('error', 'An error occurred. Please try again');
             }
         }
@@ -61,8 +58,7 @@ class JobNatureController extends Controller
      */
     public function edit(JobNature $jobNature)
     {
- 
-        return view('backend.job-natures.edit', compact('jobNature'));
+     return view('backend.job-natures.edit', compact('jobNature'));
     }
 
     /**

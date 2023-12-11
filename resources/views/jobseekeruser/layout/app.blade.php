@@ -20,15 +20,82 @@
     <link href="{{asset('public/build/css/custom.min.css')}}" rel="stylesheet">
 
 
+		<!-- CSS here -->
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/bootstrap.min.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/owl.carousel.min.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/flaticon.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/price_rangs.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/slicknav.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/animate.min.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/magnific-popup.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/fontawesome-all.min.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/themify-icons.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/slick.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/nice-select.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/dropdown.css')}}">
+            <link rel="stylesheet" href="{{asset('public/frontend/assets/css/style.css')}}">
+
   </head>
 
+ <header>
+        <!-- Header Start -->
+       <div class="header-area header-transparrent">
+           <div class="headder-top header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 col-md-2">
+                            <!-- Logo -->
+                            <div class="logo">
+                                <a href="index.html"><img src="{{asset('public/frontend/assets/img/logo/logo.png')}}" alt=""></a>
+                            </div>  
+                        </div>
+                        <div class="col-lg-9 col-md-9">
+                            <div class="menu-wrapper">
+                                <!-- Main-menu -->
+                                <div class="main-menu">
+                                    <nav class="d-none d-lg-block">
+                                        <ul id="navigation">
+                                            <li><a href="{{url('/')}}">Home</a></li>
+                                            <li><a href="{{url('/joblisting')}}">Find a Jobs </a></li>
+                                            <li><a href="{{ route('employeruser.login') }}">Employer</a></li>
+                                            <li><a href="#">Page</a>
+                                                <ul class="submenu">
+                                                    <li><a href="{{url('/blog')}}">Blog</a></li>
+                                                    <li><a href="{{url('/blogdetails')}}">Blog Details</a></li>
+                                                    <li><a href="{{url('/elements')}}">Elements</a></li>
+                                                    <li><a href="{{url('/jobdetails')}}">job Details</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="{{url('/contact')}}">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>          
+                                <!-- Header-btn -->
+                                <div class="header-btn d-none f-right d-lg-block">
+                                    
+                                    <a href="{{ route('jobseekeruserdashboard') }}" class="btn head-btn2">Dashboard</a>
+                                       
+                                    <a href="{{ route('jobseekeruser.LogOut') }}" class="btn head-btn2">Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+       </div>
+       <br>
+       <br>
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="{{route('home')}}" class="site_title"> <img src="{{ asset('public/images/logo.png') }}" alt="logo"><span>Job Finder</span></a>
+              {{-- <a href="{{route('home')}}" class="site_title"> <img src="{{ asset('public/images/logo.png') }}" alt="logo"><span>Job Finder</span></a> --}}
             </div>
 
             <div class="clearfix"></div>
@@ -101,87 +168,10 @@
                       <li><a href="calendar.html">Calendar</a></li>
                     </ul>
                   </li>
-                
-                  <!-- <li><a><i class="fa fa-bar-chart-o"></i> Helpline <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="chartjs.html">Chart JS</a></li>
-                      <li><a href="chartjs2.html">Chart JS2</a></li>
-                      <li><a href="morisjs.html">Moris JS</a></li>
-                      <li><a href="echarts.html">ECharts</a></li>
-                      <li><a href="other_charts.html">Other Charts</a></li>
-                    </ul>
-                  </li> -->
-                  <!-- <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-              <div class="menu_section">
-                <h3>Live On</h3>
-                <ul class="nav side-menu">
-                  <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="e_commerce.html">E-commerce</a></li>
-                      <li><a href="projects.html">Projects</a></li>
-                      <li><a href="project_detail.html">Project Detail</a></li>
-                      <li><a href="contacts.html">Contacts</a></li>
-                      <li><a href="profile.html">Profile</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="page_403.html">403 Error</a></li>
-                      <li><a href="page_404.html">404 Error</a></li>
-                      <li><a href="page_500.html">500 Error</a></li>
-                      <li><a href="plain_page.html">Plain Page</a></li>
-                      <li><a href="login.html">Login Page</a></li>
-                      <li><a href="pricing_tables.html">Pricing Tables</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a> -->
-                    <!-- <ul class="nav child_menu">
-                        <li><a href="#level1_1">Level One</a>
-                        </li>
-                        <li><a>Level One<span class="fa fa-chevron-down"></span></a>
-                          <ul class="nav child_menu">
-                            <li class="sub_menu"><a href="level2.html">Level Two</a>
-                            </li>
-                            <li><a href="#level2_1">Level Two</a>
-                            </li>
-                            <li><a href="#level2_2">Level Two</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li><a href="#level1_2">Level One</a>
-                        </li>
-                    </ul>
-                  </li>                  
-                  <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
-                </ul> -->
               </div>
 
             </div>
             <!-- /sidebar menu -->
-
-            <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
-                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-              </a>
-            </div>
-            <!-- /menu footer buttons -->
           </div>
         </div>
 
@@ -280,69 +270,150 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-          <div class="">
             <div class="page-title">
               <div class="title_left">
                 <h3>Jobseeker Dashboard</h3>
               </div>
-
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5   form-group pull-right top_search">
-                  <!-- <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                  </div> -->
-                </div>
-              </div>
             </div>
-
-            <div class="clearfix"></div>
-
-            <div class="row">
-              <div class="col-md-12 col-sm-12  ">
-                <!-- <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Plain Page</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Settings 1</a>
-                            <a class="dropdown-item" href="#">Settings 2</a>
-                          </div>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                      Add content to the page ...
-                  </div>
-                </div> -->
-              </div>
-            </div>
-          </div>
         </div>
         <!-- /page content -->
-
-        <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-          </div>
-          <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
       </div>
     </div>
 
 
 @yield('content')
+
+<footer>
+    <!-- Footer Start-->
+    <div class="footer-area footer-bg footer-padding">
+        <div class="container">
+            <div class="row d-flex justify-content-between">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                   <div class="single-footer-caption mb-50">
+                     <div class="single-footer-caption mb-30">
+                         <div class="footer-tittle">
+                             <h4>About Us</h4>
+                             <div class="footer-pera">
+                                 <p>Heaven frucvitful doesn't cover lesser dvsays appear creeping seasons so behold.</p>
+                            </div>
+                         </div>
+                     </div>
+
+                   </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                    <div class="single-footer-caption mb-50">
+                        <div class="footer-tittle">
+                            <h4>Contact Info</h4>
+                            <ul>
+                                <li>
+                                <p>Address :Your address goes
+                                    here, your demo address.</p>
+                                </li>
+                                <li><a href="#">Phone : +8880 44338899</a></li>
+                                <li><a href="#">Email : info@colorlib.com</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                    <div class="single-footer-caption mb-50">
+                        <div class="footer-tittle">
+                            <h4>Important Link</h4>
+                            <ul>
+                                <li><a href="#"> View Project</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Testimonial</a></li>
+                                <li><a href="#">Proparties</a></li>
+                                <li><a href="#">Support</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                    <div class="single-footer-caption mb-50">
+                        <div class="footer-tittle">
+                            <h4>Newsletter</h4>
+                            <div class="footer-pera footer-pera2">
+                             <p>Heaven fruitful doesn't over lesser in days. Appear creeping.</p>
+                         </div>
+                         <!-- Form -->
+                         <div class="footer-form" >
+                             <div id="mc_embed_signup">
+                                 <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                                 method="get" class="subscribe_form relative mail_part">
+                                     <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address"
+                                     class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
+                                     onblur="this.placeholder = ' Email Address '">
+                                     <div class="form-icon">
+                                         <button type="submit" name="submit" id="newsletter-submit"
+                                         class="email_icon newsletter-submit button-contactForm"><img src="assets/img/icon/form.png" alt=""></button>
+                                     </div>
+                                     <div class="mt-10 info"></div>
+                                 </form>
+                             </div>
+                         </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           <!--  -->
+           <div class="row footer-wejed justify-content-between">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                    <!-- logo -->
+                    <div class="footer-logo mb-20">
+                    <a href="index.html"><img src="public/frontend/assets/img/logo/logo2_footer.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                <div class="footer-tittle-bottom">
+                    <span>5000+</span>
+                    <p>Talented Hunter</p>
+                </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                    <div class="footer-tittle-bottom">
+                        <span>451</span>
+                        <p>Talented Hunter</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                    <!-- Footer Bottom Tittle -->
+                    <div class="footer-tittle-bottom">
+                        <span>568</span>
+                        <p>Talented Hunter</p>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </div>
+    <!-- footer-bottom area -->
+    <div class="footer-bottom-area footer-bg">
+        <div class="container">
+            <div class="footer-border">
+                 <div class="row d-flex justify-content-between align-items-center">
+                     <div class="col-xl-10 col-lg-10 ">
+                         <div class="footer-copy-right">
+                             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                         </div>
+                     </div>
+                     <div class="col-xl-2 col-lg-2">
+                         <div class="footer-social f-right">
+                             <a href="#"><i class="fab fa-facebook-f"></i></a>
+                             <a href="#"><i class="fab fa-twitter"></i></a>
+                             <a href="#"><i class="fas fa-globe"></i></a>
+                             <a href="#"><i class="fab fa-behance"></i></a>
+                         </div>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End-->
+</footer>
 
 
 
@@ -357,5 +428,7 @@
 
 <!-- Custom Theme Scripts -->
 <script src="{{asset('public/build/js/custom.min.js')}}"></script>
+
+
 </body>
 </html>

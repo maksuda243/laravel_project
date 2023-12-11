@@ -45,10 +45,9 @@ class GenderController extends Controller
     public function update(Request $request, Gender $gender)
     {
         try {
-            // Fetch the existing gender by its ID
+
             $existingGender = Gender::find($gender->id);
     
-            // Update its properties
             $existingGender->name = $request->name;
     
             if ($existingGender->save()) {
