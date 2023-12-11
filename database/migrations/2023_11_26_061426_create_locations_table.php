@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
+use Carbon\Carbon;
 return new class extends Migration
 {
     /**
@@ -17,6 +17,39 @@ return new class extends Migration
             $table->text('covered_area')->nullable();
             $table->timestamps();
         });
+
+        DB::table('locations')->insert([
+            [
+                'name' => 'Dhaka',
+                'covered_area' => 'fgfhghuryndn',
+                'created_at'=> Carbon::now()
+            ],[
+                'name' => 'Chattogram',
+                'covered_area' => 'fgfhghuryndn',
+                'created_at'=> Carbon::now()
+            ],[
+                'name' => 'Barisal',
+                'covered_area' => 'fgfhghuryndn',
+                'created_at'=> Carbon::now()
+            ],[
+                'name' => 'Sylhet',
+                'covered_area' => 'fgfhghuryndn',
+                'created_at'=> Carbon::now()
+            ],[
+                'name' => 'Khulna',
+                'covered_area' => 'fgfhghuryndn',
+                'created_at'=> Carbon::now()
+            ],[
+                'name' => 'Rajshahi',
+                'covered_area' => 'fgfhghuryndn',
+                'created_at'=> Carbon::now()
+            ],[
+                'name' => 'Rangpur',
+                'covered_area' => 'fgfhghuryndn',
+                'created_at'=> Carbon::now()
+            ]
+
+        ]);
     }
 
     /**

@@ -18,8 +18,8 @@ class JobPostController extends Controller
 {
     public function index()
     {
-        $data=JobpostController::latest()->paginate(10);
-        return view('employeruser.job.index',compact('data'));
+        $data=JobPost::latest()->paginate(10);
+        return view('employeruser.job_post.index',compact('data'));
     }
     
     public function create()
@@ -31,15 +31,15 @@ class JobPostController extends Controller
         $organization_type = OrgType::all();
         $location = Location::all();
  
-        return view('employeruser.job.create', compact('service_type','job_categories','job_nature','job_level','organization_type','location',));
+        return view('employeruser.job_post.create', compact('service_type','job_categories','job_nature','job_level','organization_type','location',));
         
     }
 
     public function store(Request $request)
     {try{
-        $data=new JobPostController();
+        $data=new JobPost();
         $data->employer_id=$request->employer_id;
-        $data->service_type=$request->subscription;
+        $data->service_type=$request->service_type;
         $data->no_of_vacancies=$request->no_of_vacancies;
         $data->job_title=$request->job_title;
         $data->job_categories=$request->job_categories;
@@ -54,7 +54,7 @@ class JobPostController extends Controller
         $data->application_deadline=$request->application_deadline;
       
         if($data->save())
-            return redirect()->route('employeruser.job.index')->with('success','Successfully saved');
+            return redirect()->route('job_post.index')->with('success','Successfully saved');
         else
             return redirect()->back()->withInput()->with('error','Please try again');
         
@@ -67,15 +67,16 @@ class JobPostController extends Controller
 
     public function edit(string $id)
     {
-             $data = JobPostController::find($id);
-         return view('employeruser.job.edit', compact('data'));
+             $data = JobPost::find($id);
+         return view('employeruser.job_post.edit', compact('data'));
     }
 
     public function update(Request $request, $id)
     {
         try{
-            $data=JobPostController::findOrFail(encryptor('decrypt',$id));
+            $data=JobPost::findOrFail(encryptor('decrypt',$id));
             $data->employer_id=$request->employer_id;
+            $data->service_type=$request->            
             $data->service_type=$request->subscription;
             $data->no_of_vacancies=$request->no_of_vacancies;
             $data->job_title=$request->job_title;
@@ -91,7 +92,7 @@ class JobPostController extends Controller
             $data->application_deadline=$request->application_deadline;
            
             if($data->save())
-                return redirect()->route('employeruser.job.index')->with('success','Successfully saved');
+                return redirect()->route('job_post.index')->with('success','Successfully saved');
             else
                 return redirect()->back()->withInput()->with('error','Please try again');
             

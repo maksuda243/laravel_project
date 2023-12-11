@@ -74,7 +74,6 @@ class JobseekerprofileController extends Controller
         $data->organization_type=$request->organization_type;
         $data->location=$request->location;
         $data->skill=$request->skill;
-        $data->password=Hash::make($request->password);
 
         if($request->hasFile('image')){
             $imageName = rand(111,999).time().'.'.$request->image->extension();
