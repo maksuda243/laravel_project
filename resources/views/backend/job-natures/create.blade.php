@@ -22,12 +22,10 @@
                                 @endif
                             </div>
                         </div>
-                        <!-- Add more fields here if needed for job nature creation -->
                     </div>
                     <div class="row">
                         <div class="col-12 d-flex justify-content-end">
                             <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
-                            <!-- Add Cancel or Back button if needed -->
                         </div>
                     </div>
                 </form>

@@ -1,23 +1,21 @@
 @extends('backend.layouts.app')
-@section('title', trans('Employer User List'))
+@section('title', trans('Employer User '))
 
 @section('content')
 
-<!-- Enhanced Bordered table -->
-<section class="p-3">
-    <div class="container">
-     <div class="row" id="table-bordered">
-        <div class="col-lg-10 offset-lg-2">
-            <div class="card">
-                <div class="card-header">
-                    <h4>{{ trans('Employer User List') }}</h4>
-                    <!-- <div class="card-header-action">
-                        <a href="{{ route('jobseeker_user.create') }}" class="btn btn-primary">
-                            <i class="fa fa-plus"></i> {{ trans('Add User') }}
-                        </a>
-                    </div> -->
-                </div>
-                <div class="card-body">
+<div class="row">
+    <div class="col-md-12 col-sm-12  ">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Employer User</h2>
+                {{-- <div class="card-header-action float-right">
+                    <a href="{{ route('employer_user.create') }}" class="btn btn-primary">
+                        <i class="fa fa-plus"></i> {{ trans('Add Employer') }}
+                    </a>
+                </div> --}}
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped mb-0">
                             <thead>
@@ -78,7 +76,7 @@
         </div>
     </div>
 </div>
-</section>
+</div>
 
 <!-- JavaScript Function to Confirm Deletion -->
 <script>

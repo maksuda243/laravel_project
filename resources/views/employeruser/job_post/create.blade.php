@@ -4,12 +4,13 @@
 
 @section('content')
 
-    <section id="multiple-column-form">
-        <div class="row match-height">
-            <div class="col-lg-10 offset-lg-2">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-body">
+<div class="row">
+    <div class="col-md-12 col-sm-12  ">
+        <div class="x_panel">
+            <div class="x_title">
+                {{-- <h2>Employer Dashboard</h2> --}}
+            </div>
+             <div class="x_content">
                             <form class="form" method="post" enctype="multipart/form-data" action="{{route('job_post.store')}}">
                                 @csrf
                                 <div class="row">
@@ -185,9 +186,9 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 @endsection

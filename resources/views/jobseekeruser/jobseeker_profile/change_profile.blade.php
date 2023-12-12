@@ -7,7 +7,7 @@
     <div class="col-md-12 col-sm-12  ">
         <div class="x_panel">
             <div class="x_title">
-                <h2>Jobseeker Dashboard</h2>
+                {{-- <h2>Jobseeker Dashboard</h2> --}}
             </div>
             <div class="x_content">
                 <form class="form" method="post" enctype="multipart/form-data" action="{{route('jobseekerprofile.update')}}">
@@ -25,7 +25,7 @@
                         <div class="col-md-4 col-12">
                             <div class="form-group">
                                 <label for="father_name"> Father's Name</label>
-                                <input type="text" id="father_name" class="form-control" value="{{ old('father_name')}}" name="father_name">
+                                <input type="text" id="father_name" class="form-control" value="{{ old('father_name',$js_profile->father_name)}}" name="father_name">
                                 @if($errors->has('father_name'))
                                     <span class="text-danger"> {{ $errors->first('father_name') }}</span>
                                 @endif
@@ -34,7 +34,7 @@
                         <div class="col-md-4 col-12">
                             <div class="form-group">
                                 <label for="mother_name"> Mother's Name</label>
-                                <input type="text" id="mother_name" class="form-control" value="{{ old('mother_name')}}" name="mother_name">
+                                <input type="text" id="mother_name" class="form-control" value="{{ old('mother_name',$js_profile->mother_name)}}" name="mother_name">
                                 @if($errors->has('mother_name'))
                                     <span class="text-danger"> {{ $errors->first('mother_name') }}</span>
                                 @endif
@@ -43,7 +43,7 @@
                         <div class="col-md-4 col-12">
                             <div class="form-group">
                                 <label for="date_of_birth"> Date of Birth</label>
-                                <input type="text" id="date_of_birth" class="form-control" value="{{ old('date_of_birth')}}" name="date_of_birth">
+                                <input type="text" id="date_of_birth" class="form-control" value="{{ old('date_of_birth',$js_profile->date_of_birth)}}" name="date_of_birth">
                                 @if($errors->has('date_of_birth'))
                                     <span class="text-danger"> {{ $errors->first('date_of_birth') }}</span>
                                 @endif
@@ -53,7 +53,7 @@
                         <div class="col-md-4 col-12">
                             <div class="form-group">
                                 <label for="email"> Email</label>
-                                <input type="text" id="email" class="form-control" value="{{ old('email')}}" name="email">
+                                <input type="text" id="email" class="form-control" value="{{ old('email',$js_profile->email)}}" name="email">
                                 @if($errors->has('email'))
                                     <span class="text-danger"> {{ $errors->first('email') }}</span>
                                 @endif
@@ -96,7 +96,7 @@
                         <div class="col-md-4 col-12">
                             <div class="form-group">
                                 <label for="nationality"> Nationality</label>
-                                <input type="text" id="nationality" class="form-control" value="{{ old('nationality')}}" name="nationality">
+                                <input type="text" id="nationality" class="form-control" value="{{ old('nationality',$js_profile->nationality)}}" name="nationality">
                                 @if($errors->has('nationality'))
                                     <span class="text-danger"> {{ $errors->first('nationality') }}</span>
                                 @endif
@@ -106,7 +106,7 @@
                         <div class="col-md-4 col-12">
                             <div class="form-group">
                                 <label for="present_address"> Present Address</label>
-                                <input type="text" id="present_address" class="form-control" value="{{ old('present_address')}}" name="present_address">
+                                <input type="text" id="present_address" class="form-control" value="{{ old('present_address',$js_profile->present_address)}}" name="present_address">
                                 @if($errors->has('present_address'))
                                     <span class="text-danger"> {{ $errors->first('present_address') }}</span>
                                 @endif
@@ -115,7 +115,7 @@
                         <div class="col-md-4 col-12">
                             <div class="form-group">
                                 <label for="permanent_address"> Permanent Address</label>
-                                <input type="text" id="permanent_address" class="form-control" value="{{ old('permanent_address')}}" name="permanent_address">
+                                <input type="text" id="permanent_address" class="form-control" value="{{ old('permanent_address',$js_profile->permanent_address)}}" name="permanent_address">
                                 @if($errors->has('permanent_address'))
                                     <span class="text-danger"> {{ $errors->first('permanent_address') }}</span>
                                 @endif
@@ -125,7 +125,7 @@
                         <div class="col-md-4 col-12">
                             <div class="form-group">
                                 <label for="contact_no"> Contact No.</label>
-                                <input type="text" id="contact_no" class="form-control" value="{{ old('contact_no')}}" name="contact_no">
+                                <input type="text" id="contact_no" class="form-control" value="{{ old('contact_no',$js_profile->contact_no)}}" name="contact_no">
                                 @if($errors->has('contact_no'))
                                     <span class="text-danger"> {{ $errors->first('contact_no') }}</span>
                                 @endif
@@ -134,7 +134,7 @@
                         <div class="col-md-4 col-12">
                             <div class="form-group">
                                 <label for="career_objective"> Career Objective</label>
-                                <input type="textarea" id="career_objective" class="form-control" value="{{ old('career_objective')}}" name="career_objective">
+                                <input type="text" id="career_objective" class="form-control" value="{{ old('career_objective',$js_profile->career_objective)}}" name="career_objective">
                                 @if($errors->has('career_objective'))
                                     <span class="text-danger"> {{ $errors->first('career_objective') }}</span>
                                 @endif
@@ -144,7 +144,7 @@
                         <div class="col-md-4 col-12">
                             <div class="form-group">
                                 <label for="expected_salary"> Expected Salary</label>
-                                <input type="text" id="expected_salary" class="form-control" value="{{ old('expected_salary')}}" name="expected_salary">
+                                <input type="text" id="expected_salary" class="form-control" value="{{ old('expected_salary',$js_profile->expected_salary)}}" name="expected_salary">
                                 @if($errors->has('expected_salary'))
                                     <span class="text-danger"> {{ $errors->first('expected_salary') }}</span>
                                 @endif
