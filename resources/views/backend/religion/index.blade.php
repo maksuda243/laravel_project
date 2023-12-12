@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', trans('Religion List'))
+@section('title', trans('Religion'))
 
 @section('content')
 

@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', trans('Location List'))
+@section('title', trans('Location '))
 
 @section('content')
 
@@ -7,7 +7,7 @@
     <div class="col-md-12 col-sm-12  ">
         <div class="x_panel">
             <div class="x_title">
-                <h2>Job Category List</h2>
+                <h2>Location</h2>
                 <div class="card-header-action float-right">
                     <a href="{{ route('location.create') }}" class="btn btn-primary">
                         <i class="fa fa-plus"></i> {{ trans('Add Location') }}

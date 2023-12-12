@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('pageTitle',trans('Update Users'))
+@section('pageTitle',trans('Update Jobseeker Users'))
 @section('pageSubTitle',trans('Update'))
 
 @section('content')

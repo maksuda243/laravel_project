@@ -7,9 +7,9 @@
     <div class="col-md-12 col-sm-12  ">
         <div class="x_panel">
             <div class="x_title">
-                <h2>Job Category List</h2>
+                <h2>Organization List</h2>
                 <div class="card-header-action float-right">
-                    <a href="{{ route('job-category.create') }}" class="btn btn-primary">
+                    <a href="{{ route('org-type.create') }}" class="btn btn-primary">
                         <i class="fa fa-plus"></i> {{ trans('Add Job Catrgory') }}
                     </a>
                 </div>

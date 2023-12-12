@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title', trans('Job Category'))
+@section('title', trans('Job Location'))
 
 @section('content')
 <div class="row">

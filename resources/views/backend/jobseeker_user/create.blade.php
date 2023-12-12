@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title',trans('Create Users'))
+@section('title',trans('Create Jobseeker Users'))
 
 @section('content')
   <!-- // Basic multiple Column Form section start -->

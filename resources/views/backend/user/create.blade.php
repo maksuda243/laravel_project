@@ -10,7 +10,7 @@
                 <h2>Add New User </h2>
             </div>
             <div class="x_content">
-                <form class="form" method="post" enctype="multipart/form-data" action="{{ route('job-category.store') }}">
+                <form class="form" method="post" enctype="multipart/form-data" action="{{ route('user.store') }}">
                     @csrf
                     <div class="row">
                         <div class="col-md-6 col-12">
