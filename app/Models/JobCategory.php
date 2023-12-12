@@ -9,6 +9,9 @@ class JobCategory extends Model
 {
     use HasFactory;
     protected $table = 'job_catagories';
+    public function jobs(){
+        return $this->hasMany(JobPost::class, 'job_categories');
+    }
 
    
 }

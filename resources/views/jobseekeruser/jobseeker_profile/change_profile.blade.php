@@ -226,9 +226,9 @@
                                     <span class="text-danger"> {{ $errors->first('organization_type"') }}</span>
                                 @endif
                             </div>
-                            </div>
+                        </div>
 
-                            <div class="col-md-4 col-12">
+                        <div class="col-md-4 col-12">
                             <div class="form-group">
                                 <label for="location"> Job Location <i class="text-danger">*</i></label>
                                 <select id="location" class="form-control" name="location">
@@ -243,12 +243,16 @@
                                 @endif
                             </div>
                         </div>
-
-
+                        <div class="col-md-4 col-12">
+                            <div class="form-group">
+                                <label for="location"> Image</label>
+                                <input type="file" class="form-control" name="image">
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-12 d-flex justify-content-end">
                             <button type="submit" class="btn btn-primary me-5 mb-5">Save</button>
-                            
                         </div>
                     </div>
                 </form>

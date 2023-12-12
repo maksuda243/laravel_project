@@ -67,11 +67,13 @@ Route::post('jobseekeruser/register', [jsuserauth::class,'signUpStore'])->name('
 Route::get('jobseekeruser/login', [jsuserauth::class,'signInForm'])->name('jobseekeruser.login');
 Route::post('jobseekeruser/login', [jsuserauth::class,'signInCheck'])->name('jobseekeruser.login.check');
 Route::get('jobseekeruser/logout', [jsuserauth::class,'singOut'])->name('jobseekeruser.LogOut');
+Route::middleware(['checkJobseekerAuth'])->prefix('jobseeker')->group(function(){
+  Route::get('jobseeker_profile',[JobseekerprofileController::class,'index'])->name('jobseekerprofile');
+  Route::get('jobseeker_profile/change',[JobseekerprofileController::class,'change_profile'])->name('jobseekerprofile.change');
+  Route::post('jobseeker_profile/update',[JobseekerprofileController::class,'update'])->name('jobseekerprofile.update');
+  Route::post('jobseeker_photo/update',[JobseekerprofileController::class,'update_photo'])->name('jobseeker_photo.update');
 
-Route::get('jobseeker_profile',[JobseekerprofileController::class,'index'])->name('jobseekerprofile');
-Route::get('jobseeker_profile/change',[JobseekerprofileController::class,'change_profile'])->name('jobseekerprofile.change');
-Route::post('jobseeker_profile/update',[JobseekerprofileController::class,'update'])->name('jobseekerprofile.update');
-
+});
 
 // EmployerUser
 Route::get('employeruser/register', [empuserauth::class,'signUpForm'])->name('employeruser.register');
@@ -79,12 +81,12 @@ Route::post('employeruser/register', [empuserauth::class,'signUpStore'])->name('
 Route::get('employeruser/login', [empuserauth::class,'signInForm'])->name('employeruser.login');
 Route::post('employeruser/login', [empuserauth::class,'signInCheck'])->name('employeruser.login.check');
 Route::get('employeruser/logout', [empuserauth::class,'singOut'])->name('employeruser.LogOut');
+
+Route::middleware(['checkEmployerAuth'])->prefix('employee')->group(function(){
 Route::get('employeruser/dashboard', [empuserdashboard::class,'index'])->name('empuserdashboard');
-
-Route::resource('job_post',JobPostController::class);
-Route::resource('employer_profile',EmployerProfileController::class);
-
-
+  Route::resource('job_post',JobPostController::class);
+  Route::resource('employer_profile',EmployerProfileController::class);
+});
 
 
 Route::middleware(['checkrole'])->prefix('admin')->group(function(){
@@ -127,7 +129,7 @@ Route::get('/blogdetails',[BlogDetailsController::class,'index']);
 Route::get('/contact',[ContactController::class,'index']);
 Route::get('/elements',[ElementsController::class,'index']);
 Route::get('/jobdetails',[JobDetailsController::class,'index']);
-Route::get('/joblisting',[JobListingController::class,'index']);
+Route::get('/joblisting',[JobListingController::class,'index'])->name('joblisting');
 Route::get('/service',[ServiceController::class,'index']);
    
 

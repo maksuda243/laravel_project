@@ -67,26 +67,38 @@
                                     </nav>
                                 </div>          
                                 <!-- Header-btn -->
-                                <div class="header-btn d-none f-right d-lg-block">
-                                    <div class="dropdown">
-                                        <button onclick="toggleDropdown()" class="btn head-btn1 dropbtn">Register</button>
-                                        <div id="registerDropdown" class="dropdown-content">
-                                            <a href="{{ route('jobseekeruser.register') }}">
-                                                <div class="dropdown-card jobseeker">
-                                                    <i class="fas fa-laptop"></i>
-                                                    <p> As a Jobseeker</p>
-                                                </div>
-                                            </a>
-                                            <a href="{{ route('employeruser.register') }}">
-                                                <div class="dropdown-card employer">
-                                                    <i class="fas fa-user-tie"></i>
-                                                    <p>As a Employer</p>
-                                                </div>
-                                            </a>
-                                        </div>
+                                @if(request()->session()->get('isJobseeker'))
+                                    <div class="header-btn d-none f-right d-lg-block">
+                                        <a href="{{ route('jobseekeruserdashboard') }}" class="btn head-btn2">Dashboard</a>
+                                        <a href="{{ route('jobseekeruser.LogOut') }}" class="btn head-btn2">Logout</a>
                                     </div>
-                                    <a href="{{ route('jobseekeruser.login') }}" class="btn head-btn2">Login</a>
-                                </div>
+                                @elseif (request()->session()->get('isEmployer'))
+                                    <div class="header-btn d-none f-right d-lg-block">
+                                        <a href="{{ route('empuserdashboard') }}" class="btn head-btn2">Dashboard</a>
+                                        <a href="{{ route('employeruser.LogOut') }}" class="btn head-btn2">Logout</a>
+                                    </div>
+                                @else
+                                    <div class="header-btn d-none f-right d-lg-block">
+                                        <div class="dropdown">
+                                            <button onclick="toggleDropdown()" class="btn head-btn1 dropbtn">Register</button>
+                                            <div id="registerDropdown" class="dropdown-content">
+                                                <a href="{{ route('jobseekeruser.register') }}">
+                                                    <div class="dropdown-card jobseeker">
+                                                        <i class="fas fa-laptop"></i>
+                                                        <p> As a Jobseeker</p>
+                                                    </div>
+                                                </a>
+                                                <a href="{{ route('employeruser.register') }}">
+                                                    <div class="dropdown-card employer">
+                                                        <i class="fas fa-user-tie"></i>
+                                                        <p>As a Employer</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="{{ route('jobseekeruser.login') }}" class="btn head-btn2">Login</a>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                         <!-- Mobile Menu -->

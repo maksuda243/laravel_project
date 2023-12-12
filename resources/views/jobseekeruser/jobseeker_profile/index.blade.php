@@ -3,24 +3,7 @@
 @section('title',trans('Your Profile'))
 
 @section('content')
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Gentelella Alela! | </title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
-        {
-            background: -webkit-linear-gradient(left, #3931af, #00c6ff);
-        }
         .emp-profile{
             padding: 3%;
             margin-top: 3%;
@@ -113,240 +96,228 @@
             font-weight: 600;
             color: #0062cc;
         }
-        </style>
-  </head>
+        .profile-btn{
+            padding:21px 11px;
+        }
+    </style>
+
 
 
 <div class="container emp-profile">
-            <form method="post">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="profile-img">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
-                            <div class="file btn btn-lg btn-primary">
-                                Change Photo
-                                <input type="file" name="file"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="profile-head">
-                                    <h5>
-                                        Kshiti Ghelani
-                                    </h5>
-                                    <h6>
-                                        Kshiti Ghelani@gmail.com
-                                    </h6>
-                                    <h6>
-                                        136/D,RF Niketon,Muradpur,Chattogram
-                                    </h6>
-                                    <h6>
-                                      Cell : 0183546768
-                                    </h6>
-                                   
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Personal Information</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Careeer Information</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Academic Information</a>
-                                </li>
-                              
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="profile-work">
-                            <p>SKILLS</p>
-                            <a href="">Web Designer</a><br/>
-                            <a href="">Web Developer</a><br/>
-                            <a href="">WordPress</a><br/>
-                            <a href="">WooCommerce</a><br/>
-                            <a href="">PHP, .Net</a><br/>
-                            <p>PROJECTS LINK</p>
-                            <a href="">Website Link</a><br/>
-                            <a href="">Bootsnipp Profile</a><br/>
-                            <a href="">Bootply Profile</a>
-                            
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="tab-content profile-tab" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Name</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Kshiti123</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Father's Name</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Kshiti Ghelani</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Mother's Name</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Kshiti Ghelani</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Email</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>kshitighelani@gmail.com</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Phone</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>123 456 7890</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Present Address</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>gshdjdgj</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Permanent Address</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>gshdjdgj</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Date of Birth </label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>gshdjdgj</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Gender </label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>gshdjdgj</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Religion </label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>gshdjdgj</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Nationality </label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>gshdjdgj</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Marital Status </label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>gshdjdgj</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>National Id </label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>gshdjdgj</p>
-                                            </div>
-                                        </div>
-                            </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Skills</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>safsdg,dfdsgfggbsfhf,sgfwsdghfh</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Preferred Job Nature</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>dgsghfsh</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Preferred Job level</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>230</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Preferred Job Organization</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Expert</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Preferred Job Location</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>fafag</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Expected Salary</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>fafag</p>
-                                            </div>
-                                        </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <label>Career Objective</label><br/>
-                                        <p>Your detail descriptionYour detail descriptionYour detail descriptionYour detail descriptionYour detail description</p>
-                                    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="profile-img">
+                @if($js_profile->image)
+                    <img src="{{asset('public/uploads/jobseekerusers/'.$js_profile->image)}}" alt=""/>
+                @else
+                    <img src="{{asset('public/images/noimage.jpg')}}" alt=""/>
+                @endif
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="profile-head">
+                <h5>{{$js_profile->name}}</h5>
+                <h6>{{$js_profile->email}}</h6>
+                <h6>136/D,RF Niketon,Muradpur,Chattogram</h6>
+                <h6>Cell : 0183546768</h6>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active text-dark" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Personal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Careeer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Academic</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="profile-work">
+                <p>SKILLS</p>
+                @php $skills=explode(',',$js_profile->skill); @endphp
+                @if(count($skills) > 0 )
+                    @foreach($skills as $sk)
+                        <a href="#">{{$sk}}</a><br/>
+                    @endforeach
+                @endif
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="tab-content profile-tab" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Name</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Kshiti123</p>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Father's Name</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Kshiti Ghelani</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Mother's Name</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Kshiti Ghelani</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Email</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>kshitighelani@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Phone</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>123 456 7890</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Present Address</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>gshdjdgj</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Permanent Address</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>gshdjdgj</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Date of Birth </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>gshdjdgj</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Gender </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>gshdjdgj</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Religion </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>gshdjdgj</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Nationality </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>gshdjdgj</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Marital Status </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>gshdjdgj</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>National Id </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>gshdjdgj</p>
+                                </div>
+                            </div>
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Skills</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>safsdg,dfdsgfggbsfhf,sgfwsdghfh</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Preferred Job Nature</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>dgsghfsh</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Preferred Job level</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>230</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Preferred Job Organization</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Expert</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Preferred Job Location</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>fafag</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Expected Salary</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>fafag</p>
+                                </div>
+                            </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Career Objective</label><br/>
+                            <p>Your detail descriptionYour detail descriptionYour detail descriptionYour detail descriptionYour detail description</p>
                         </div>
                     </div>
                 </div>
-            </form>           
+            </div>
         </div>
+    </div>     
+</div>
 
 @endsection 
 

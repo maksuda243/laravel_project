@@ -18,7 +18,7 @@ class JobPostController extends Controller
 {
     public function index()
     {
-        $data=JobPost::latest()->paginate(10);
+        $data=JobPost::where('employer_id',currentUserId())->paginate(10);
         return view('employeruser.job_post.index',compact('data'));
     }
     
@@ -38,7 +38,7 @@ class JobPostController extends Controller
     public function store(Request $request)
     {try{
         $data=new JobPost();
-        $data->employer_id=$request->employer_id;
+        $data->employer_id=currentUserId();
         $data->service_type=$request->service_type;
         $data->no_of_vacancies=$request->no_of_vacancies;
         $data->job_title=$request->job_title;
@@ -67,8 +67,14 @@ class JobPostController extends Controller
 
     public function edit(string $id)
     {
-             $data = JobPost::find($id);
-         return view('employeruser.job_post.edit', compact('data'));
+        $service_type = Subscription::all();
+        $job_categories = JobCategory::all();
+        $job_nature = JobNature::all();
+        $job_level = JobLevel::all();
+        $organization_type = OrgType::all();
+        $location = Location::all();
+        $data = JobPost::find(encryptor('decrypt',$id));
+        return view('employeruser.job_post.edit', compact('service_type','job_categories','job_nature','job_level','organization_type','location','data'));
     }
 
     public function update(Request $request, $id)

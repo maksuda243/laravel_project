@@ -19,7 +19,7 @@ class JobPost extends Model
     }
 
     public function jobCategory(){
-        return $this->belongsTo(JobCategory::class, 'job_category');
+        return $this->belongsTo(JobCategory::class, 'job_categories');
     }
 
     public function jobLevel(){

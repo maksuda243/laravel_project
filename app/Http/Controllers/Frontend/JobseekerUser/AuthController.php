@@ -65,6 +65,7 @@ class AuthController extends Controller
                 'userName'=>encryptor('encrypt',$user->name),
                 'email'=>encryptor('encrypt',$user->email),
                 'contactNo'=>encryptor('encrypt',$user->contact_no),
+                'isJobseeker'=>1,
                 'image'=>$user->image ?? 'no-image.png'
             ]
         );

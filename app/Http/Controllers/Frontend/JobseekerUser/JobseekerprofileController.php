@@ -24,8 +24,8 @@ class JobseekerprofileController extends Controller
      */
     public function index()
     {
-    $js_profile = JobseekerProfile::find(currentUserId());
-    return view('jobseekeruser.jobseeker_profile.index', ['js_profile' => $js_profile]);
+        $js_profile = JobseekerProfile::find(currentUserId());
+        return view('jobseekeruser.jobseeker_profile.index', ['js_profile' => $js_profile]);
     }
 
     /**
@@ -83,9 +83,7 @@ class JobseekerprofileController extends Controller
             }
 
             if($data->save())
-                return redirect()->route('jobseekeruser.jobseeker_profile.index')->with('success','Successfully saved');
-            else
-                return redirect()->back()->withInput()->with('error','Please try again');
+                return redirect()->route('jobseekerprofile')->with('success','Successfully saved');
             
         }catch(Exception $e){
             dd($e);
