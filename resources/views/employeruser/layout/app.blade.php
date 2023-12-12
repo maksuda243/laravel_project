@@ -154,10 +154,8 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="{{route('job_post.create')}}"><i class="fa fa-home"></i> Post a Job </a>
-                    
-                  </li>
-                  <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                  
+                  <li><a><i class="fa fa-edit"></i> Profile <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{route('employer_profile.create')}}">Create Employer Profile</a></li>
                       <li><a href="form_advanced.html">Advanced Components</a></li>
@@ -167,6 +165,7 @@
                       <li><a href="form_buttons.html">Form Buttons</a></li>
                     </ul>
                   </li>
+                  <li><a href="{{route('job_post.create')}}"><i class="fa fa-home"></i> Post a Job </a></li>
                   <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="general_elements.html">General Elements</a></li>
