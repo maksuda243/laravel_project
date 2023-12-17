@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\UserEmployer;
+use App\Models\EmployerUser;
 use Illuminate\Http\Request;
 use Exception;
 use Toastr;
@@ -12,7 +12,7 @@ class EmployerUserController extends Controller
 {
     public function index()
     {
-        $useremployer = UserEmployer::all();
+        $useremployer = EmployerUser::all();
         return view('backend.employer_user.index', compact('useremployer'));
     }
 
@@ -25,7 +25,7 @@ class EmployerUserController extends Controller
     public function store(Request $request)
     {
         try{
-            $useremployer=new UserEmployer();
+            $useremployer=new EmployerUser();
             $useremployer->name=$request->name;
             $useremployer->email=$request->email;
             $useremployer->contact_no=$request->contact_no;
@@ -43,15 +43,15 @@ class EmployerUserController extends Controller
 
     public function edit(string $id)
     { 
-        $useremployer = UserEmployer::find($id);
+        $useremployer = EmployerUser::find($id);
         return view('backend.employer_user.edit', compact('useremployer'));
     }
 
-    public function update(Request $request, UserEmployer $useremployer)
+    public function update(Request $request, EmployerUser $useremployer)
     {
         {
             try {
-                $useremployer = new UserEmployer();
+                $useremployer = new EmployerUser();
                 $useremployer->name = $request->name;
                 $useremployer->email = $request->email;
                 $useremployer->contact_no=$request->contact_no; 
@@ -68,7 +68,7 @@ class EmployerUserController extends Controller
         }
     }
 
-    public function destroy(UserEmployer $useremployer)
+    public function destroy(EmployerUser $useremployer)
     {
         $jobNature->delete();
         return redirect()->route('jobseeker_user.index')->with('success', 'Job nature deleted successfully');

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\UserJobseeker;
+use App\Models\JobseekerUser;
 use Illuminate\Http\Request;
 use Exception;
 use Toastr;
@@ -12,7 +12,7 @@ class JobseekerUserController extends Controller
 {
     public function index()
     {
-        $userJobseeker = UserJobseeker::all();
+        $userJobseeker = JobseekerUser::all();
         return view('backend.jobseeker_user.index', compact('userJobseeker'));
     }
 
@@ -25,7 +25,7 @@ class JobseekerUserController extends Controller
     public function store(Request $request)
     {
         try{
-            $userJobseeker=new UserJobseeker();
+            $userJobseeker=new JobseekerUser();
             $userJobseeker->name=$request->name;
             $userJobseeker->email=$request->email;
             $userJobseeker->contact_no=$request->contact_no;
@@ -43,11 +43,11 @@ class JobseekerUserController extends Controller
 
     public function edit(string $id)
     { 
-        $userJobseeker = UserJobseeker::find($id);
+        $userJobseeker = JobseekerUser::find($id);
         return view('backend.jobseeker_user.edit', compact('jobLevel'));
     }
 
-    public function update(Request $request, UserJobseeker $userJobseeker)
+    public function update(Request $request, JobseekerUser $userJobseeker)
     {
         {
             try {
@@ -68,7 +68,7 @@ class JobseekerUserController extends Controller
         }
     }
 
-    public function destroy(UserJobseeker $userJobseeker)
+    public function destroy(JobseekerUser $userJobseeker)
     {
         $jobNature->delete();
         return redirect()->route('jobseeker_user.index')->with('success', 'Job nature deleted successfully');

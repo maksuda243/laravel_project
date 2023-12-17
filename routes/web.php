@@ -67,6 +67,7 @@ Route::post('jobseekeruser/register', [jsuserauth::class,'signUpStore'])->name('
 Route::get('jobseekeruser/login', [jsuserauth::class,'signInForm'])->name('jobseekeruser.login');
 Route::post('jobseekeruser/login', [jsuserauth::class,'signInCheck'])->name('jobseekeruser.login.check');
 Route::get('jobseekeruser/logout', [jsuserauth::class,'singOut'])->name('jobseekeruser.LogOut');
+
 Route::middleware(['checkJobseekerAuth'])->prefix('jobseeker')->group(function(){
   Route::get('jobseeker_profile',[JobseekerprofileController::class,'index'])->name('jobseekerprofile');
   Route::get('jobseeker_profile/change',[JobseekerprofileController::class,'change_profile'])->name('jobseekerprofile.change');
@@ -82,10 +83,13 @@ Route::get('employeruser/login', [empuserauth::class,'signInForm'])->name('emplo
 Route::post('employeruser/login', [empuserauth::class,'signInCheck'])->name('employeruser.login.check');
 Route::get('employeruser/logout', [empuserauth::class,'singOut'])->name('employeruser.LogOut');
 
-Route::middleware(['checkEmployerAuth'])->prefix('employee')->group(function(){
+Route::middleware(['checkEmployerAuth'])->prefix('employer')->group(function(){
 Route::get('employeruser/dashboard', [empuserdashboard::class,'index'])->name('empuserdashboard');
   Route::resource('job_post',JobPostController::class);
-  Route::resource('employer_profile',EmployerProfileController::class);
+  Route::get('employer_profile',[EmployerProfileController::class,'index'])->name('employerprofile');
+  Route::get('employer/change',[EmployerProfileController::class,'change_profile'])->name('employerprofile.change');
+  Route::post('employer/update',[EmployerProfileController::class,'update'])->name('employerprofile.update');
+  Route::post('employer_photo/update',[EmployerProfileController::class,'update_photo'])->name('employer_photo.update');
 });
 
 

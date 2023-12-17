@@ -1,101 +1,259 @@
-@extends('backend.layouts.app')
-@section('title', trans('Posted Job List'))
+@extends('employeruser.layout.app')
+
+@section('title',trans('Your Profile'))
 
 @section('content')
+    <style>
+        .emp-profile{
+            padding: 3%;
+            margin-top: 3%;
+            margin-bottom: 3%;
+            border-radius: 0.5rem;
+            background: #fff;
+        }
+        .profile-img{
+            text-align: center;
+        }
+        .profile-img img{
+            width: 70%;
+            height: 100%;
+        }
+        .profile-img .file {
+            position: relative;
+            overflow: hidden;
+            margin-top: -20%;
+            width: 70%;
+            border: none;
+            border-radius: 0;
+            font-size: 15px;
+            background: #212529b8;
+        }
+        .profile-img .file input {
+            position: absolute;
+            opacity: 0;
+            right: 0;
+            top: 0;
+        }
+        .profile-head h5{
+            color: #333;
+        }
+        .profile-head h6{
+            color: #0062cc;
+        }
+        .profile-edit-btn{
+            border: none;
+            border-radius: 1.5rem;
+            width: 70%;
+            padding: 2%;
+            margin-left: 60px;
+            font-weight: 600;
+            color: #e83e8c;
+            /* cursor: pointer; */
+        }
+        
+        .proile-rating{
+            font-size: 12px;
+            color: #818182;
+            margin-top: 5%;
+        }
+        .proile-rating span{
+            color: #495057;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .profile-head .nav-tabs{
+            margin-bottom:5%;
+        }
+        .profile-head .nav-tabs .nav-link{
+            font-weight:600;
+            border: none;
+        }
+        .profile-head .nav-tabs .nav-link.active{
+            border: none;
+            border-bottom:2px solid #0062cc;
+        }
+        .profile-work{
+            padding: 14%;
+            margin-top: -15%;
+        }
+        .profile-work p{
+            font-size: 12px;
+            color: black;
+            font-weight: 600;
+            margin-top: 10%;
+            margin-left: 60px;
+        }
+        .profile-work a{
+            text-decoration: none;
+            color: #495057;
+            font-weight: 600;
+            font-size: 14px;
+            padding-left: 50px;
+        }
+        .profile-work ul{
+            list-style: none;
+        }
+        .profile-tab label{
+            font-weight: 600;
+        }
+        .profile-tab p{
+            font-weight: 600;
+            color: #0062cc;
+        }
+        .profile-btn{
+            padding:21px 11px;
+        }
+    </style>
 
-<!-- Enhanced Bordered table -->
-<section class="p-3">
-    <div class="container">
-     <div class="row" id="table-bordered">
-        <div class="col-lg-10 offset-lg-2">
-            <div class="card">
-                <div class="card-header">
-                    <h4>{{ trans('Posted Job List') }}</h4>
-                    <div class="card-Posted Job Listheader-action">
-                        <a href="{{ route('jobpost.create') }}" class="btn btn-primary">
-                            <i class="fa fa-plus"></i> {{ trans('Post New Job') }}
-                        </a>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped mb-0">
-                            <thead>
-                                <tr>
-                                    <th scope="col">{{ __('#SL') }}</th>
-                                    <th scope="col">{{ __('Employer ID') }}</th>
-                                    <th scope="col">{{ __('Service Type') }}</th>
-                                    <th scope="col">{{ __('No. of Vacancies') }}</th>
-                                    <th scope="col">{{ __('Job Title') }}</th>
-                                    <th scope="col">{{ __('Industry') }}</th>
-                                    <th scope="col">{{ __('Job Nature') }}</th>
-                                    <th scope="col">{{ __('Job Level') }}</th>
-                                    <th scope="col">{{ __('Organization Type') }}</th>
-                                    <th scope="col">{{ __('Location') }}</th>
-                                    <th scope="col">{{ __('Salary') }}</th>
-                                    <th scope="col">{{ __('Requirment') }}</th>
-                                    <th scope="col">{{ __('Special Instruction') }}</th>
-                                    <th scope="col">{{ __('Application Start Date') }}</th>
-                                    <th scope="col">{{ __('Application Deadline') }}</th>
-                                    <th class="text-center">{{ __('Action') }}</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @forelse($data as $p)
-                                <tr>
-                                    <td>{{ ++$loop->index }}</td>
-                                    <td>{{ $p->employer_id }}</td>
-                                    <td>{{ $p->service_type }}</td>
-                                    <td>{{ $p->no_of_vacancies }}</td>
-                                    <td>{{ $p->job_title }}</td>
-                                    <td>{{ $p->job_categories}}</td>
-                                    <td>{{ $p->job_nature}}</td>
-                                    <td>{{ $p->job_level}}</td>
-                                    <td>{{ $p->organization_type}}</td>
-                                    <td>{{ $p->location}}</td>
-                                    <td>{{ $p->salary}}</td>
-                                    <td>{{ $p->requirment}}</td>
-                                    <td>{{ $p->special_instruction}}</td>
-                                    <td>{{ $p->special_instruction}}</td>
-                                    <td>{{ $p->application_start_date}}</td>
-                                    <td>{{ $p->application_deadline}}</td>
-                                   
-                                    <td class="text-center">
-                                        <a href="{{ route('jobpost.edit', encryptor('encrypt', $p->id)) }}" class="btn btn-sm btn-warning">
-                                            <i class="fa fa-edit"></i>
-                                        </a>
-                                        <a href="javascript:void(0)" onclick="deleteUser('{{ $p->id }}')" class="btn btn-sm btn-danger">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
-                                        <form id="delete-form-{{ $p->id }}" action="{{ route('jobpost.destroy', encryptor('encrypt', $p->id)) }}" method="post" style="display: none;">
-                                            @csrf
-                                            @method('delete')
-                                        </form>
-                                    </td>
-                                </tr>
-                                @empty
-                                <tr>
-                                    <td colspan="8" class="text-center">{{ __('No jobpost Found') }}</td>
-                                </tr>
-                                @endforelse
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+
+
+<div class="container emp-profile">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="profile-img">
+                @if($employer_profile->image)
+                    <img src="{{asset('public/uploads/employer_users/'.$employer_profile->image)}}" alt=""/>
+                @else
+                    <img src="{{asset('public/images/noimage.jpg')}}" alt=""/>
+                @endif
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="profile-head">
+                <h5>{{$employer_profile->name}}</h5>
+                <h6>{{$employer_profile->email}}</h6>
+                <h6>{{$employer_profile->address}}</h6>
+                <h6>Cell : {{$employer_profile->contact_no}}</h6>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active text-dark" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Personal Info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Company Info</a>
+                    </li>
+                    {{-- <li class="nav-item">
+                        <a class="nav-link text-dark" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Academic</a>
+                    </li> --}}
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3 edit_profile">
+            <a href="{{route('jobseekerprofile.change')}}">
+                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+            </a>
+        </div>
     </div>
+    <div class="row">
+        <div class="col-md-4">
+            
+        </div>
+        <div class="col-md-8">
+            <div class="tab-content profile-tab" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Name</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{$employer_profile->name}}</p>
+                                </div>
+                            </div>
+                           
+                           
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Email</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{$employer_profile->email}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Phone</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{$employer_profile->contact_no}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Designation</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{$employer_profile->designation}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Address</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{$employer_profile->address}}</p>
+                                </div>
+                            </div>            
+                </div>
+                  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Company Name</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{$employer_profile->company_name}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Company Category</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{$employer_profile->industry}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Organization Type</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{$employer_profile->organization_type}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Year of Establishment</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{$employer_profile->years_of_establishment}}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Website URL</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{$employer_profile->website_url}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Company Description</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{$employer_profile->company_description}}</p>
+                                </div>
+                            </div>
+                    </div>
+
+                    
+            </div>
+        </div>
+    </div>     
 </div>
-</section>
 
-<!-- JavaScript Function to Confirm Deletion -->
-<script>
-    function deleteUser(userId) {
-        if (confirm("Are you sure you want to delete this user?")) {
-            event.preventDefault();
-            document.getElementById('delete-form-' + userId).submit();
-        }
-    }
-</script>
+@endsection 
 
-@endsection
+  
+
+

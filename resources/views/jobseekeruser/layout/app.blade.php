@@ -99,7 +99,7 @@
             <div class="clearfix"></div>
 
             <!-- menu profile quick info -->
-            <div class="profile clearfix">
+            <div class="profile clearfix pl-5">
               <div class="profile_info">
                 <span>Welcome,</span>
                 <h2>{{encryptor('decrypt', request()->session()->get('userName'))}}</h2>

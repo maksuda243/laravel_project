@@ -135,13 +135,13 @@
             <div class="clearfix"></div>
 
             <!-- menu profile quick info -->
-            <div class="profile clearfix">
+            <div class="profile clearfix pl-5">
               <div class="profile_pic">
-                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                {{-- <img src="images/img.jpg" alt="..." class="img-circle profile_img"> --}}
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <h2>{{encryptor('decrypt', request()->session()->get('userName'))}}</h2>
               </div>
               <div class="clearfix"></div>
             </div>
@@ -157,8 +157,8 @@
                   
                   <li><a><i class="fa fa-edit"></i> Profile <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{route('employer_profile.create')}}">Create Employer Profile</a></li>
-                      <li><a href="form_advanced.html">Advanced Components</a></li>
+                        <li><a href="{{route('employerprofile')}}"> Profile</a></li>
+                      <li><a href="{{route('employerprofile.change')}}">Update Profile</a></li>
                       <li><a href="form_validation.html">Form Validation</a></li>
                       <li><a href="form_wizards.html">Form Wizard</a></li>
                       <li><a href="form_upload.html">Form Upload</a></li>
@@ -186,9 +186,9 @@
                 <nav class="nav navbar-nav">
                 <ul class=" navbar-right">
                   <li class="nav-item dropdown open" style="padding-left: 15px;">
-                    <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                      John Doe
-                    </a>
+                    <a href="javascript:;" class="user-profile">
+                        {{encryptor('decrypt', request()->session()->get('userName'))}}
+                      </a>
                   </li>
                 </ul>
               </nav>

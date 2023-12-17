@@ -102,6 +102,15 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="col-md-4 col-12">
+                            <div class="form-group">
+                                <label for="national_id"> National ID</label>
+                                <input type="text" id="national_id" class="form-control" value="{{ old('national_id',$js_profile->national_id)}}" name="national_id">
+                                @if($errors->has('national_id'))
+                                    <span class="text-danger"> {{ $errors->first('national_id') }}</span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="col-md-4 col-12">
                             <div class="form-group">
@@ -152,7 +161,7 @@
                         </div>
                         <div class="col-md-4 col-12">
                             <div class="form-group">
-                                <label for="job_nature">Job Nature <i class="text-danger">*</i></label>
+                                <label for="job_nature"> Preferred Job Nature <i class="text-danger">*</i></label>
                                 <select id="job_nature" class="form-control" name="job_nature">
                                     <option value="">Select Job Nature</option>
                                     @forelse($job_nature as $nature)
@@ -167,7 +176,7 @@
                         </div>
                         <div class="col-md-4 col-12">
                             <div class="form-group">
-                                <label for="job_level">Job Level <i class="text-danger">*</i></label>
+                                <label for="job_level"> Preferred Job Level <i class="text-danger">*</i></label>
                                 <select id="job_level" class="form-control" name="job_level">
                                     <option value="">Select Job Level</option>
                                     @forelse($job_level as $level)
@@ -198,7 +207,7 @@
 
                         <div class="col-md-4 col-12">
                             <div class="form-group">
-                                <label for="job_category">Job Category <i class="text-danger">*</i></label>
+                                <label for="job_category"> Preferred Job Category <i class="text-danger">*</i></label>
                                 <select id="job_category" class="form-control" name="job_category">
                                     <option value="">Select Industry</option>
                                     @forelse($job_category as $cat)
@@ -214,7 +223,7 @@
 
                         <div class="col-md-4 col-12">
                             <div class="form-group">
-                                <label for="organization_type">Organization Type <i class="text-danger">*</i></label>
+                                <label for="organization_type"> Preferred Organization Type <i class="text-danger">*</i></label>
                                 <select id="organization_type" class="form-control" name="organization_type">
                                     <option value="">Select Organization Type</option>
                                     @forelse($org_type as $org)
@@ -230,7 +239,7 @@
 
                         <div class="col-md-4 col-12">
                             <div class="form-group">
-                                <label for="location"> Job Location <i class="text-danger">*</i></label>
+                                <label for="location"> Preferred Job Location <i class="text-danger">*</i></label>
                                 <select id="location" class="form-control" name="location">
                                     <option value="">Select Location</option>
                                     @forelse($location as $loc)
@@ -243,9 +252,19 @@
                                 @endif
                             </div>
                         </div>
+
                         <div class="col-md-4 col-12">
                             <div class="form-group">
-                                <label for="location"> Image</label>
+                                <label for="skill"> Skill</label>
+                                <input type="text" id="skill" class="form-control" value="{{ old('skill',$js_profile->skill)}}" name="skill">
+                                @if($errors->has('skill'))
+                                    <span class="text-danger"> {{ $errors->first('skill') }}</span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="form-group">
+                                <label for="location">Image</label>
                                 <input type="file" class="form-control" name="image">
                             </div>
                         </div>

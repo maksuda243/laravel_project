@@ -45,10 +45,12 @@
             border-radius: 1.5rem;
             width: 70%;
             padding: 2%;
+            margin-left: 60px;
             font-weight: 600;
-            color: #6c757d;
-            cursor: pointer;
+            color: #e83e8c;
+            /* cursor: pointer; */
         }
+        
         .proile-rating{
             font-size: 12px;
             color: #818182;
@@ -76,15 +78,17 @@
         }
         .profile-work p{
             font-size: 12px;
-            color: #818182;
+            color: black;
             font-weight: 600;
             margin-top: 10%;
+            margin-left: 60px;
         }
         .profile-work a{
             text-decoration: none;
             color: #495057;
             font-weight: 600;
             font-size: 14px;
+            padding-left: 50px;
         }
         .profile-work ul{
             list-style: none;
@@ -118,8 +122,8 @@
             <div class="profile-head">
                 <h5>{{$js_profile->name}}</h5>
                 <h6>{{$js_profile->email}}</h6>
-                <h6>136/D,RF Niketon,Muradpur,Chattogram</h6>
-                <h6>Cell : 0183546768</h6>
+                <h6>{{$js_profile->present_address}}</h6>
+                <h6>Cell : {{$js_profile->contact_no}}</h6>
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active text-dark" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Personal</a>
@@ -134,14 +138,16 @@
                 </ul>
             </div>
         </div>
-        <div class="col-md-3">
-            <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+        <div class="col-md-3 edit_profile">
+            <a href="{{route('jobseekerprofile.change')}}">
+                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+            </a>
         </div>
     </div>
     <div class="row">
         <div class="col-md-4">
-            <div class="profile-work">
-                <p>SKILLS</p>
+            <div class="profile-work pt-5">
+                <p><strong>SKILLS</strong></p>
                 @php $skills=explode(',',$js_profile->skill); @endphp
                 @if(count($skills) > 0 )
                     @foreach($skills as $sk)
@@ -158,7 +164,7 @@
                                     <label>Name</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>Kshiti123</p>
+                                    <p>{{$js_profile->name}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -166,7 +172,7 @@
                                     <label>Father's Name</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>Kshiti Ghelani</p>
+                                    <p>{{$js_profile->father_name}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -174,7 +180,7 @@
                                     <label>Mother's Name</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>Kshiti Ghelani</p>
+                                    <p>{{$js_profile->mother_name}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -182,7 +188,7 @@
                                     <label>Email</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>kshitighelani@gmail.com</p>
+                                    <p>{{$js_profile->email}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -190,7 +196,7 @@
                                     <label>Phone</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>123 456 7890</p>
+                                    <p>{{$js_profile->contact_no}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -198,7 +204,7 @@
                                     <label>Present Address</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>gshdjdgj</p>
+                                    <p>{{$js_profile->present_address}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -206,7 +212,7 @@
                                     <label>Permanent Address</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>gshdjdgj</p>
+                                    <p>{{$js_profile->permanent_address}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -214,7 +220,7 @@
                                     <label>Date of Birth </label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>gshdjdgj</p>
+                                    <p>{{$js_profile->date_of_birth}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -222,7 +228,7 @@
                                     <label>Gender </label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>gshdjdgj</p>
+                                    <p>{{$js_profile->gender}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -230,7 +236,7 @@
                                     <label>Religion </label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>gshdjdgj</p>
+                                    <p>{{$js_profile->religion}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -238,33 +244,26 @@
                                     <label>Nationality </label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>gshdjdgj</p>
+                                    <p>{{$js_profile->nationality}}</p>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Marital Status </label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>gshdjdgj</p>
-                                </div>
-                            </div>
+                            
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>National Id </label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>gshdjdgj</p>
+                                    <p>{{$js_profile->national_id}}</p>
                                 </div>
                             </div>
                 </div>
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Skills</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>safsdg,dfdsgfggbsfhf,sgfwsdghfh</p>
+                                    <p>{{$js_profile->skill}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -272,7 +271,7 @@
                                     <label>Preferred Job Nature</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>dgsghfsh</p>
+                                    <p>{{$js_profile->job_nature}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -280,7 +279,7 @@
                                     <label>Preferred Job level</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>230</p>
+                                    <p>{{$js_profile->job_level}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -288,7 +287,7 @@
                                     <label>Preferred Job Organization</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>Expert</p>
+                                    <p>{{$js_profile->organization_type}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -296,7 +295,7 @@
                                     <label>Preferred Job Location</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>fafag</p>
+                                    <p>{{$js_profile->location}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -304,16 +303,20 @@
                                     <label>Expected Salary</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>fafag</p>
+                                    <p>{{$js_profile->expected_salary}}</p>
                                 </div>
                             </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <label>Career Objective</label><br/>
-                            <p>Your detail descriptionYour detail descriptionYour detail descriptionYour detail descriptionYour detail description</p>
-                        </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Career Objective</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{$js_profile->career_objective}}</p>
+                                </div>
+                            </div>
                     </div>
-                </div>
+
+                    
             </div>
         </div>
     </div>     
@@ -324,85 +327,3 @@
   
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{{-- @extends('jobseekeruser.layout.app')
-
-@section('title',trans('Your Profile'))
-
-@section('content')
-<div class="row">
-    <div class="col-md-12 col-sm-12  ">
-        <div class="x_panel">
-            <div class="x_title">
-                <h2>Your Profile</h2>
-            </div>
-            <div class="x_content">
-                <div class="table-responsive">
-                    <table class="table table-bordered table-striped mb-0">
-                        <thead>
-                            <tr>
-                                <th scope="col">{{ __('#SL') }}</th>
-                                <th scope="col">{{ __('Name') }}</th>
-                                <th scope="col">{{ __("Father's Name") }}</th>
-                                <th scope="col">{{ __("Mother's Name") }}</th>
-                                <th scope="col">{{ __('Date of Birth') }}</th>
-                                <th scope="col">{{ __('Email') }}</th>
-                                <th scope="col">{{ __('Gender') }}</th>
-                                <th scope="col">{{ __('Religion') }}</th>
-                                <th scope="col">{{ __('Nationality') }}</th>
-                                <th scope="col">{{ __('Marital Status ') }}</th>
-                                <th scope="col">{{ __('National Id ') }}</th>
-                                <th scope="col">{{ __('Present Address') }}</th>
-                                <th scope="col">{{ __('Permanent Address') }}</th>
-                                <th scope="col">{{ __('Contact No.') }}</th>
-                                <th scope="col">{{ __('Expected Salary') }}</th>
-                                <th scope="col">{{ __('Job Nature') }}</th>
-                                <th scope="col">{{ __('Job Level') }}</th>
-                                <th scope="col">{{ __('Education') }}</th>
-                                <th scope="col">{{ __('Pefferred Job Category') }}</th>
-                                <th scope="col">{{ __('Pefferred Organization') }}</th>
-                                <th scope="col">{{ __('Pefferred Job Location') }}</th>
-                                <th scope="col">{{ __('Skill') }}</th>
-                                <th scope="col">{{ __('Image') }}</th>
-                                
-                                <th class="text-center">{{ __('Action') }}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php print_r($js_profile) ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</section>
-
-<!-- JavaScript Function to Confirm Deletion -->
-<script>
-    function deleteUser(userId) {
-        if (confirm("Are you sure you want to delete this user?")) {
-            event.preventDefault();
-            document.getElementById('delete-form-' + userId).submit();
-        }
-    }
-</script>
-
-@endsection --}}

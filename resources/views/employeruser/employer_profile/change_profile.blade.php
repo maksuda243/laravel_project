@@ -11,7 +11,7 @@
                 {{-- <h2>Employer Dashboard</h2> --}}
             </div>
              <div class="x_content">
-                            <form class="form" method="post" enctype="multipart/form-data" action="{{route('employer_profile.store')}}">
+                            <form class="form" method="post" enctype="multipart/form-data" action="{{route('employerprofile.update')}}">
                                 @csrf
                                 <div class="row">
 

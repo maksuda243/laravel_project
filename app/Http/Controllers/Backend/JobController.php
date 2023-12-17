@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Job;
+use App\Models\JobPost;
 use Illuminate\Http\Request;
 
 class JobController extends Controller
@@ -13,7 +13,7 @@ class JobController extends Controller
      */
     public function index()
     {
-        $job = Job::all();
+        $job = JobPost::all();
         return view('backend.job.index', compact('job'));
     }
     /**
@@ -28,7 +28,7 @@ class JobController extends Controller
     public function store(Request $request)
     {
         try{
-            $job=new Job();
+            $job=new JobPost();
             $job->employer_id=$request->employer_id;
             $job->service_type=$request->service_type;
             $job->no_of_vacancies=$request->no_of_vacancies;
@@ -58,7 +58,7 @@ class JobController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Job $job)
+    public function show(JobPost $job)
     {
         //
     }
@@ -73,11 +73,11 @@ class JobController extends Controller
     }
 
 
-    public function update(Request $request, Job $job)
+    public function update(Request $request, JobPost $job)
     {
         try {
           
-            $job = Job::find($job->id);
+            $job = JobPost::find($job->id);
     
             $job->employer_id=$request->employer_id;
             $job->service_type=$request->service_type;
@@ -105,7 +105,7 @@ class JobController extends Controller
         }
     }
 
-    public function destroy(job $job)
+    public function destroy(JobPost $job)
     {
         $job->delete();
         return redirect()->route('job.index')->with('success', 'educajobtion deleted successfully');
