@@ -129,7 +129,7 @@
                                         </a>
                                         <ul>
                                             <!-- Display other job details -->
-                                            <li>{{ $job->company }}</li>
+                                            <li>{{$job->job_title}}</li>
                                             <li><i class="fas fa-map-marker-alt"></i>{{ $job->location }}</li>
                                             <li>BDT{{ $job->salary }}</li>
                                         </ul>

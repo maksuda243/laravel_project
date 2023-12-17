@@ -38,6 +38,15 @@
                         </div>
                         <div class="col-md-4 col-12">
                             <div class="form-group">
+                                <label for="company_name">Company Name <i class="text-danger">*</i></label>
+                                <input type="text" id="company_name" class="form-control" value="{{ old('company_name')}}" name="company_name">
+                                @if($errors->has('company_name'))
+                                    <span class="text-danger"> {{ $errors->first('company_name') }}</span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="form-group">
                                 <label for="no_of_vacancies">No.of Vacancies <i class="text-danger">*</i></label>
                                 <input type="text" id="no_of_vacancies" class="form-control" value="{{ old('no_of_vacancies')}}" name="no_of_vacancies">
                                 @if($errors->has('no_of_vacancies'))

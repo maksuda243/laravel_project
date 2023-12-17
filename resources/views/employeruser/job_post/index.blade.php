@@ -14,6 +14,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">{{ __('#SL') }}</th>
+                                    <th scope="col">{{ __('Company Name') }}</th>
                                     <th scope="col">{{ __('No. of Vacancies') }}</th>
                                     <th scope="col">{{ __('Job Title') }}</th>
                                     <th scope="col">{{ __('Industry') }}</th>
@@ -30,9 +31,10 @@
                                 @forelse($data as $p)
                                 <tr>
                                     <td>{{ ++$loop->index }}</td>
+                                    <td>{{ $p->company_name }}</td>
                                     <td>{{ $p->no_of_vacancies }}</td>
                                     <td>{{ $p->job_title }}</td>
-                                    <td>{{ $p->jobCategory?->name}}</td>
+                                    <td>{{ $p->job_categories}}</td>
                                     <td>{{ $p->job_nature}}</td>
                                     <td>{{ $p->job_level}}</td>
                                     <td>{{ $p->location}}</td>

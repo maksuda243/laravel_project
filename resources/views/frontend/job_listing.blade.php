@@ -111,7 +111,7 @@
                                 </div>
                                 <!-- Count of Job list End -->
                                 <!-- single-job-content -->
-                                @forelse ($jobs as $job)
+                                @forelse ($joblist as $job)
                                     <div class="single-job-items mb-30">
                                         <div class="job-items">
                                             <div class="company-img">
@@ -122,8 +122,8 @@
                                                     <h4>{{$job->job_title}}</h4>
                                                 </a>
                                                 <ul>
-                                                    <li>{{$job->employer?->company_name}}</li>
-                                                    <li><i class="fas fa-map-marker-alt"></i>{{$job->employer?->address}}</li>
+                                                    <li>{{$job->company_name}}</li>
+                                                    <li><i class="fas fa-map-marker-alt"></i>{{$job->location}}</li>
                                                     <li>{{$job->salary}}</li>
                                                 </ul>
                                             </div>
