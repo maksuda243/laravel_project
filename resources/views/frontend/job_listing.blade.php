@@ -111,7 +111,7 @@
                                 </div>
                                 <!-- Count of Job list End -->
                                 <!-- single-job-content -->
-                                @forelse ($joblist as $job)
+                                @forelse ($jobs as $job)
                                     <div class="single-job-items mb-30">
                                         <div class="job-items">
                                             <div class="company-img">
