@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form" method="post" enctype="multipart/form-data" action="{{route('jobseeker_user.update',encryptor('encrypt',$user->id))}}">
+                            <form class="form" method="post" enctype="multipart/form-data" action="{{route('job.update',encryptor('encrypt',$job->id))}}">
                                 @csrf
                                 @method('PATCH')
-                                <input type="hidden" name="uptoken" value="{{encryptor('encrypt',$user->id)}}">
+                                <input type="hidden" name="uptoken" value="{{encryptor('encrypt',$job->id)}}">
                                 <div class="row">
                                 <div class="col-md-6 col-12">
                                         <div class="form-group">

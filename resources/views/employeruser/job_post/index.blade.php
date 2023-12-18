@@ -22,6 +22,7 @@
                                     <th scope="col">{{ __('Job Level') }}</th>
                                     <th scope="col">{{ __('Location') }}</th>
                                     <th scope="col">{{ __('Salary') }}</th>
+                                    <th scope="col">{{ __('Company Logo') }}</th>
                                     <th scope="col">{{ __('Start Date') }}</th>
                                     <th scope="col">{{ __('Deadline') }}</th>
                                     <th class="text-center">{{ __('Action') }}</th>
@@ -39,8 +40,10 @@
                                     <td>{{ $p->job_level}}</td>
                                     <td>{{ $p->location}}</td>
                                     <td>{{ $p->salary}}</td>
+                                    <td>{{ $p->image}}</td>
                                     <td>{{ $p->application_start_date}}</td>
                                     <td>{{ $p->application_deadline}}</td>
+                                    <td>{{ $p->status}}</td>
                                    
                                     <td class="text-center">
                                         <a class="text-dark" href="{{ route('job_post.edit', encryptor('encrypt', $p->id)) }}">

@@ -153,6 +153,12 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="col-md-4 col-12">
+                            <div class="form-group">
+                                <label for="location">Company Logo</label>
+                                <input type="file" class="form-control" name="image">
+                            </div>
+                        </div>
                         <div class="col-md-6 col-12">
                             <div class="form-group">
                                 <label for="requirements">Requirements</label>

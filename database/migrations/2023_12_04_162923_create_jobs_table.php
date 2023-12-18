@@ -14,18 +14,19 @@ return new class extends Migration
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
             $table->integer('employer_id');
-            $table->integer('service_type');
+            $table->string('service_type');
             $table->string('company_name')->nullable();
-            $table->integer('no_of_vacancies')->nullable();
+            $table->string('no_of_vacancies')->nullable();
             $table->string('job_title');
-            $table->integer('job_categories');
-            $table->integer('job_nature');
-            $table->integer('job_level');
-            $table->integer('organization_type');
-            $table->integer('location');
+            $table->string('job_categories');
+            $table->string('job_nature');
+            $table->string('job_level');
+            $table->string('organization_type');
+            $table->string('location');
             $table->text('requirments')->nullable();
             $table->text('special_instruction')->nullable();
             $table->string('salary')->nullable();
+            $table->string('image')->nullable();
             $table->date('application_start_date')->nullable();
             $table->date('application_deadline')->nullable();
             $table->integer('status')->default(0)->comment('0 pending,1 active, 2 inactive');

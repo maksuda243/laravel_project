@@ -27,7 +27,7 @@
                                 <th scope="col">{{ __('Salary') }}</th>
                                 <th scope="col">{{ __('Application Date') }}</th>
                                 <th scope="col">{{ __('Deadline') }}</th>
-                                <!-- <th class="text-center">{{ __('Action') }}</th> -->
+                                <th class="text-center">{{ __('Action') }}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,22 +46,23 @@
                                 <td>{{ $p->salary }}</td>
                                 <td>{{ $p->application_start_date }}</td>
                                 <td>{{ $p->application_deadline }}</td>
-                                <!-- <td class="text-center">
-                                    <a href="{{ route('jobseeker_user.edit', encryptor('encrypt', $p->id)) }}" class="btn btn-sm btn-warning">
+                                <td>{{ $p->status }}</td>
+                                <td class="text-center">
+                                    <a href="{{ route('job.edit', encryptor('encrypt', $p->id)) }}" class="btn btn-sm btn-warning">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <a href="javascript:void(0)" onclick="deleteUser('{{ $p->id }}')" class="btn btn-sm btn-danger">
+                                    <a href="javascript:void(0)" onclick="deleteJob('{{ $p->id }}')" class="btn btn-sm btn-danger">
                                         <i class="fa fa-trash"></i>
                                     </a>
-                                    <form id="delete-form-{{ $p->id }}" action="{{ route('jobseeker_user.destroy', encryptor('encrypt', $p->id)) }}" method="post" style="display: none;">
+                                    <form id="delete-form-{{ $p->id }}" action="{{ route('job.destroy', encryptor('encrypt', $p->id)) }}" method="post" style="display: none;">
                                         @csrf
                                         @method('delete')
                                     </form>
-                                </td> -->
+                                </td>
                             </tr>
                             @empty
                             <tr>
-                                <td colspan="8" class="text-center">{{ __('No User Found') }}</td>
+                                <td colspan="8" class="text-center">{{ __('No Job Found') }}</td>
                             </tr>
                             @endforelse
                         </tbody>
@@ -75,10 +76,10 @@
 
 <!-- JavaScript Function to Confirm Deletion -->
 <script>
-    function deleteUser(userId) {
-        if (confirm("Are you sure you want to delete this user?")) {
+    function deleteJob(jobId) {
+        if (confirm("Are you sure you want to delete this job post?")) {
             event.preventDefault();
-            document.getElementById('delete-form-' + userId).submit();
+            document.getElementById('delete-form-' + jobId).submit();
         }
     }
 </script>

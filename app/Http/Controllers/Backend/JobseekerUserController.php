@@ -44,7 +44,7 @@ class JobseekerUserController extends Controller
     public function edit(string $id)
     { 
         $userJobseeker = JobseekerUser::find($id);
-        return view('backend.jobseeker_user.edit', compact('jobLevel'));
+        return view('backend.jobseeker_user.edit', compact('userJobseeker'));
     }
 
     public function update(Request $request, JobseekerUser $userJobseeker)
