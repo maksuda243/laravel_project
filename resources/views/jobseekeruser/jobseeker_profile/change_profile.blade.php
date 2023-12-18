@@ -67,7 +67,7 @@
                                 <select id="gender" class="form-control" name="gender">
                                     <option value="">Select Gender</option>
                                     @forelse($gender as $g)
-                                        <option value="{{$g->id}}" @if(old('gender')==$g->id) selected @endif>{{$g->name}}</option>
+                                    <option value="{{ $g->id }}" @if(old('gender', $js_profile->gender) == $g->id) selected @endif>{{ $g->name }}</option>
                                     @empty
                                     @endforelse
                                 </select>
@@ -83,7 +83,7 @@
                                 <select id="religion" class="form-control" name="religion">
                                     <option value="">Select Religion</option>
                                     @forelse($religion as $r)
-                                        <option value="{{$r->id}}" @if(old('religion')==$r->id) selected @endif>{{$r->name}}</option>
+                                     <option value="{{ $r->id }}" @if(old('religion', $js_profile->religion) == $r->id) selected @endif>{{ $r->name }}</option>
                                     @empty
                                     @endforelse
                                 </select>
@@ -165,7 +165,7 @@
                                 <select id="job_nature" class="form-control" name="job_nature">
                                     <option value="">Select Job Nature</option>
                                     @forelse($job_nature as $nature)
-                                        <option value="{{$nature->id}}" @if(old('job_nature')==$nature->id) selected @endif>{{$nature->name}}</option>
+                                    <option value="{{ $nature->id }}" @if(old('job_nature', $js_profile->job_nature) == $nature->id) selected @endif>{{ $nature->name }}</option>
                                     @empty
                                     @endforelse
                                 </select>
@@ -180,7 +180,7 @@
                                 <select id="job_level" class="form-control" name="job_level">
                                     <option value="">Select Job Level</option>
                                     @forelse($job_level as $level)
-                                        <option value="{{$level->id}}" @if(old('job_level')==$level->id) selected @endif>{{$level->name}}</option>
+                                        <<option value="{{ $level->id }}" @if(old('job_level', $js_profile->job_level) == $level->id) selected @endif>{{ $level->name }}</option>
                                     @empty
                                     @endforelse
                                 </select>
@@ -195,7 +195,7 @@
                                 <select id="education" class="form-control" name="education">
                                     <option value="">Select Education</option>
                                     @forelse($education as $edu)
-                                        <option value="{{$edu->id}}" @if(old('education')==$edu->id) selected @endif>{{$edu->name}}</option>
+                                    <option value="{{ $edu->id }}" @if(old('education', $js_profile->education) == $edu->id) selected @endif>{{ $edu->name }}</option>
                                     @empty
                                     @endforelse
                                 </select>
@@ -211,7 +211,7 @@
                                 <select id="job_category" class="form-control" name="job_category">
                                     <option value="">Select Industry</option>
                                     @forelse($job_category as $cat)
-                                        <option value="{{$cat->id}}" @if(old('job_category')==$cat->id) selected @endif>{{$cat->name}}</option>
+                                    <option value="{{ $cat->id }}" @if(old('job_category', $js_profile->job_category) == $cat->id) selected @endif>{{ $cat->name }}</option>
                                     @empty
                                     @endforelse
                                 </select>
@@ -227,7 +227,7 @@
                                 <select id="organization_type" class="form-control" name="organization_type">
                                     <option value="">Select Organization Type</option>
                                     @forelse($org_type as $org)
-                                        <option value="{{$org->id}}" @if(old('organization_type')==$org->id) selected @endif>{{$org->name}}</option>
+                                    <option value="{{ $org->id }}" @if(old('organization_type', $js_profile->organization_type) == $org->id) selected @endif>{{ $org->name }}</option>
                                     @empty
                                     @endforelse
                                 </select>
@@ -243,7 +243,7 @@
                                 <select id="location" class="form-control" name="location">
                                     <option value="">Select Location</option>
                                     @forelse($location as $loc)
-                                        <option value="{{$loc->id}}" @if(old('location')==$loc->id) selected @endif>{{$loc->name}}</option>
+                                    <option value="{{ $loc->id }}" @if(old('location', $js_profile->location) == $loc->id) selected @endif>{{ $loc->name }}</option>
                                     @empty
                                     @endforelse
                                 </select>

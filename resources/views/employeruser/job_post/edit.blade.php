@@ -40,7 +40,7 @@
                         <div class="col-md-4 col-12">
                             <div class="form-group">
                                 <label for="no_of_vacancies">No.of Vacancies <i class="text-danger">*</i></label>
-                                <input type="text" id="no_of_vacancies" class="form-control" value="{{ old('no_of_vacancies')}}" name="no_of_vacancies">
+                                <input type="text" id="no_of_vacancies" class="form-control" value="{{ old('no_of_vacancies', $data->no_of_vacancies) }}" name="no_of_vacancies">
                                 @if($errors->has('no_of_vacancies'))
                                     <span class="text-danger"> {{ $errors->first('no_of_vacancies') }}</span>
                                 @endif
@@ -48,8 +48,17 @@
                         </div>
                         <div class="col-md-4 col-12">
                             <div class="form-group">
-                                <label for="job_title">Job Title</label>
-                                <input type="text" id="job_title" class="form-control" value="{{ old('job_title')}}" name="job_title">
+                                <label for="company_name">Company Name <i class="text-danger">*</i></label>
+                                <input type="text" id="company_name" class="form-control" value="{{ old('company_name', $data->company_name) }}" name="company_name">
+                                @if($errors->has('company_name'))
+                                    <span class="text-danger"> {{ $errors->first('company_name') }}</span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="form-group">
+                                <label for="job_title">Job Title <i class="text-danger">*</i></label>
+                                <input type="text" id="job_title" class="form-control" value="{{ old('job_title', $data->job_title) }}" name="job_title">
                                 @if($errors->has('job_title'))
                                     <span class="text-danger"> {{ $errors->first('job_title') }}</span>
                                 @endif
@@ -62,7 +71,7 @@
                                 <select id="job_categories" class="form-control" name="job_categories">
                                     <option value="">Select Job Category</option>
                                     @forelse($job_categories as $cat)
-                                    <option value="{{$cat->id}}" @if(old('job_categories',$data->service_type)==$cat->id) selected @endif>{{$cat->name}}</option>
+                                    <option value="{{$cat->id}}" @if(old('job_categories',$data->job_categories)==$cat->id) selected @endif>{{$cat->name}}</option>
                                     @empty
                                     @endforelse
                                 </select>
@@ -78,7 +87,7 @@
                                 <select id="job_nature" class="form-control" name="job_nature">
                                     <option value="">Select Job Nature</option>
                                     @forelse($job_nature as $nature)
-                                        <option value="{{$nature->id}}" @if(old('job_nature')==$nature->id) selected @endif>{{$nature->name}}</option>
+                                    <option value="{{$nature->id}}" @if(old('job_nature',$data->job_nature)==$nature->id) selected @endif>{{$nature->name}}</option>
                                     @empty
                                     @endforelse
                                 </select>
@@ -94,7 +103,7 @@
                                 <select id="job_level" class="form-control" name="job_level">
                                     <option value="">Select Job Level</option>
                                     @forelse($job_level as $level)
-                                        <option value="{{$level->id}}" @if(old('job_level')==$level->id) selected @endif>{{$level->name}}</option>
+                                    <option value="{{$level->id}}" @if(old('job_level',$data->job_level)==$level->id) selected @endif>{{$level->name}}</option>
                                     @empty
                                     @endforelse
                                 </select>
@@ -110,7 +119,7 @@
                                 <select id="organization_type" class="form-control" name="organization_type">
                                     <option value="">Select Organization Type</option>
                                     @forelse($organization_type as $org)
-                                        <option value="{{$org->id}}" @if(old('organization_type')==$org->id) selected @endif>{{$org->name}}</option>
+                                    <option value="{{$org->id}}" @if(old('organization_type',$data->organization_type)==$org->id) selected @endif>{{$org->name}}</option>
                                     @empty
                                     @endforelse
                                 </select>
@@ -126,7 +135,7 @@
                                 <select id="location" class="form-control" name="location">
                                     <option value="">Select Location</option>
                                     @forelse($location as $loc)
-                                        <option value="{{$loc->id}}" @if(old('location')==$loc->id) selected @endif>{{$loc->name}}</option>
+                                    <option value="{{$loc->id}}" @if(old('location',$data->location)==$loc->id) selected @endif>{{$loc->name}}</option>
                                     @empty
                                     @endforelse
                                 </select>
@@ -139,16 +148,22 @@
                         <div class="col-md-4 col-12">
                             <div class="form-group">
                                 <label for="salary">Salary</label>
-                                <input type="text" id="salary" class="form-control" value="{{ old('salary')}}" name="salary">
+                                <input type="text" id="salary" class="form-control" value="{{ old('salary', $data->salary) }}" name="salary">
                                 @if($errors->has('salary'))
                                     <span class="text-danger"> {{ $errors->first('salary') }}</span>
                                 @endif
                             </div>
                         </div>
+                        <div class="col-md-4 col-12">
+                            <div class="form-group">
+                                <label for="location">Company Logo</label>
+                                <input type="file" class="form-control" name="image">
+                            </div>
+                        </div>
                         <div class="col-md-6 col-12">
                             <div class="form-group">
                                 <label for="requirements">Requirements</label>
-                                <textarea id="requirements" class="form-control summernote" name="requirements">{{ old('requirements') }}</textarea>
+                                <textarea id="requirements" class="form-control summernote" name="requirements">{{ old('requirements',$data->requirements) }}</textarea>
                                 @if($errors->has('requirements'))
                                     <span class="text-danger">{{ $errors->first('requirements') }}</span>
                                 @endif

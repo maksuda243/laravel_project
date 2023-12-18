@@ -53,6 +53,11 @@ class JobPostController extends Controller
         $data->application_start_date=$request->application_start_date;
         $data->application_deadline=$request->application_deadline;
       
+        if($request->hasFile('image')){
+            $imageName = rand(111,999).time().'.'.$request->image->extension();
+            $request->image->move(public_path('uploads/employer_users'), $imageName);
+            $data->image=$imageName;
+        }
         if($data->save())
             return redirect()->route('job_post.index')->with('success','Successfully saved');
         else

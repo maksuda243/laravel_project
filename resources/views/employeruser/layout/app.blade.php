@@ -140,8 +140,8 @@
                 {{-- <img src="images/img.jpg" alt="..." class="img-circle profile_img"> --}}
               </div>
               <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>{{encryptor('decrypt', request()->session()->get('userName'))}}</h2>
+                <span><strong>Welcome,</strong></span>
+                <strong><h2>{{encryptor('decrypt', request()->session()->get('userName'))}}</h2></strong>
               </div>
               <div class="clearfix"></div>
             </div>
@@ -152,21 +152,23 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3>General</h3>
+                {{-- <h3>General</h3> --}}
                 <ul class="nav side-menu">
                   
-                  <li><a><i class="fa fa-edit"></i> Profile <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-edit"></i>MANAGE PROFILE <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                         <li><a href="{{route('employerprofile')}}"> Profile</a></li>
                       <li><a href="{{route('employerprofile.change')}}">Update Profile</a></li>
-                      <li><a href="form_validation.html">Form Validation</a></li>
+                      {{-- <li><a href="form_validation.html">Form Validation</a></li>
                       <li><a href="form_wizards.html">Form Wizard</a></li>
                       <li><a href="form_upload.html">Form Upload</a></li>
-                      <li><a href="form_buttons.html">Form Buttons</a></li>
+                      <li><a href="form_buttons.html">Form Buttons</a></li> --}}
                     </ul>
                   </li>
-                  <li><a href="{{route('job_post.create')}}"><i class="fa fa-home"></i> Post a Job </a></li>
-                  <li><a href="{{route('job_post.index')}}"><i class="fa fa-home"></i> Job List</a></li>
+                  <li><a href="{{route('job_post.create')}}"><i class="fa fa-briefcase"></i> POST A JOB </a></li>
+                  <li><a href="{{route('job_post.index')}}"><i class="fa fa-list"></i> JOB LIST</a></li>
+                  <li><a href="{{route('job_post.index')}}"><i class="fa fa-users"></i> JOB APPLICATION</a></li>
+                  <li><a href="{{route('job_post.index')}}"><i class="fa fa-credit-card"></i>PAYMENT HISTORY</a></li>
                 </ul>
               </div>
 
@@ -186,8 +188,8 @@
                 <nav class="nav navbar-nav">
                 <ul class=" navbar-right">
                   <li class="nav-item dropdown open" style="padding-left: 15px;">
-                    <a href="javascript:;" class="user-profile">
-                        {{encryptor('decrypt', request()->session()->get('userName'))}}
+                    <a href="javascript:;" class="user-profile pr-4">
+                       <strong>{{encryptor('decrypt', request()->session()->get('userName'))}}</strong> 
                       </a>
                   </li>
                 </ul>

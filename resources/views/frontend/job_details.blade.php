@@ -94,13 +94,15 @@
                               <li>Salary :  <span>$7,800 yearly</span></li>
                               <li>Application date : <span>12 Sep 2020</span></li>
                           </ul>
-                        @if(request()->session()->get('isJobseeker'))
-                            <div class="apply-btn2">
-                                <a href="#" class="btn">Apply Now</a>
-                            </div>
-                        @else
-                            <b>You have to login as job seekee to apply this job</b>
-                        @endif
+                          @if(request()->session()->get('isJobseeker'))
+                          <div class="apply-btn2">
+                              <a href="#" class="btn">Apply Now</a>
+                          </div>
+                      @else
+                          <div class="alert alert-warning" role="alert">
+                              <strong>You have to log in as a job seeker to apply for this job.</strong>
+                          </div>
+                      @endif
                        </div>
                         <div class="post-details4  mb-50">
                             <!-- Small Section Tittle -->

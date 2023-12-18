@@ -102,7 +102,7 @@
             <div class="profile clearfix pl-5">
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>{{encryptor('decrypt', request()->session()->get('userName'))}}</h2>
+                <strong><h2>{{encryptor('decrypt', request()->session()->get('userName'))}}</h2></strong>
               </div>
               <div class="clearfix"></div>
             </div>
@@ -165,7 +165,7 @@
                 <ul class=" navbar-right">
                   <li class="nav-item dropdown open" style="padding-left: 15px;">
                     <a href="javascript:;" class="user-profile">
-                      {{encryptor('decrypt', request()->session()->get('userName'))}}
+                     <strong>{{encryptor('decrypt', request()->session()->get('userName'))}}</strong> 
                     </a>
                   </li>
                 </ul>

@@ -119,12 +119,12 @@
                                 <div class="job-items">
                                     <!-- Display job details -->
                                     <div class="company-img">
-                                        <a href="{{ route('joblisting', $job->id) }}">
+                                        <a href="{{ route('jobdetail', $job->id) }}">
                                             <img src="{{ asset($job->image) }}" alt="{{ $job->title }}">
                                         </a>
                                     </div>
                                     <div class="job-tittle">
-                                        <a href="{{ route('joblisting', $job->id) }}">
+                                        <a href="{{ route('jobdetail', $job->id) }}">
                                             <h4>{{ $job->job_title }}</h4>
                                         </a>
                                         <ul>
@@ -137,7 +137,7 @@
                                 </div>
                                 <div class="items-link f-right">
                                     <!-- Display more job details -->
-                                    <a href="{{ route('joblisting', $job->id) }}">{{ $job->job_nature }}</a>
+                                    <a href="{{ route('jobdetail', $job->id) }}">{{ $job->job_nature }}</a>
                                 </div>
                             </div>
                         @endforeach

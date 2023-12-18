@@ -22,10 +22,16 @@ class EmployerProfileController extends Controller
 
     public function change_profile()
     {
+        $employer_profile = EmployerProfile::find(currentUserId()); 
+        if (!$employer_profile) {
+            $employer_profile = new EmployerProfile();  
+        }
+
         $orgtype = OrgType::get();
         $location = Location::get();
         $jobcategory = JobCategory::get();
-        return view('employeruser.employer_profile.change_profile',compact('orgtype','location','jobcategory'));
+        
+        return view('employeruser.employer_profile.change_profile', compact('employer_profile', 'orgtype', 'location', 'jobcategory'));
     }
 
     public function update(Request $request,)
@@ -36,7 +42,7 @@ class EmployerProfileController extends Controller
         $data->email=$request->email;
         $data->contact_no=$request->contact_no;
         $data->designation=$request->designation;
-        $data->industry=$request->industry;
+        $data->job_categories=$request->job_categories;
         $data->organization_type=$request->organization_type;
         $data->location=$request->location;
         $data->company_description=$request->company_description;
@@ -49,7 +55,7 @@ class EmployerProfileController extends Controller
             $data->image=$imageName;
         }
         $data->save();
-        return redirect('employerprofile');
+        return redirect('employer/employer_profile');
     }
     
     public function destroy(EmployerProfile $employer_profile)

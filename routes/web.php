@@ -132,7 +132,7 @@ Route::get('/blog',[BlogController::class,'index']);
 Route::get('/blogdetails',[BlogDetailsController::class,'index']);
 Route::get('/contact',[ContactController::class,'index']);
 Route::get('/elements',[ElementsController::class,'index']);
-Route::get('/jobdetails',[JobDetailsController::class,'index']);
+Route::get('/jobdetails',[JobDetailsController::class,'index'])->name('jobdetail');
 Route::get('/joblisting',[JobListingController::class,'index'])->name('joblisting');
 Route::get('/service',[ServiceController::class,'index']);
    
