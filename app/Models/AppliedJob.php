@@ -5,14 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class JobNature extends Model
+class AppliedJob extends Model
 {
     use HasFactory;
-
-    protected $table = 'job_natures';
-
-   
-    
-
-  
+    protected $table = 'applied_jobs';
 }
