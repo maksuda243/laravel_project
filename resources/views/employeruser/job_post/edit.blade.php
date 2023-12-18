@@ -62,7 +62,7 @@
                                 <select id="job_categories" class="form-control" name="job_categories">
                                     <option value="">Select Job Category</option>
                                     @forelse($job_categories as $cat)
-                                        <option value="{{$cat->id}}" @if(old('job_categories')==$cat->id) selected @endif>{{$cat->name}}</option>
+                                    <option value="{{$cat->id}}" @if(old('job_categories',$data->service_type)==$cat->id) selected @endif>{{$cat->name}}</option>
                                     @empty
                                     @endforelse
                                 </select>
