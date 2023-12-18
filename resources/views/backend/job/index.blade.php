@@ -18,6 +18,7 @@
                                 <th scope="col">{{ __('Employer') }}</th>
                                 <th scope="col">{{ __('Service Type') }}</th>
                                 <th scope="col">{{ __('No.of.Vacancies') }}</th>
+                                <th scope="col">{{ __('Company Name') }}</th>
                                 <th scope="col">{{ __('Job Title') }}</th>
                                 <th scope="col">{{ __('Industry') }}</th>
                                 <th scope="col">{{ __('Job Nature') }}</th>
@@ -27,6 +28,7 @@
                                 <th scope="col">{{ __('Salary') }}</th>
                                 <th scope="col">{{ __('Application Date') }}</th>
                                 <th scope="col">{{ __('Deadline') }}</th>
+                                <th scope="col">{{ __('Status') }}</th>
                                 <th class="text-center">{{ __('Action') }}</th>
                             </tr>
                         </thead>
@@ -37,8 +39,9 @@
                                 <td>{{ $p->employee?->name }}</td>
                                 <td>{{ $p->service_type }}</td>
                                 <td>{{ $p->no_of_vacancies }}</td>
+                                <td>{{ $p->company_name }}</td>
                                 <td>{{ $p->job_title }}</td>
-                                <td>{{ $p->job_category }}</td>
+                                <td>{{ $p->job_categories }}</td>
                                 <td>{{ $p->job_nature }}</td>
                                 <td>{{ $p->job_level }}</td>
                                 <td>{{ $p->organization_type }}</td>
