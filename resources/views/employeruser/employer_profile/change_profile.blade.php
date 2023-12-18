@@ -18,7 +18,8 @@
                                     <div class="col-md-4 col-12">
                                         <div class="form-group">
                                             <label for="name">Name</label>
-                                            <input type="text" id="name" class="form-control" value="{{ old('name')}}" name="name">
+         return view('employeruser.employer_profile.index', ['employer_profile' => $employer_profile]);
+                                            <input type="text" id="name" class="form-control" value="{{ old('name',$employer_profile->name)}}" name="name">
                                             @if($errors->has('name'))
                                                 <span class="text-danger"> {{ $errors->first('name') }}</span>
                                             @endif
@@ -147,6 +148,12 @@
                                             @endif
                                         </div>
                                     </div>
+                                    <div class="col-md-4 col-12">
+                                    <div class="form-group">
+                                     <label for="location">Image</label>
+                                     <input type="file" class="form-control" name="image">
+                                     </div>
+                        </div>
  
                                 <div class="row">
                                     <div class="col-12 d-flex justify-content-end">
