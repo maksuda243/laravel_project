@@ -138,7 +138,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-md-3 edit_profile">
+        <div class="col-md-3 edit_profile pt-5">
             <a href="{{route('jobseekerprofile.change')}}">
                 <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
             </a>
