@@ -12,6 +12,8 @@ use App\Models\JobNature;
 use App\Models\Education;
 use App\Models\Religion;
 use App\Models\JobseekerProfile;
+
+use App\Models\AppliedJob;
 use Illuminate\Http\Request;
 use Exception;
 use File;
@@ -94,8 +96,9 @@ class JobseekerprofileController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function appliedJob()
     {
-        //
+        $already_apply=AppliedJob::where('jobseeker_id',currentUserId())->get();
+        return view('jobseekeruser.applied_job',compact('already_apply'));
     }
 }

@@ -25,6 +25,7 @@
             <link rel="stylesheet" href="{{asset('public/frontend/assets/css/dropdown.css')}}">
           
             <link rel="stylesheet" href="{{asset('public/frontend/assets/css/style.css')}}">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"/>
    </head>
 
    <body>

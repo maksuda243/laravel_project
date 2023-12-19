@@ -96,7 +96,11 @@
                           </ul>
                           @if(request()->session()->get('isJobseeker'))
                           <div class="apply-btn2">
-                              <a href="#" class="btn">Apply Now</a>
+                            @if($already_apply)
+                              <a href="" class="btn disabled">Already Applied</a>
+                            @else
+                            <a href="{{route('job_apply')}}?jobid={{encryptor('encrypt',$job->id)}}" class="btn">Apply Now</a>
+                            @endif
                           </div>
                       @else
                           <div class="alert alert-warning" role="alert">

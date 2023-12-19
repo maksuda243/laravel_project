@@ -129,7 +129,7 @@
                                                 <a href="#"><img src="{{asset('public/uploads/employer/companylogo/'.$job->employer?->image)}}" alt=""></a>
                                             </div>
                                             <div class="job-tittle job-tittle2">
-                                                <a href="{{url('/jobdetails')}}">
+                                                <a href="{{url('/jobdetails')}}?jobid={{encryptor('encrypt',$job->id)}}">
                                                     <h4>{{$job->job_title}}</h4>
                                                 </a>
                                                 <ul>

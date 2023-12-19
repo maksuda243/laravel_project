@@ -167,6 +167,24 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- Jquery Plugins, main Jquery -->	
     <script src="{{asset('public/frontend/assets/js/plugins.js')}}"></script>
     <script src="{{asset('public/frontend/assets/js/main.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" ></script>
+		
+  <!-- endinject -->
+    <script>  
+		@if(Session::has('success'))  
+				toastr.success("{{ Session::get('success') }}");  
+		@endif  
+		@if(Session::has('info'))  
+				toastr.info("{{ Session::get('info') }}");  
+		@endif  
+		@if(Session::has('warning'))  
+				toastr.warning("{{ Session::get('warning') }}");  
+		@endif  
+		@if(Session::has('error'))  
+				toastr.error("{{ Session::get('error') }}");  
+		@endif  
+		</script>
+
     @stack('scripts')
 </body>
 </html>

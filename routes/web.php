@@ -69,6 +69,7 @@ Route::post('jobseekeruser/login', [jsuserauth::class,'signInCheck'])->name('job
 Route::get('jobseekeruser/logout', [jsuserauth::class,'singOut'])->name('jobseekeruser.LogOut');
 
 Route::middleware(['checkJobseekerAuth'])->prefix('jobseeker')->group(function(){
+  Route::get('appliedJob',[JobseekerprofileController::class,'appliedJob'])->name('appliedJob');
   Route::get('jobseeker_profile',[JobseekerprofileController::class,'index'])->name('jobseekerprofile');
   Route::get('jobseeker_profile/change',[JobseekerprofileController::class,'change_profile'])->name('jobseekerprofile.change');
   Route::post('jobseeker_profile/update',[JobseekerprofileController::class,'update'])->name('jobseekerprofile.update');
@@ -133,6 +134,7 @@ Route::get('/blogdetails',[BlogDetailsController::class,'index']);
 Route::get('/contact',[ContactController::class,'index']);
 Route::get('/elements',[ElementsController::class,'index']);
 Route::get('/jobdetails',[JobDetailsController::class,'index'])->name('jobdetail');
+Route::get('/job_apply',[JobDetailsController::class,'job_apply'])->name('job_apply');
 Route::get('/joblisting',[JobListingController::class,'index'])->name('joblisting');
 Route::get('/service',[ServiceController::class,'index']);
    
