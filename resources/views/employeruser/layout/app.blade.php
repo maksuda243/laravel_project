@@ -167,8 +167,7 @@
                   </li>
                   <li><a href="{{route('job_post.create')}}"><i class="fa fa-briefcase"></i> POST A JOB </a></li>
                   <li><a href="{{route('job_post.index')}}"><i class="fa fa-list"></i> JOB LIST</a></li>
-                  <li><a href="{{route('job_post.index')}}"><i class="fa fa-users"></i> JOB APPLICATION</a></li>
-                  <li><a href="{{route('job_post.index')}}"><i class="fa fa-credit-card"></i>PAYMENT HISTORY</a></li>
+                  <li><a href="{{route('appliedJob')}}"><i class="fa fa-users"></i> JOB APPLICATION</a></li>
                 </ul>
               </div>
 

@@ -78,20 +78,7 @@ class JobController extends Controller
         try {
           
             $job = JobPost::find($job->id);
-    
-            $job->employer_id=$request->employer_id;
-            $job->service_type=$request->service_type;
-            $job->no_of_vacancies=$request->no_of_vacancies;
-            $job->job_title=$request->job_title;
-            $job->job_category=$request->job_category;
-            $job->job_nature=$request->job_nature;
-            $job->job_level=$request->job_level;
-            $job->organization_type=$request->organization_type;
-            $job->location=$request->location;
-            $job->special_instruction=$request->special_instruction;
-            $job->salary=$request->salary;
-            $job->application_start_date=$request->application_start_date;
-            $job->application_deadline=$request->application_deadline;
+            $job->status=$request->status;
          
     
             if ($job->save()) {

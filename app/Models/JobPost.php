@@ -11,7 +11,7 @@ class JobPost extends Model
     protected $table = 'jobs';
 
     public function employer() { 
-      return $this->belongsTo(EmployerUser::class, 'employer_id');
+        return $this->belongsTo(EmployerUser::class, 'employer_id');
     }
 
     public function serviceType() {

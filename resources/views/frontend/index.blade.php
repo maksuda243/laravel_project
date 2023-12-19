@@ -64,7 +64,7 @@
                             </div>
                             <div class="services-cap">
                                <h5><a href="{{route('joblisting')}}?job_categories={{encryptor('encrypt',$cat->id)}}">{{$cat->name}}</a></h5>
-                                <span>({{$cat->jobs->count()}})</span>
+                                <span>({{$cat->jobs->where('status',1)->count()}})</span>
                             </div>
                         </div>
                     </div>

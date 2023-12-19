@@ -85,7 +85,10 @@ Route::post('employeruser/login', [empuserauth::class,'signInCheck'])->name('emp
 Route::get('employeruser/logout', [empuserauth::class,'singOut'])->name('employeruser.LogOut');
 
 Route::middleware(['checkEmployerAuth'])->prefix('employer')->group(function(){
-Route::get('employeruser/dashboard', [empuserdashboard::class,'index'])->name('empuserdashboard');
+  Route::get('appliedJob',[JobPostController::class,'appliedJob'])->name('appliedJob');
+  Route::get('appliedJob_edit/{id}',[JobPostController::class,'appliedJob_edit'])->name('appliedJob_edit');
+  Route::post('appliedJob_update/{id}',[JobPostController::class,'appliedJob_update'])->name('appliedJob_update');
+  Route::get('employeruser/dashboard', [empuserdashboard::class,'index'])->name('empuserdashboard');
   Route::resource('job_post',JobPostController::class);
   Route::get('employer_profile',[EmployerProfileController::class,'index'])->name('employerprofile');
   Route::get('employer/change',[EmployerProfileController::class,'change_profile'])->name('employerprofile.change');

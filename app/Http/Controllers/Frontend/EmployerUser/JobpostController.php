@@ -11,6 +11,7 @@ use App\Models\JobNature;
 use App\Models\JobLevel;
 use App\Models\OrgType;
 use App\Models\Location;
+use App\Models\AppliedJob;
 use Illuminate\Http\Request;
 use Exception;
 
@@ -113,4 +114,37 @@ class JobPostController extends Controller
         }
     }
 
+
+    public function appliedJob()
+    {
+        $jobid=JobPost::where('employer_id',currentUserId())->pluck('id');
+        $applied=AppliedJob::whereIn('job_id',$jobid)->get();
+        return view('employeruser.applied_job',compact('applied'));
+    }
+
+    public function appliedJob_edit(string $id)
+    {
+        $data = AppliedJob::find(encryptor('decrypt',$id));
+        $data->seen=1;
+        $data->save();
+        
+        $js_profile=$data->jobseeker;
+        return view('employeruser.applied_job_edit', compact('js_profile','data'));
+    }
+
+    public function appliedJob_update(Request $request, $id)
+    {
+        try{
+            $data=AppliedJob::findOrFail(encryptor('decrypt',$id));
+            $data->status=$request->status;
+            if($data->save())
+                return redirect()->route('appliedJob')->with('success','Successfully saved');
+            else
+                return redirect()->back()->withInput()->with('error','Please try again');
+            
+        }catch(Exception $e){
+            dd($e);
+            return redirect()->back()->withInput()->with('error','Please try again');
+        }
+    }
 }

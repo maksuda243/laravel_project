@@ -15,7 +15,7 @@ class JobListingController extends Controller
 {
     public function index(Request $r)
     {
-        $jobs=JobPost::where('application_start_date','<=',date('y-m-d'))->where('application_deadline','>=',date('y-m-d'));
+        $jobs=JobPost::where('application_start_date','<=',date('y-m-d'))->where('application_deadline','>=',date('y-m-d'))->where('status',1);
         
         if($r->query()){
             foreach($r->query() as $k=>$v){

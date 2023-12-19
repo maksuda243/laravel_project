@@ -11,60 +11,23 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form" method="post" enctype="multipart/form-data" action="{{route('job.update',encryptor('encrypt',$job->id))}}">
+                            <form class="form" method="post" enctype="multipart/form-data" action="{{route('job.update',$job->id)}}">
                                 @csrf
                                 @method('PATCH')
                                 <input type="hidden" name="uptoken" value="{{encryptor('encrypt',$job->id)}}">
                                 <div class="row">
-                                <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="name">Name<i class="text-danger">*</i></label>
-                                            <input type="text" id="name" class="form-control" value="{{ old('name')}}" name="name">
-                                            @if($errors->has('name'))
-                                                <span class="text-danger"> {{ $errors->first('name') }}</span>
-                                            @endif
-                                        </div>
-                                </div>
-                                <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="email">Email <i class="text-danger">*</i></label>
-                                            <input type="text" id="email" class="form-control" value="{{ old('email')}}" name="email">
-                                            @if($errors->has('email'))
-                                                <span class="text-danger"> {{ $errors->first('email') }}</span>
-                                            @endif
-                                        </div>
-                                </div>
-                                
-                                <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="EmailAddress">Email <i class="text-danger">*</i></label>
-                                            <input type="text" id="EmailAddress" class="form-control" value="{{ old('EmailAddress',$user->email)}}" name="EmailAddress">
-                                            @if($errors->has('EmailAddress'))
-                                                <span class="text-danger"> {{ $errors->first('EmailAddress') }}</span>
-                                            @endif
-                                        </div>
-                                </div>
-                                <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="contact_no">Contact Number<i class="text-danger">*</i></label>
-                                            <input type="text" id="contact_no" class="form-control" value="{{ old('contact_no')}}" name="contact_no">
-                                            @if($errors->has('contact_no'))
-                                                <span class="text-danger"> {{ $errors->first('contact_no') }}</span>
-                                            @endif
-                                        </div>
-                                </div>
-                                   
-                                <div class="col-md-6 col-12">
+                                    <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="status">Status</label>
                                             <select id="status" class="form-control" name="status">
-                                                <option value="1" @if(old('status',$user->status)==1) selected @endif>Active</option>
-                                                <option value="0" @if(old('status',$user->status)==0) selected @endif>Inactive</option>
+                                                <option value="1" @if(old('status',$job->status)==1) selected @endif>Approved</option>
+                                                <option value="0" @if(old('status',$job->status)==0) selected @endif>Not Approved</option>
                                             </select>
                                             @if($errors->has('status'))
                                                 <span class="text-danger"> {{ $errors->first('status') }}</span>
                                             @endif
                                         </div>
+                                    </div>
                                 </div>
                                 
                                 <div class="row">

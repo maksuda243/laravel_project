@@ -36,22 +36,22 @@
                             @forelse($job as $p)
                             <tr>
                                 <td>{{ ++$loop->index }}</td>
-                                <td>{{ $p->employee?->name }}</td>
-                                <td>{{ $p->service_type }}</td>
+                                <td>{{ $p->employer?->name }}</td>
+                                <td>{{ $p->serviceType?->name }}</td>
                                 <td>{{ $p->no_of_vacancies }}</td>
-                                <td>{{ $p->company_name }}</td>
+                                <td>{{ $p->employer?->company_name }}</td>
                                 <td>{{ $p->job_title }}</td>
-                                <td>{{ $p->job_categories }}</td>
-                                <td>{{ $p->job_nature }}</td>
+                                <td>{{ $p->jobCategory?->name }}</td>
+                                <td>{{ $p->jobNature?->name }}</td>
                                 <td>{{ $p->job_level }}</td>
                                 <td>{{ $p->organization_type }}</td>
                                 <td>{{ $p->location }}</td>
                                 <td>{{ $p->salary }}</td>
                                 <td>{{ $p->application_start_date }}</td>
                                 <td>{{ $p->application_deadline }}</td>
-                                <td>{{ $p->status }}</td>
+                                <td>{{ $p->status?"Approved":"Not Approved" }}</td>
                                 <td class="text-center">
-                                    <a href="{{ route('job.edit', encryptor('encrypt', $p->id)) }}" class="btn btn-sm btn-warning">
+                                    <a href="{{ route('job.edit', $p->id) }}" class="btn btn-sm btn-warning">
                                         <i class="fa fa-edit"></i>
                                     </a>
                                     <a href="javascript:void(0)" onclick="deleteJob('{{ $p->id }}')" class="btn btn-sm btn-danger">

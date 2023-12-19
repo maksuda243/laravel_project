@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->integer('job_id');
             $table->integer('jobseeker_id');
-            $table->string('status');
+            $table->string('seen')->default(0);
+            $table->string('status')->default(0);
             $table->timestamps();
         });
     }
