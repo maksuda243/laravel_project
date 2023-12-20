@@ -38,15 +38,6 @@
                         </div>
                         <div class="col-md-4 col-12">
                             <div class="form-group">
-                                <label for="company_name">Company Name <i class="text-danger">*</i></label>
-                                <input type="text" id="company_name" class="form-control" value="{{ old('company_name')}}" name="company_name">
-                                @if($errors->has('company_name'))
-                                    <span class="text-danger"> {{ $errors->first('company_name') }}</span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-12">
-                            <div class="form-group">
                                 <label for="no_of_vacancies">No.of Vacancies <i class="text-danger">*</i></label>
                                 <input type="text" id="no_of_vacancies" class="form-control" value="{{ old('no_of_vacancies')}}" name="no_of_vacancies">
                                 @if($errors->has('no_of_vacancies'))
@@ -159,12 +150,30 @@
                                 <input type="file" class="form-control" name="image">
                             </div>
                         </div>
+                        <div class="col-md-4 col-12">
+                            <div class="form-group">
+                                <label for="application_start_date">Application Start Date</label>
+                                <input type="date" id="application_start_date" class="form-control" value="{{ old('application_start_date')}}" name="application_start_date">
+                                @if($errors->has('application_start_date'))
+                                    <span class="text-danger"> {{ $errors->first('application_start_date') }}</span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="form-group">
+                                <label for="application_deadline">application_deadline</label>
+                                <input type="date" id="application_deadline" class="form-control" value="{{ old('application_deadline')}}" name="application_deadline">
+                                @if($errors->has('application_deadline'))
+                                    <span class="text-danger"> {{ $errors->first('application_deadline') }}</span>
+                                @endif
+                            </div>
+                        </div>
                         <div class="col-md-6 col-12">
                             <div class="form-group">
-                                <label for="requirements">Requirements</label>
-                                <textarea id="requirements" class="form-control summernote" name="requirements">{{ old('requirements') }}</textarea>
-                                @if($errors->has('requirements'))
-                                    <span class="text-danger">{{ $errors->first('requirements') }}</span>
+                                <label for="requirments">Requirements</label>
+                                <textarea id="requirments" class="form-control summernote" name="requirments">{{ old('requirments') }}</textarea>
+                                @if($errors->has('requirments'))
+                                    <span class="text-danger">{{ $errors->first('requirments') }}</span>
                                 @endif
                             </div>
                         </div>
@@ -179,25 +188,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4 col-12">
-                            <div class="form-group">
-                                <label for="application_start_date">Application Start Date</label>
-                                <input type="date" id="application_start_date" class="form-control" value="{{ old('application_start_date')}}" name="application_start_date">
-                                @if($errors->has('application_start_date'))
-                                    <span class="text-danger"> {{ $errors->first('application_start_date') }}</span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 col-12">
-                            <div class="form-group">
-                                <label for="application_deadline">application_deadline</label>
-                                <input type="date" id="application_deadline" class="form-control" value="{{ old('application_deadline')}}" name="application_deadline">
-                                @if($errors->has('application_deadline'))
-                                    <span class="text-danger"> {{ $errors->first('application_deadline') }}</span>
-                                @endif
-                            </div>
-                        </div>
+                        
                     </div>
                     
                     <div class="row">

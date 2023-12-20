@@ -43,9 +43,9 @@
                                 <td>{{ $p->job_title }}</td>
                                 <td>{{ $p->jobCategory?->name }}</td>
                                 <td>{{ $p->jobNature?->name }}</td>
-                                <td>{{ $p->job_level }}</td>
-                                <td>{{ $p->organization_type }}</td>
-                                <td>{{ $p->location }}</td>
+                                <td>{{ $p->jobLevel?->name }}</td>
+                                <td>{{ $p->organizationType?->name }}</td>
+                                <td>{{ $p->jobLocation?->name }}</td>
                                 <td>{{ $p->salary }}</td>
                                 <td>{{ $p->application_start_date }}</td>
                                 <td>{{ $p->application_deadline }}</td>

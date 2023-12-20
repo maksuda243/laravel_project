@@ -49,7 +49,7 @@ class JobPostController extends Controller
         $data->organization_type=$request->organization_type;
         $data->location=$request->location;
         $data->salary=$request->salary;
-        $data->requirments=$request->requirments;
+        $data->requirments = $request->requirments;
         $data->special_instruction=$request->special_instruction;
         $data->application_start_date=$request->application_start_date;
         $data->application_deadline=$request->application_deadline;
@@ -87,8 +87,7 @@ class JobPostController extends Controller
     {
         try{
             $data=JobPost::findOrFail(encryptor('decrypt',$id));
-            $data->employer_id=$request->employer_id;
-            $data->service_type=$request->            
+            $data->employer_id=$request->employer_id;           
             $data->service_type=$request->subscription;
             $data->no_of_vacancies=$request->no_of_vacancies;
             $data->job_title=$request->job_title;
@@ -147,4 +146,12 @@ class JobPostController extends Controller
             return redirect()->back()->withInput()->with('error','Please try again');
         }
     }
+
+    public function alreadyappliedJob()
+    {
+        $jobid=JobPost::where('employer_id',currentUserId())->pluck('id');
+        $applied=AppliedJob::whereIn('job_id',$jobid)->get();
+        return view('jobseekeruser.applied_job',compact('applied'));
+    }
+
 }

@@ -125,7 +125,7 @@
                   </li>
                   <li><a><i class="fa fa-edit"></i>MY ACTIVITIES <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{route('appliedJob')}}">Applied Jobs</a></li>
+                      <li><a href="{{route('appliedJobs')}}">Applied Jobs</a></li>
                       <li><a href="form_advanced.html">Emailed Resume</a></li>
                       <li><a href="form_validation.html">Shortlisted Jobs</a></li>
                       <li><a href="form_wizards.html">Following Employer</a></li>

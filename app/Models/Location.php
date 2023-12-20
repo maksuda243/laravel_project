@@ -9,9 +9,6 @@ class Location extends Model
 {
     use HasFactory;
 
-    // public function jobpost()
-    // {
-    //     return $this->belongsTo(JobPost::class);
-    // }
+    
     
 }

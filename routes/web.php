@@ -69,7 +69,7 @@ Route::post('jobseekeruser/login', [jsuserauth::class,'signInCheck'])->name('job
 Route::get('jobseekeruser/logout', [jsuserauth::class,'singOut'])->name('jobseekeruser.LogOut');
 
 Route::middleware(['checkJobseekerAuth'])->prefix('jobseeker')->group(function(){
-  Route::get('appliedJob',[JobseekerprofileController::class,'appliedJob'])->name('appliedJob');
+  Route::get('alreadyappliedJob',[JobPostController::class,'alreadyappliedJob'])->name('appliedJobs');
   Route::get('jobseeker_profile',[JobseekerprofileController::class,'index'])->name('jobseekerprofile');
   Route::get('jobseeker_profile/change',[JobseekerprofileController::class,'change_profile'])->name('jobseekerprofile.change');
   Route::post('jobseeker_profile/update',[JobseekerprofileController::class,'update'])->name('jobseekerprofile.update');

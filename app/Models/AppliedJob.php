@@ -15,4 +15,7 @@ class AppliedJob extends Model
     public function jobseeker() { 
         return $this->belongsTo(JobseekerUser::class, 'jobseeker_id');
     }
+    public function employer() { 
+        return $this->belongsTo(EmployerProfile::class, 'employer_id');
+    }
 }

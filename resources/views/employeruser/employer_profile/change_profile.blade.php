@@ -120,7 +120,7 @@
                                     <div class="col-md-4 col-12">
                                         <div class="form-group">
                                             <label for="company_description">Company Description</label>
-                                            <textarea id="company_description" class="form-control"  value="{{ old('company_description', $employer_profile->company_description) }}" name="company_description"></textarea>
+                                            <textarea id="company_description" class="form-control"   value="{{ old('company_description', $employer_profile->company_description) }}" name="company_description"></textarea>
                                             @if($errors->has('company_description'))
                                                 <span class="text-danger">{{ $errors->first('company_description') }}</span>
                                             @endif
