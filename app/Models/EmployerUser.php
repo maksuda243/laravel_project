@@ -19,4 +19,12 @@ class EmployerUser extends Model
         return $this->hasOne(EmployerProfile::class, 'employer_id');
     }
 
+    public function organizationType(){
+        return $this->belongsTo(OrgType::class, 'organization_type');
+    }
+    
+    public function jobCategory(){
+        return $this->belongsTo(JobCategory::class, 'job_catagories');
+    }
+
 }

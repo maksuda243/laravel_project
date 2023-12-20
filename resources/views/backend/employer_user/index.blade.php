@@ -46,8 +46,8 @@
                                     <td>{{ $p->designation }}</td>
                                     <td>{{ $p->address }}</td>
                                     <td>{{ $p->years_of_establishment }}</td>
-                                    <td>{{ $p->industry }}</td>
-                                    <td>{{ $p->organization_type }}</td>
+                                    <td>{{ $p->jobCategory?->name }}</td>
+                                    <td>{{ $p->organizationType?->name }}</td>
                                     <td>{{ $p->company_description }}</td>
                                     <td>{{ $p->website_url }}</td>
                                     <!-- <td class="text-center">

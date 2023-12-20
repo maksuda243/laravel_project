@@ -55,7 +55,7 @@
                                     <td>{{ $p->father_name }}</td>
                                     <td>{{ $p->mother_name }}</td>
                                     <td>{{ $p->date_of_birth }}</td>
-                                    <td>{{ $p->gender }}</td>
+                                    <td>{{ $p->gender}}</td>
                                     <td>{{ $p->religion}}</td>
                                     <td>{{ $p->nationality}}</td>
                                     <td>{{ $p->marital_status}}</td>
