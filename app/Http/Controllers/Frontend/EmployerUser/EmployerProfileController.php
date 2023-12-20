@@ -42,7 +42,7 @@ class EmployerProfileController extends Controller
         $data->email=$request->email;
         $data->contact_no=$request->contact_no;
         $data->designation=$request->designation;
-        $data->industry=$request->industry;
+        $data->job_catagories=$request->job_catagories;
         $data->organization_type=$request->organization_type;
         $data->location=$request->location;
         $data->company_description=$request->company_description;

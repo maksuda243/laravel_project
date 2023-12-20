@@ -17,7 +17,7 @@ class EmployerProfile extends Model
         return $this->belongsTo(Location::class,'location');
     }
     public function jobcategory(){
-        return $this->belongsTo(JobCategory::class,'industry');
+        return $this->belongsTo(JobCategory::class,'job_catagories');
     }
 
     public function employeruser()

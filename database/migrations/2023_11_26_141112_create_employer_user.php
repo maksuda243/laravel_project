@@ -21,7 +21,7 @@ return new class extends Migration
             $table->text('designation')->nullable();
             $table->string('password');
             $table->string('image')->nullable();
-            $table->string('job_categories')->nullable();
+            $table->string('job_catagories')->nullable();
             $table->string('organization_type')->nullable();
             $table->string('location')->nullable();
             $table->text('company_description')->nullable();

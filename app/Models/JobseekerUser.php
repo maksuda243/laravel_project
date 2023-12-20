@@ -11,25 +11,28 @@ class JobseekerUser extends Model
 
     protected $table = 'jobseeker_user'; 
   
-    public function gender(){
+    public function genders(){
         return $this->belongsTo(Gender::class,'gender');
     }
-    public function location(){
+    public function locations(){
         return $this->belongsTo(Location::class,'location');
     }
-    public function job_level(){
+    public function job_Level(){
         return $this->belongsTo(JobLevel::class,'job_level');
     }
-    public function job_category(){
+    public function job_categories(){
         return $this->belongsTo(JobCategory::class,'job_category');
     }
     public function org_type(){
         return $this->belongsTo(OrgType::class,'organization_type');
     }
-    public function job_nature(){
+    public function jobNature(){
         return $this->belongsTo(JobNature::class,'job_nature');
     }
-    public function education(){
+    public function educations(){
         return $this->belongsTo(Education::class,'education');
+    }
+    public function religions(){
+        return $this->belongsTo(Religion::class,'religion');
     }
 }

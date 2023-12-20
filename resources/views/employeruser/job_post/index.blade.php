@@ -33,10 +33,10 @@
                                     <td>{{ ++$loop->index }}</td>
                                     <td>{{ $p->no_of_vacancies }}</td>
                                     <td>{{ $p->job_title }}</td>
-                                    <td>{{ $p->job_categories}}</td>
-                                    <td>{{ $p->job_nature}}</td>
-                                    <td>{{ $p->job_level}}</td>
-                                    <td>{{ $p->location}}</td>
+                                    <td>{{ $p->jobCategory?->name}}</td>
+                                    <td>{{ $p->jobNature?->name}}</td>
+                                    <td>{{ $p->jobLevel->name}}</td>
+                                    <td>{{ $p->jobLocation?->name}}</td>
                                     <td>{{ $p->salary}}</td>
                                     <td>{{ $p->image}}</td>
                                     <td>{{ $p->application_start_date}}</td>

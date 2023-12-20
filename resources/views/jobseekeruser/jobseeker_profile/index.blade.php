@@ -129,10 +129,10 @@
                         <a class="nav-link active text-dark" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Personal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Careeer</a>
+                        <a class="nav-link text-dark" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Career</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Academic</a>
+                        <a class="nav-link text-dark" id="academic-tab" data-toggle="tab" href="#academic" role="tab" aria-controls="academic" aria-selected="false">Academic</a>
                     </li>
                     
                 </ul>
@@ -228,7 +228,7 @@
                                     <label>Gender </label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>{{$js_profile->gender}}</p>
+                                    <p>{{$js_profile->genders?->name}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -236,7 +236,7 @@
                                     <label>Religion </label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>{{$js_profile->religion}}</p>
+                                    <p>{{$js_profile->religions?->name}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -256,6 +256,7 @@
                                     <p>{{$js_profile->national_id}}</p>
                                 </div>
                             </div>
+                            
                 </div>
                   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             <div class="row">
@@ -271,7 +272,7 @@
                                     <label>Preferred Job Nature</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>{{$js_profile->job_nature}}</p>
+                                    <p>{{$js_profile->job_Nature?->name}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -279,7 +280,7 @@
                                     <label>Preferred Job level</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>{{$js_profile->job_level}}</p>
+                                    <p>{{$js_profile->job_Level?->name}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -287,7 +288,7 @@
                                     <label>Preferred Job Organization</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>{{$js_profile->organization_type}}</p>
+                                    <p>{{$js_profile->org_type?->name}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -295,7 +296,7 @@
                                     <label>Preferred Job Location</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>{{$js_profile->location}}</p>
+                                    <p>{{$js_profile->locations?->name}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -316,7 +317,17 @@
                             </div>
                     </div>
 
-                    
+                    <div class="tab-pane fade" id="academic" role="tabpanel" aria-labelledby="academic-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Education</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{$js_profile->educations?->name}}</p>
+                            </div>
+                        </div>
+                        
+                </div>
             </div>
         </div>
     </div>     

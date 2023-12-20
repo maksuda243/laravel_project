@@ -133,7 +133,7 @@ Route::put('/blogs/{blog}', [BlogsController::class, 'update'])->name('blog.upda
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/about',[AboutController::class,'index']);
 Route::get('/blog',[BlogController::class,'index']);
-Route::get('/blogdetails',[BlogDetailsController::class,'index']);
+Route::get('/blogdetails',[BlogDetailsController::class,'index'])->name('blogdetail');
 Route::get('/contact',[ContactController::class,'index']);
 Route::get('/elements',[ElementsController::class,'index']);
 Route::get('/jobdetails',[JobDetailsController::class,'index'])->name('jobdetail');

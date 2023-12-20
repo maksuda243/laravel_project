@@ -33,9 +33,9 @@ class JobPost extends Model
     public function organizationType(){
         return $this->belongsTo(OrgType::class, 'organization_type');
     }
-
+    
     public function jobLocation(){
-        return $this->belongsTo(Location::class, 'locations');
+        return $this->belongsTo(Location::class, 'location');
     }
 
 }

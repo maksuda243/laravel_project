@@ -29,7 +29,6 @@
                                     <th scope="col">{{ __("Gender") }}</th>
                                     <th scope="col">{{ __("Religion") }}</th>
                                     <th scope="col">{{ __("Nationality") }}</th>
-                                    <th scope="col">{{ __("Marital Status") }}</th>
                                     <th scope="col">{{ __("Nationl_ID") }}</th>
                                     <th scope="col">{{ __("Present Address") }}</th>
                                     <th scope="col">{{ __("Permanent Address") }}</th>
@@ -55,21 +54,20 @@
                                     <td>{{ $p->father_name }}</td>
                                     <td>{{ $p->mother_name }}</td>
                                     <td>{{ $p->date_of_birth }}</td>
-                                    <td>{{ $p->gender}}</td>
-                                    <td>{{ $p->religion}}</td>
+                                    <td>{{ $p->genders?->name}}</td>
+                                    <td>{{ $p->religions?->name}}</td>
                                     <td>{{ $p->nationality}}</td>
-                                    <td>{{ $p->marital_status}}</td>
                                     <td>{{ $p->national_id}}</td>
                                     <td>{{ $p->present_address}}</td>
                                     <td>{{ $p->permanent_address}}</td>
                                     <td>{{ $p->contact_no }}</td>
-                                    <td>{{ $p->job_nature }}</td>
-                                    <td>{{ $p->job_level }}</td>
+                                    <td>{{ $p->jobNature?->name }}</td>
+                                    <td>{{ $p->job_Level?->name }}</td>
                                     <td>{{ $p->expected_salary }}</td>
-                                    <td>{{ $p->job_category }}</td>
-                                    <td>{{ $p->organization_type }}</td>
-                                    <td>{{ $p->location }}</td>
-                                    <td>{{ $p->education }}</td>
+                                    <td>{{ $p->job_categories?->name }}</td>
+                                    <td>{{ $p->org_type?->name }}</td>
+                                    <td>{{ $p->locations?->name }}</td>
+                                    <td>{{ $p->educations?->name }}</td>
                                     <td>{{ $p->career_objective }}</td>
                                     <td>{{ $p->skill }}</td>
                                     

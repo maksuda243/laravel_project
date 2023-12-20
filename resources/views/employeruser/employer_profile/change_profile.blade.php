@@ -71,16 +71,16 @@
 
                                     <div class="col-md-4 col-12">
                                         <div class="form-group">
-                                            <label for="job_category">Job Category <i class="text-danger">*</i></label>
-                                            <select id="job_category" class="form-control" name="job_category">
+                                            <label for="job_catagories">Job Category <i class="text-danger">*</i></label>
+                                            <select id="job_catagories" class="form-control" name="job_catagories">
                                                 <option value="">Select Category</option>
                                                 @forelse($jobcategory as $cat)
-                                                <option value="{{ $cat->id }}" @if(old('job_category', $employer_profile->job_categories) == $cat->id) selected @endif>{{ $cat->name }}</option>
+                                                <option value="{{ $cat->id }}" @if(old('job_catagories', $employer_profile->job_catagories) == $cat->id) selected @endif>{{ $cat->name }}</option>
                                                 @empty
                                                 @endforelse
                                             </select>
-                                            @if($errors->has('job_category"'))
-                                                <span class="text-danger"> {{ $errors->first('job_category"') }}</span>
+                                            @if($errors->has('job_catagories"'))
+                                                <span class="text-danger"> {{ $errors->first('job_catagories"') }}</span>
                                             @endif
                                         </div>                                                                                                                                  
                                     </div>

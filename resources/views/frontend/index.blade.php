@@ -130,14 +130,14 @@
                                         <ul>
                                             <!-- Display other job details -->
                                             <li>{{$job->job_title}}</li>
-                                            <li><i class="fas fa-map-marker-alt"></i>{{ $job->location }}</li>
+                                            <li><i class="fas fa-map-marker-alt"></i>{{ $job->jobLocation?->name }}</li>
                                             <li>BDT{{ $job->salary }}</li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="items-link f-right">
                                     <!-- Display more job details -->
-                                    <a href="{{ route('jobdetail', $job->id) }}">{{ $job->job_nature }}</a>
+                                    <a href="{{ route('jobdetail', $job->id) }}">{{ $job->jobNature?->name }}</a>
                                 </div>
                             </div>
                         @endforeach
@@ -318,8 +318,8 @@
                                 </div>
                                 <div class="blog-cap">
                                     <p>|   Properties</p>
-                                    <h3><a href="single-blog.html">Footprints in Time is perfect House in Kurashiki</a></h3>
-                                    <a href="#" class="more-btn">Read more »</a>
+                                    <h3><a href="{{ route('blogdetail') }}">Footprints in Time is perfect House in Kurashiki</a></h3>
+                                    <a href="{{ route('blogdetail') }}" class="more-btn">Read more »</a>
                                 </div>
                             </div>
                         </div>
@@ -337,8 +337,8 @@
                                 </div>
                                 <div class="blog-cap">
                                     <p>|   Properties</p>
-                                    <h3><a href="single-blog.html">Footprints in Time is perfect House in Kurashiki</a></h3>
-                                    <a href="#" class="more-btn">Read more »</a>
+                                    <h3><a href="{{ route('blogdetail') }}">Footprints in Time is perfect House in Kurashiki</a></h3>
+                                    <a href="{{ route('blogdetail') }}" class="more-btn">Read more »</a>
                                 </div>
                             </div>
                         </div>
