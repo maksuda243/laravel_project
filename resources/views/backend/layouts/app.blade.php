@@ -49,7 +49,7 @@
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <h2><strong>{{encryptor('decrypt', request()->session()->get('userName'))}}</strong></h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
