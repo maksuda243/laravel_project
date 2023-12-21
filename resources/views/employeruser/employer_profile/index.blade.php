@@ -131,9 +131,9 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Company Info</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link text-dark" id="academic-tab" data-toggle="tab" href="#pro" role="tab" aria-controls="pro" aria-selected="false">Academic</a>
-                    </li>
+                    </li> -->
                     
                 </ul>
             </div>
@@ -244,54 +244,8 @@
                                     <p>{{$employer_profile->company_description}}</p>
                                 </div>
                             </div>
-                    </div>
-
-                    <div class="tab-pane fade " id="pro" role="tabpanel" aria-labelledby="academic-tab">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>education</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$employer_profile->name}}</p>
-                            </div>
-                        </div>
-                       
-                       
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Em</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$employer_profile->email}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Pho</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$employer_profile->contact_no}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Designa</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$employer_profile->designation}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Addre</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$employer_profile->address}}</p>
-                            </div>
-                        </div>            
-         </div>
-
-                    
+                    </div>              
+                </div> 
             </div>
         </div>
     </div>     

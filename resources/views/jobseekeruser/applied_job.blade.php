@@ -52,7 +52,7 @@
                                 </tr>
                                 @empty
                                 <tr>
-                                    <td colspan="8" class="text-center">{{ __('No jobpost Found') }}</td>
+                                    <td colspan="8" class="text-center">{{ __('No Applied Job Found') }}</td>
                                 </tr>
                                 @endforelse
                             </tbody>
