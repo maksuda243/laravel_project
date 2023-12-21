@@ -99,6 +99,7 @@
                   </li>
                   <li><a href="{{route('job.index')}}"><i class="fa fa-bar-chart-o"></i> Jobs </a></li>
                   <li><a href="{{ route('blog.index') }}"><i class="fa fa-bar-chart-o"></i> Blogs </a></li>
+                  <li><a href="{{ route('appliedjob') }}"><i class="fa fa-bar-chart-o"></i> Applied Jobs </a></li>
                 </ul>
               </div>
 

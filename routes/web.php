@@ -20,6 +20,7 @@ use App\Http\Controllers\Backend\BlogsController;
 use App\Http\Controllers\Backend\ReligionController;
 use App\Http\Controllers\Backend\JobseekerUserController;
 use App\Http\Controllers\Backend\EmployerUserController;
+use App\Http\Controllers\Backend\ApplyJobController;
 
 // Frontend
 use App\Http\Controllers\Frontend\AboutController;
@@ -116,6 +117,7 @@ Route::resource('job', JobController::class);
 Route::resource('religion', ReligionController::class);
 Route::resource('jobseeker_user', JobseekerUserController::class);
 Route::resource('employer_user', EmployerUserController::class);
+Route::get('/appliedjobs', [ApplyJobController::class, 'index'])->name('appliedjob');
 Route::get('/blogs', [BlogsController::class, 'index'])->name('blog.index');
 Route::get('/blogs/create', [BlogsController::class, 'create'])->name('blog.create');
 Route::post('/blogs', [BlogsController::class, 'store'])->name('blog.store');

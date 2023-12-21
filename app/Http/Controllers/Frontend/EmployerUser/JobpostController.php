@@ -154,4 +154,5 @@ class JobPostController extends Controller
         return view('jobseekeruser.applied_job',compact('applied'));
     }
 
+   
 }

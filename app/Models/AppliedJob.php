@@ -18,4 +18,22 @@ class AppliedJob extends Model
     public function employer() { 
         return $this->belongsTo(EmployerProfile::class, 'employer_id');
     }
+    public function genders() { 
+        return $this->belongsTo(JobseekerProfile::class, 'gender');
+    }
+    public function religions() { 
+        return $this->belongsTo(JobseekerProfile::class, 'religion');
+    }
+    public function job_Natures(){
+        return $this->belongsTo(JobNature::class,'job_nature');
+    }
+    public function job_Level(){
+        return $this->belongsTo(JobLevel::class,'job_level');
+    }
+    public function org_type(){
+        return $this->belongsTo(OrgType::class,'organization_type');
+    }
+    public function locations(){
+        return $this->belongsTo(Location::class,'location');
+    }
 }

@@ -27,8 +27,8 @@
                                 @forelse($applied as $p)
                                 <tr>
                                     <td>{{ ++$loop->index }}</td>
-                                    <td>{{$p->employer?->company_name}}</td>
-                                    <td>{{$p->employer?->email}}</td>
+                                    <td>{{$p->employers?->company_name}}</td>
+                                    <td>{{$p->jobseeker?->email}}</td>
                                     <td>{{$p->jobseeker?->contact_no}}</td>
                                     <td>{{$p->job?->job_title}}</td>
                                     <td>{{\Carbon\Carbon::parse($p->created_at)->format('d/m/y h:mA')}}</td>
