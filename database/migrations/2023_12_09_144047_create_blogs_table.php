@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('short_description')->nullable();
             $table->text('description')->nullable();
+            $table->string('category')->nullable();
             $table->string('image')->nullable();
             $table->string('author')->nullable();
             $table->date('publish_date')->nullable();
