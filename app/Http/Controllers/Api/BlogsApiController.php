@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 
-class BlogsController extends Controller
+class BlogsApiController extends Controller
 {
     
-    public function index()
+    public function index($id)
     {
-        $blog = Blog::all();
-        return view('backend.blog.index', compact('blog'));
+        $blog = Blog::where('id',$id)->get()->toArray();
+        return response($blog, 200);
     }
 
     public function create()
@@ -43,11 +43,11 @@ class BlogsController extends Controller
             } catch (Exception $e) {
                   //dd($e);
                 return redirect()->back()->withInput()->with('error', 'An error occurred. Please try again');
-             }
+            }
         }
         
     }
-   
+ 
     public function edit(Blog $blog)
     {
      return view('backend.blog.edit', compact('blog'));
@@ -63,11 +63,13 @@ class BlogsController extends Controller
             $blog->publish_date = $request->publish_date;
             $blog->author = $request->author;
     
+          
             if ($request->hasFile('image')) {
                 $imageName = rand(111,999) . time() . '.' . $request->image->extension();
                 $request->image->move(public_path('uploads/blog'), $imageName);
                 $blog->image = $imageName;
             }
+    
             if ($blog->save()) {
                 return redirect()->route('blog.index')->with('success', 'Blog updated successfully');
             } else {
@@ -75,9 +77,10 @@ class BlogsController extends Controller
             }
         } catch (\Exception $e) {
             return redirect()->back()->withInput()->with('error', 'An error occurred. Please try again');
-         }
+        }
     }
     
+
     public function destroy(Blog $blog)
     {
         $blog->delete();

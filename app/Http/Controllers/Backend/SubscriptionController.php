@@ -64,8 +64,6 @@ class SubscriptionController extends Controller
         try {
          
             $existingSubscription = Subscription::find($subscription->id);
-    
-          
             $existingSubscription->name = $request->input('name');
             $existingSubscription->description = $request->input('description');
             $existingSubscription->duration = $request->input('duration');
@@ -82,7 +80,6 @@ class SubscriptionController extends Controller
         }
     }
     
-
     public function destroy(subscription $subscription)
     {
         $subscription->delete();

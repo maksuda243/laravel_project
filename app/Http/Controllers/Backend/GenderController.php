@@ -60,12 +60,9 @@ class GenderController extends Controller
         }
     }
     
-
     public function destroy(gender $gender)
     {
         $gender->delete();
         return redirect()->route('gender.index')->with('success', 'gender deleted successfully');
     }
-
-
 }

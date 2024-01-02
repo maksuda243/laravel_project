@@ -1,7 +1,6 @@
 @extends('frontend.layouts.home')
 @section('content')
     <main>
-
         <!-- Hero Area Start-->
         <div class="slider-area ">
         <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="public/frontend/assets/img/hero/about.jpg">

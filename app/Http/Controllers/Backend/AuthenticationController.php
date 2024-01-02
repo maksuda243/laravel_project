@@ -34,7 +34,6 @@ class AuthenticationController extends Controller
             // dd($e);
             return redirect('login')->with('danger','Please try again');;
         }
-
     }
 
     public function signInForm(){
@@ -56,7 +55,7 @@ class AuthenticationController extends Controller
         }catch(Exception $e){
             dd($e);
             return redirect()->route('login')->with('error','Your phone number or password is wrong3!');
-        }
+         }
     }
 
     public function setSession($user){
@@ -72,7 +71,6 @@ class AuthenticationController extends Controller
             ]
         );
     }
-
     public function signOut(){
         request()->session()->flush();
         return redirect('login')->with('danger','Successfully logged out');

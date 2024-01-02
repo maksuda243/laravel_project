@@ -16,14 +16,11 @@ class JobController extends Controller
         $job = JobPost::all();
         return view('backend.job.index', compact('job'));
     }
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
         return view('backend.job.create');
     }
-
 
     public function store(Request $request)
     {
@@ -54,33 +51,18 @@ class JobController extends Controller
         }
     }
 
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(JobPost $job)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     { 
         $job = JobPost::find($id);
         return view('backend.job.edit', compact('job'));
     }
-
-
+    
     public function update(Request $request, JobPost $job)
     {
         try {
-          
             $job = JobPost::find($job->id);
             $job->status=$request->status;
          
-    
             if ($job->save()) {
                 return redirect()->route('job.index')->with('success', 'job updated successfully');
             } else {

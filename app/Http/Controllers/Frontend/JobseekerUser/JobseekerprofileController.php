@@ -12,7 +12,6 @@ use App\Models\JobNature;
 use App\Models\Education;
 use App\Models\Religion;
 use App\Models\JobseekerProfile;
-
 use App\Models\AppliedJob;
 use Illuminate\Http\Request;
 use Exception;
@@ -21,9 +20,7 @@ use Toastr;
 
 class JobseekerprofileController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+   
     public function index()
     {
         $js_profile = JobseekerProfile::find(currentUserId());

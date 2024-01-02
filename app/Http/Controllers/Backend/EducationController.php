@@ -14,12 +14,10 @@ class EducationController extends Controller
         return view('backend.education.index', compact('education'));
     }
 
-
     public function create()
     {
         return view('backend.education.create');
     }
-
 
     public function store(Request $request)
     {
@@ -38,13 +36,11 @@ class EducationController extends Controller
         }
     }
 
-
     public function edit(string $id)
     { 
         $education = Education::find($id);
         return view('backend.education.edit', compact('education'));
     }
-
 
     public function update(Request $request, Education $education)
     {
@@ -65,7 +61,6 @@ class EducationController extends Controller
         }
     }
     
-
     public function destroy(education $education)
     {
         $education->delete();

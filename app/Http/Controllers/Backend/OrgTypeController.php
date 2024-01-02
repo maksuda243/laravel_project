@@ -44,10 +44,8 @@ class OrgTypeController extends Controller
     public function update(Request $request, OrgType $orgType)
 {
     try {
-        // Find the existing organization type by its ID
+    
         $existingOrgType = OrgType::find($orgType->id);
-
-        // Update its properties
         $existingOrgType->name = $request->name;
         $existingOrgType->description = $request->description;
 
@@ -61,17 +59,14 @@ class OrgTypeController extends Controller
     }
 }
 
-
 public function destroy($id)
     {
         try {
             $orgType = OrgType::findOrFail($id);
             $orgType->delete();
-
             return redirect()->route('org-type.index')->with('success', 'Organization type deleted successfully');
         } catch (\Exception $e) {
             return redirect()->route('org-type.index')->with('error', 'Failed to delete organization type');
         }
     }
-
 }

@@ -18,13 +18,11 @@ class JobNatureController extends Controller
         return view('backend.job-natures.index', compact('jobNatures'));
     }
 
-    
     public function create()
     {
         return view('backend.job-natures.create');
     }
 
-    
     public function store(Request $request)
     {
         {
@@ -45,25 +43,11 @@ class JobNatureController extends Controller
         
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-       
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(JobNature $jobNature)
     {
      return view('backend.job-natures.edit', compact('jobNature'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, JobNature $jobNature)
     {
     $jobNature->name = $request->jobNatureName;

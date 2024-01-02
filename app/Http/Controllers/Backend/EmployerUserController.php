@@ -21,7 +21,6 @@ class EmployerUserController extends Controller
         return view('backend.employer_user.create');
     }
 
-
     public function store(Request $request)
     {
         try{

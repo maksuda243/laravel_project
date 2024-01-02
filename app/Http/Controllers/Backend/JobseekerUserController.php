@@ -21,7 +21,6 @@ class JobseekerUserController extends Controller
         return view('backend.jobseeker_user.create');
     }
 
-
     public function store(Request $request)
     {
         try{
@@ -70,7 +69,7 @@ class JobseekerUserController extends Controller
 
     public function destroy(JobseekerUser $userJobseeker)
     {
-        $jobNature->delete();
-        return redirect()->route('jobseeker_user.index')->with('success', 'Job nature deleted successfully');
+        $userJobseeker->delete();
+        return redirect()->route('jobseeker_user.index')->with('success', 'Jobseeker user deleted successfully');
     }
 }

@@ -97,14 +97,12 @@ Route::middleware(['checkEmployerAuth'])->prefix('employer')->group(function(){
   Route::post('employer_photo/update',[EmployerProfileController::class,'update_photo'])->name('employer_photo.update');
 });
 
-
 Route::middleware(['checkrole'])->prefix('admin')->group(function(){
   Route::resource('user', user::class);
   Route::resource('role', role::class);
   Route::get('permission/{role}', [permission::class,'index'])->name('permission.list');
   Route::post('permission/{role}', [permission::class,'save'])->name('permission.save');
 });
-
 Route::resource('job-natures', JobNatureController::class);
 Route::resource('job-category', JobCategoryController::class);
 Route::resource('job-level', JobLevelController::class);

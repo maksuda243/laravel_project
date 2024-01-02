@@ -53,10 +53,7 @@
 </head>
   <body>
 
-
-    
     @yield('content')
-
 
      <!-- plugins:js -->
   <script src="{{asset('public/vendors/js/vendor.bundle.base.js')}}"></script>
@@ -70,8 +67,7 @@
   <script src="{{asset('public/js/settings.js')}}"></script>
   <script src="{{asset('public/js/todolist.js')}}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" ></script>
-
-
+  
     <!-- jQuery -->
     <script src="{{asset('public/vendors/jquery/dist/jquery.min.js')}}"></script>
     <!-- Bootstrap -->
@@ -83,8 +79,6 @@
     
     <!-- Custom Theme Scripts -->
     <script src="{{asset('public/build/js/custom.min.js')}}"></script>
-
-
 
   <!-- endinject -->
     <script>  

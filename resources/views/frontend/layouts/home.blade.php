@@ -2,8 +2,8 @@
 @yield('content')
 @include('frontend.layouts.footer')
 
-
-{{-- <!DOCTYPE html>
+<!-- 
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,4 +13,4 @@
 <body>
     Hello world
 </body>
-</html> --}}
+</html> -->

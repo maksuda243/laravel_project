@@ -112,8 +112,7 @@ class JobPostController extends Controller
             return redirect()->back()->withInput()->with('error','Please try again');
         }
     }
-
-
+    
     public function appliedJob()
     {
         $jobid=JobPost::where('employer_id',currentUserId())->pluck('id');

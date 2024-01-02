@@ -15,11 +15,8 @@
     <link href="{{asset('public/vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
     <!-- NProgress -->
     <link href="{{asset('public/vendors/nprogress/nprogress.css')}}" rel="stylesheet">
-
     <!-- Custom Theme Style -->
     <link href="{{asset('public/build/css/custom.min.css')}}" rel="stylesheet">
-
-
 		<!-- CSS here -->
             <link rel="stylesheet" href="{{asset('public/frontend/assets/css/bootstrap.min.css')}}">
             <link rel="stylesheet" href="{{asset('public/frontend/assets/css/owl.carousel.min.css')}}">
@@ -113,31 +110,27 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <!-- <h3>General</h3> -->
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> MANAGE PROFILE <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-home"></i> MANAGE PROFILE <span class="fa fa-chevron-down"><span><a>
                     <ul class="nav child_menu">
                         <li><a href="{{route('jobseekerprofile')}}"> Profile</a></li>
-                      <li><a href="{{route('jobseekerprofile.change')}}">Update Profile</a></li>
-                      <li><a href="index3.html">Upload Resume</a></li>
-                      <li><a href="index3.html">Emailed CV</a></li>
+                        <li><a href="{{route('jobseekerprofile.change')}}">Update Profile</a></li>
+                        <li><a href="index3.html">Upload Resume</a></li>
+                        <li><a href="index3.html">Emailed CV</a></li>
                     </ul>
-                  </li>
-                  <li><a><i class="fa fa-edit"></i>MY ACTIVITIES <span class="fa fa-chevron-down"></span></a>
+                   </li>
+                   <li><a><i class="fa fa-edit"></i>MY ACTIVITIES <span class="fa fa-chevron-down"></span><a>
                     <ul class="nav child_menu">
                       <li><a href="{{route('appliedJobs')}}">Applied Jobs</a></li>
                       <li><a href="form_advanced.html">Emailed Resume</a></li>
                       <li><a href="form_validation.html">Shortlisted Jobs</a></li>
                       <li><a href="form_wizards.html">Following Employer</a></li>
-                      <!-- <li><a href="form_upload.html">Form Upload</a></li>
-                      <li><a href="form_buttons.html">Form Buttons</a></li> -->
                     </ul>
-                  </li>
+                   </li>
 
-                  <li><a><i class="fa fa-table"></i>EMPLOYER ACTIVITIES <span class="fa fa-chevron-down"></span></a>
+                   <li><a><i class="fa fa-table"></i>EMPLOYER ACTIVITIES <span class="fa   fa-chevron-down"><span></a>
                     <ul class="nav child_menu">
                       <li><a href="tables.html">Employer Viewed CV</a></li>
-                      <!-- <li><a href="tables_dynamic.html">Table Dynamic</a></li> -->
                     </ul>
                   </li>
 
@@ -149,7 +142,6 @@
                     </ul>
                   </li>
               </div>
-
             </div>
             <!-- /sidebar menu -->
           </div>
@@ -181,8 +173,6 @@
         <!-- /page content -->
       </div>
     </div>
-
-
 
 <footer>
     <!-- Footer Start-->
@@ -316,8 +306,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- Footer End-->
 </footer>
 
-
-
 <!-- jQuery -->
 <script src="{{asset('public/vendors/jquery/dist/jquery.min.js')}}"></script>
 <!-- Bootstrap -->
@@ -329,7 +317,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 <!-- Custom Theme Scripts -->
 <script src="{{asset('public/build/js/custom.min.js')}}"></script>
-
 
 </body>
 </html>

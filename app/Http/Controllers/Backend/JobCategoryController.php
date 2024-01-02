@@ -57,7 +57,6 @@ class JobCategoryController extends Controller
     public function update(Request $request, $id)
 {
     $jobCategory = JobCategory::findOrFail($id);
-    
     $jobCategory->name = $request->name;
     $jobCategory->description = $request->description;
 
@@ -67,7 +66,6 @@ class JobCategoryController extends Controller
         $jobCategory->image=$imageName;
     }
     $jobCategory->save();
-
     return redirect()->route('job-category.index')->with('success', 'Job category updated successfully');
 }
 

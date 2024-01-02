@@ -27,7 +27,7 @@ class PermissionController extends Controller
     public function save(SaveRequest $request,$role)
     {
         try{
-            // delete permission before saved
+        
             Permission::where('role_id',encryptor('decrypt',$role))->delete();
             foreach($request->permission as $permission){
                 $data=new Permission;

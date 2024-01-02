@@ -36,14 +36,6 @@ class ReligionController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Religion $religion)
-    {
-        //
-    }
-
     public function edit(string $id)
     { 
         $religion = Religion::find($id);
