@@ -31,13 +31,13 @@ class JobPostController extends Controller
         $job_level = JobLevel::all();
         $organization_type = OrgType::all();
         $location = Location::all();
- 
         return view('employeruser.job_post.create', compact('service_type','job_categories','job_nature','job_level','organization_type','location',));
         
     }
 
     public function store(Request $request)
-    {try{
+    {
+        try{
         $data=new JobPost();
         $data->employer_id=currentUserId();
         $data->service_type=$request->service_type;
@@ -125,7 +125,6 @@ class JobPostController extends Controller
         $data = AppliedJob::find(encryptor('decrypt',$id));
         $data->seen=1;
         $data->save();
-        
         $js_profile=$data->jobseeker;
         return view('employeruser.applied_job_edit', compact('js_profile','data'));
     }
