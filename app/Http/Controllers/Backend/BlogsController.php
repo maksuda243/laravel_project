@@ -30,6 +30,7 @@ class BlogsController extends Controller
                 $blog->description = $request->description;
                 $blog->publish_date = $request->publish_date;
                 $blog->author = $request->author;
+                $blog->category = $request->category;
                 if($request->hasFile('image')){
                 $imageName = rand(111,999).time().'.'.$request->image->extension();
                 $request->image->move(public_path('uploads/blog'), $imageName);
@@ -41,7 +42,7 @@ class BlogsController extends Controller
                     return redirect()->back()->withInput()->with('error', 'Failed to create Blog');
                 }
             } catch (Exception $e) {
-                  //dd($e);
+                //   dd($e);
                 return redirect()->back()->withInput()->with('error', 'An error occurred. Please try again');
              }
         }

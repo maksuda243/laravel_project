@@ -11,7 +11,7 @@ class BlogsApiController extends Controller
     
     public function index($id)
     {
-        $blog = Blog::where('id',$id)->get()->toArray();
+        $blog = Blog::where('id',$id)->get();
         return response($blog, 200);
     }
 

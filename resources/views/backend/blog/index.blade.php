@@ -24,6 +24,7 @@
                                         <th scope="col">{{ __('Short Description') }}</th>
                                         <th scope="col">{{ __('Descriiption') }}</th>
                                         <th scope="col">{{ __('Image') }}</th>
+                                        <th scope="col">{{ __('Category') }}</th>
                                         <th scope="col">{{ __('Author') }}</th>
                                         <th scope="col">{{ __('Publish Date') }}</th>
                                         <th class="text-center">{{ __('Action') }}</th>
@@ -37,6 +38,7 @@
                                         <td>{{ $b->short_description }}</td>
                                         <td>{{ $b->description }}</td>
                                         <td><img width="50px" src="{{ asset('public/uploads/blog/'.$b->image) }}" alt=""></td>
+                                        <td>{{ $b->category }}</td>
                                         <td>{{ $b->author }}</td>
                                         <td>{{ $b->publish_date }}</td>
                                         <td class="text-center">

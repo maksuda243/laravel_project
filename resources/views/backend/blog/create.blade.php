@@ -10,7 +10,7 @@
                 <h2>Add New Blog </h2>
             </div>
             <div class="x_content">
-                <form class="form" method="post" enctype="multipart/form-data" action="{{ route('job-category.store') }}">
+                <form class="form" method="post" enctype="multipart/form-data" action="{{ route('blog.store') }}">
                     @csrf
                     <div class="row">
                         <div class="col-md-6 col-12">
@@ -46,6 +46,15 @@
                                 <input type="text" id="author" class="form-control" value="{{ old('author') }}" name="author">
                                 @if($errors->has('author'))
                                     <span class="text-danger"> {{ $errors->first('author') }}</span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="form-group">
+                                <label for="category">Category <i class="text-danger">*</i></label>
+                                <input type="text" id="category" class="form-control" value="{{ old('category') }}" name="category">
+                                @if($errors->has('category'))
+                                    <span class="text-danger"> {{ $errors->first('category') }}</span>
                                 @endif
                             </div>
                         </div>

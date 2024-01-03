@@ -122,7 +122,7 @@ Route::post('/blogs', [BlogsController::class, 'store'])->name('blog.store');
 Route::get('/blogs/{blog}/edit', [BlogsController::class, 'edit'])->name('blog.edit');
 Route::delete('/blogs/{blog}', [BlogsController::class, 'destroy'])->name('blog.destroy');
 Route::put('/blogs/{blog}', [BlogsController::class, 'update'])->name('blog.update');
-Route::put('/blogs/{blog}', [BlogsController::class, 'update'])->name('blog.update');
+// Route::put('/blogs/{blog}', [BlogsController::class, 'update'])->name('blog.update');
 // Route::resource('blogs', BlogsController::class);
 
 
